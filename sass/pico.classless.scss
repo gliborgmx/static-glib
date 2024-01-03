@@ -11,3 +11,26 @@ $enable-classes: false;
 // --------------------
 
 @import "pico";
+
+main {
+    article {
+        header {
+            img {
+                float: left;
+                padding-right: 1em;
+            }
+        }
+    }
+    nav {
+        ul {
+            width: 100%;
+            justify-content: center;
+        }
+        .previous {
+            float: left;
+        }
+        .next {
+            float: right;
+        }
+    }
+}

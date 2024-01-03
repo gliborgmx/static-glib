@@ -23,7 +23,7 @@
         <link rel="alternate" type={% if config.feed_filename == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %} title="RSS" href="{{ get_url(path=config.feed_filename) | safe }}" />
         {% endif %}
 
-        <link rel="stylesheet" href="{{ get_url(path="pico.css", trailing_slash=false) }}" />
+        <link rel="stylesheet" href="{{ get_url(path="pico.classless.css", trailing_slash=false) }}" />
     </head>
 
     <body>
@@ -45,12 +45,17 @@
             </article>
             {% endfor %}
             <nav>
-                {% if paginator.previous %}
-                <a class="previous" href="{{ paginator.previous }}">‹ Anterior</a>
-                {% endif %}
-                {% if paginator.next %}
-                <a class="next" href="{{ paginator.next }}">Siguiente ›</a>
-                {% endif %}
+                <ul>
+                    {% if paginator.previous %}
+                    <li><a href="{{ paginator.first }}">« Primero</a></li>
+                    <li><a href="{{ paginator.previous }}">‹ Anterior</a></li>
+                    {% endif %}
+                    <li> |
+                    {% if paginator.next %}
+                    <li><a href="{{ paginator.next }}">Siguiente ›</a></li>
+                    <li><a href="{{ paginator.last }}">Último »</a></li>
+                    {% endif %}
+                </ul>
             </nav>
             {% endblock content %}
         </main>
