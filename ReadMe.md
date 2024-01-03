@@ -12,6 +12,11 @@ Este repositorio contiene la migración del <https://glib.org.mx> a un generador
 estático en lenguaje [Rust](https://www.rust-lang.org) conocido como
 [Zola](https://www.getzola.org).
 
+Mi plan es usar únicamente [HTML
+semántico](https://es.wikipedia.org/wiki/HTML_sem%C3%A1ntico) en las plantillas,
+y que todo el formato esté en CSS *sin clases*, en este caso con [Pico
+CSS](https://picocss.com/).
+
 El mecanismo para colaborar con artículos está aún por definir, aunque
 definitivamente la carga de trabajo se traslada a los colaboradores, ya que debe
 saber Markdown/[CommonMark](https://spec.commonmark.org) para escribir
