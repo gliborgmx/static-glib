@@ -11,6 +11,8 @@ taxonomies = [
 generate_feed = true
 #feed_filename = "backend/geeklog.xml"
 
+compile_sass = true
+
 [slugify]
 paths = "safe"
 
