@@ -1,9 +1,15 @@
 # The URL the site will be built for
-base_url = "https://glib.org.mx"
+base_url = "https://glib.org.mx/nuevo"
 
-default_language = "es"
+default_language = "es_MX"
 
-taxonomies = [ {name = "tema"}, {name = "autor"} ]
+taxonomies = [
+    {name = "tema", feed = false},
+    {name = "autor", feed = false}
+]
+
+generate_feed = true
+#feed_filename = "backend/geeklog.xml"
 
 [slugify]
 paths = "safe"

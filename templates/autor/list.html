@@ -1,0 +1,8 @@
+{% extends "index.html" %}
+
+{% block content %}
+{{ terms | length }} autores
+{% for autor in terms %}
+<a href="{{ autor.permalink }}">{{ autor.name }}</a> ({{ autor.page_count }})
+{% endfor %}
+{% endblock content %}

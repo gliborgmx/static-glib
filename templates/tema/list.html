@@ -1,0 +1,8 @@
+{% extends "index.html" %}
+
+{% block content %}
+{{ terms | length }} temas
+{% for category in terms %}
+<a href="{{ category.permalink }}">{{ category.name }}</a> ({{ category.page_count }})
+{% endfor %}
+{% endblock content %}

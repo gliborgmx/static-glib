@@ -1,0 +1,12 @@
+{% macro title(page) %}
+<header>
+    <h1><a href="{{ page.permalink }}">{{ page.title }}</a></h1>
+    <p>{{ page.date | date(format="%A, %d %B %Y @ %H:%M") }}</p>
+    {% if page.taxonomies.tema[0] %}
+    <a href="{{ get_taxonomy_url(kind="tema", name=page.taxonomies.tema[0]) }}">{{ page.taxonomies.tema[0] }}</a>
+    {% endif %}
+    {% if page.taxonomies.autor[0] %}
+    <a href="{{ get_taxonomy_url(kind="autor", name=page.taxonomies.autor[0]) }}">{{ page.taxonomies.autor[0] }}</a>
+    {% endif %}
+</header>
+{% endmacro title %}

@@ -1,0 +1,58 @@
+{% extends "index.html" %}
+{% import "post_macros.html" as post_macros %}
+
+{% block title %}{{config.title}} - {{page.title}}{% endblock title %}
+
+{% block content %}
+
+{% if page.toc %}
+<h2>Contenido</h2>
+<nav>
+    <ul>
+        {% for h1 in page.toc %}
+        <li>
+            <a href="{{h1.permalink | safe}}">{{ h1.title }}</a>
+            {% if h1.children %}
+            <ul>
+                {% for h2 in h1.children %}
+                <li>
+                    <a href="{{h2.permalink | safe}}">{{ h2.title }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</nav>
+{% endif %}
+
+<article>
+    {{ post_macros::title(page=page) }}
+    {{ page.content | safe }}
+
+    {% block page_before_footer %}
+    {% endblock page_before_footer %}
+
+    {% block page_footer %}
+    {% if page.taxonomies.tags %}
+    {% for tag in page.taxonomies.tags %}
+    <a href="{{ get_taxonomy_url(kind="tags", name=tag) }}">#{{ tag }}</a>
+    {% endfor %}
+    {% endif %}
+    {% if page.lower or page.higher %}
+    {% if page.lower %}
+    <a class="previous" href="{{ page.lower.permalink }}">‹ {{ page.lower.title }}</a>
+    {% endif %}
+    {% if page.higher %}
+    <a class="next" href="{{ page.higher.permalink }}">{{ page.higher.title }} ›</a>
+    {% endif %}
+    {% endif %}
+
+    {% endblock page_footer %}
+
+    {% block page_after_footer %}
+    {% endblock page_after_footer %}
+</article>
+
+{% endblock content %}
