@@ -35,6 +35,20 @@ main {
                 padding-right: 1em;
             }
         }
+        footer {
+            ul {
+                li {
+                    display: inline;
+                    list-style: none;
+                }
+                .previous {
+                    float: left;
+                }
+                .next {
+                    float: right;
+                }
+            }
+        }
     }
     nav {
         ul {

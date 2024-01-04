@@ -24,6 +24,7 @@
         {% endif %}
 
         <link rel="stylesheet" href="{{ get_url(path='pico.classless.css', trailing_slash=false) }}" />
+        <link rel="shortcut icon" href="{{ get_url(path='favicon.ico', trailing_slash=false) }}" />
     </head>
 
     <body>
@@ -47,13 +48,13 @@
             <nav>
                 <ul>
                     {% if paginator.previous %}
-                    <li><a href="{{ paginator.first }}">« Primero</a></li>
-                    <li><a href="{{ paginator.previous }}">‹ Anterior</a></li>
+                    <li><a href="{{ paginator.first | safe }}">« Primero</a></li>
+                    <li><a href="{{ paginator.previous | safe }}">‹ Anterior</a></li>
                     {% endif %}
                     <li> |
                     {% if paginator.next %}
-                    <li><a href="{{ paginator.next }}">Siguiente ›</a></li>
-                    <li><a href="{{ paginator.last }}">Último »</a></li>
+                    <li><a href="{{ paginator.next | safe }}">Siguiente ›</a></li>
+                    <li><a href="{{ paginator.last | safe }}">Último »</a></li>
                     {% endif %}
                 </ul>
             </nav>

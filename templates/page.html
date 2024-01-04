@@ -35,20 +35,18 @@
     {% endblock page_before_footer %}
 
     {% block page_footer %}
-    {% if page.taxonomies.tags %}
-    {% for tag in page.taxonomies.tags %}
-    <a href="{{ get_taxonomy_url(kind="tags", name=tag) }}">#{{ tag }}</a>
-    {% endfor %}
-    {% endif %}
-    {% if page.lower or page.higher %}
-    {% if page.lower %}
-    <a class="previous" href="{{ page.lower.permalink }}">‹ {{ page.lower.title }}</a>
-    {% endif %}
-    {% if page.higher %}
-    <a class="next" href="{{ page.higher.permalink }}">{{ page.higher.title }} ›</a>
-    {% endif %}
-    {% endif %}
-
+    <footer>
+        {% if page.lower or page.higher %}
+        <ul>
+            {% if page.lower %}
+            <li><a class="previous" href="{{ page.lower.permalink | safe }}">‹ {{ page.lower.title }}</a></li>
+            {% endif %}
+            {% if page.higher %}
+            <li><a class="next" href="{{ page.higher.permalink | safe }}">{{ page.higher.title }} ›</a></li>
+            {% endif %}
+        </ul>
+        {% endif %}
+    </footer>
     {% endblock page_footer %}
 
     {% block page_after_footer %}
