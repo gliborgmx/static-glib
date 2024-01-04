@@ -3,7 +3,7 @@
     <h1><a rel="bookmark" href="{{ page.permalink }}">{{ page.title }}</a></h1>
     {% if page.taxonomies.tema[0] %}
     {% set tema = page.taxonomies.tema[0] | lower %}
-    <a href="{{ get_taxonomy_url(kind="tema", name=page.taxonomies.tema[0]) }}"><img src="{{ get_url(path='/topics/' ~ tema ~ '.png' ) }}" /></a>
+    <a rel="bookmark" href="{{ get_taxonomy_url(kind="tema", name=page.taxonomies.tema[0]) }}"><img src="{{ get_url(path='/topics/' ~ tema ~ '.png' ) }}" /></a>
     {% endif %}
     <time datetime="{{ page.date }}" itemprop="datePublished">{{ page.date | date(format="%A, %d %B %Y @ %H:%M") }}</time>
     {% if page.taxonomies.autor[0] %}
