@@ -23,12 +23,12 @@
         <link rel="alternate" type={% if config.feed_filename == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %} title="RSS" href="{{ get_url(path=config.feed_filename) | safe }}" />
         {% endif %}
 
-        <link rel="stylesheet" href="{{ get_url(path="pico.classless.css", trailing_slash=false) }}" />
+        <link rel="stylesheet" href="{{ get_url(path='pico.classless.css', trailing_slash=false) }}" />
     </head>
 
     <body>
         <header class="main__header">
-            <h1><a rel="bookmark" href="{{ config.base_url }}"><img src="{{ get_url(path='logo.png') }}"></a> Grupo Linuxero del Bajío</h1>
+            <h1><a rel="bookmark" href="{{ config.base_url | safe }}"><img src="{{ get_url(path='logo.png', trailing_slash=false) }}"></a> Grupo Linuxero del Bajío</h1>
         </header>
 
         <main>

@@ -1,13 +1,13 @@
 {% macro title(page) %}
 <header class="post__header">
-    <h1><a rel="bookmark" href="{{ page.permalink }}">{{ page.title }}</a></h1>
+    <h1><a rel="bookmark" href="{{ page.permalink | safe }}">{{ page.title }}</a></h1>
     {% if page.taxonomies.tema[0] %}
     {% set tema = page.taxonomies.tema[0] | lower %}
-    <a rel="bookmark" href="{{ get_taxonomy_url(kind="tema", name=page.taxonomies.tema[0]) }}"><img src="{{ get_url(path='/topics/' ~ tema ~ '.png' ) }}" /></a>
+    <a rel="bookmark" href="{{ get_taxonomy_url(kind="tema", name=page.taxonomies.tema[0], trailing_slash=false) }}"><img src="{{ get_url(path='/topics/' ~ tema ~ '.png', trailing_slash=false) }}" /></a>
     {% endif %}
     <time datetime="{{ page.date }}" itemprop="datePublished">{{ page.date | date(format="%A, %d %B %Y @ %H:%M") }}</time>
     {% if page.taxonomies.autor[0] %}
-    <address itemscope itemtype="http://schema.org/Person"><a href="{{ get_taxonomy_url(kind="autor", name=page.taxonomies.autor[0]) }}">{{ page.taxonomies.autor[0] }}</a></address>
+    <address itemscope itemtype="http://schema.org/Person"><a href="{{ get_taxonomy_url(kind="autor", name=page.taxonomies.autor[0], trailing_slash=false) }}">{{ page.taxonomies.autor[0] }}</a></address>
     {% endif %}
 </header>
 {% endmacro title %}
