@@ -36,3 +36,10 @@ jobs:
         with:
           files: |
             content/**.md
+
+      - name: Revisar ortografia
+        if: steps.archivos-md-modificados.outputs.any_changed == 'true'
+        env:
+          ARCHIVOS_MD_CAMBIADOS: ${{ steps.archivos-md-modificados.outputs.all_changed_files }}
+        run: |
+          python -m pyspelling -n ortografia -S $ARCHIVOS_MD_CAMBIADOS
