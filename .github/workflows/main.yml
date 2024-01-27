@@ -23,7 +23,7 @@ jobs:
       - name: Actualizar Python
         run: |
           python3 -m pip install --upgrade pip setuptools
-          python3 -m pip install pyspelling
+          python3 -m pip install pyspelling pymarkdownlnt
 
       - name: Extraer repositorio
         uses: actions/checkout@v4
@@ -36,6 +36,13 @@ jobs:
         with:
           files: |
             content/**.md
+
+      - name: Revisar formato markdown
+        if: steps.archivos-md-modificados.outputs.any_changed == 'true'
+        env:
+          ARCHIVOS_MD_CAMBIADOS: ${{ steps.archivos-md-modificados.outputs.all_changed_files }}
+        run: |
+          pymarkdown -d MD041 scan $ARCHIVOS_MD_CAMBIADOS
 
       - name: Revisar ortografia
         if: steps.archivos-md-modificados.outputs.any_changed == 'true'
