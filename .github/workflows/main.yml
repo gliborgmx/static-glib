@@ -19,6 +19,8 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+
+      - name: Actualizar Python
         run: |
           python3 -m pip install --upgrade pip setuptools
           python3 -m pip install pyspelling
