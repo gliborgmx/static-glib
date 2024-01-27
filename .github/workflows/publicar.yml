@@ -15,13 +15,16 @@ jobs:
         sudo locale-gen es_MX.UTF-8
         sudo update-locale
 
-    - name: Instalar Zola
-      run: |
-        wget "https://github.com/getzola/zola/releases/download/v0.18.0/zola-v0.18.0-x86_64-unknown-linux-gnu.tar.gz"
-        tar xzf ./zola-v0.18.0-x86_64-unknown-linux-gnu.tar.gz
-
     - name: Extraer repositorio
       uses: actions/checkout@v4
+
+    - name: Descargar Zola
+      run: |
+        wget "https://github.com/getzola/zola/releases/download/v0.18.0/zola-v0.18.0-x86_64-unknown-linux-gnu.tar.gz"
+
+    - name: Instalar Zola
+      run: |
+        tar vxzf ./zola-v0.18.0-x86_64-unknown-linux-gnu.tar.gz
 
     - name: Construir sitio web
       run: |
