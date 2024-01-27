@@ -1,0 +1,36 @@
+name: publicar nota
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  revisar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Actualizar sistema
+        run: |
+          sudo apt-get update
+          sudo apt-get install aspell aspell-es
+
+      - name: Instalar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+        run: |
+          python3 -m pip install --upgrade pip setuptools
+          python3 -m pip install pyspelling
+
+      - name: Extraer repositorio
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Obtener archivos markdown modificados
+        id:  archivos-md-modificados
+        uses: tj-actions/changed-files@v42
+        with:
+          files: |
+            content/**.md
