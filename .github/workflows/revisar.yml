@@ -1,4 +1,4 @@
-name: publicar nota
+name: revisar
 
 on:
   push:
