@@ -40,22 +40,31 @@ jobs:
       - name: Construir sitio web
         run: |
           LANG=es_MX.UTF-8 ./zola build
-          find public
 
       - name: Instalar llave SSH
-        env:
-          KEY: ${{ secrets.SSH_ID }}
-        run: |
-          echo "$KEY" > deploy_key''
-          chmod 600 ./deploy_key
-
-      - name: Desplegar en servidor
+        uses: shimataro/ssh-key-action@v2
         env:
           HOST: ${{ secrets.HOST }}
           USER: ${{ secrets.USER }}
           PORT: ${{ secrets.PORT }}
+        with:
+          key: ${{ secrets.SSH_ID }}
+          name: id_deploy
+          known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
+          config: |
+            Host deploy
+            HostName "$HOST"
+            User "$USER"
+            Port "$PORT"
+            IdentityFile ~/.ssh/id_deploy
+
+      - name: Generar known_hosts
+        env:
+          HOST: ${{ secrets.HOST }}
+          PORT: ${{ secrets.PORT }}
         run: |
-          rsync -P -rvzc --delete \
-            -e 'ssh -i ./deploy_key -p 6789 -o StrictHostKeyChecking=no' \
-            public/ "$USER"@"$HOST":~/public_html
-          
+          ssh-keyscan -p "$PORT" -H "$HOST" >> ~/.ssh/known_hosts
+
+      - name: Desplegar en servidor
+        run: |
+          rsync -P -rvzc --delete  public/ deploy:~/public_html
