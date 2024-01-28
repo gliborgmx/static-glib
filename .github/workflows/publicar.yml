@@ -66,4 +66,5 @@ jobs:
         
       - name: Desplegar en servidor
         run: |
+          ssh -v deploy
           rsync -P -rvzc --delete  public/ deploy:~/public_html
