@@ -45,7 +45,9 @@ jobs:
 
       - name: Desplegar
         env:
-          RSYNC_OPTS: -P -rvzc --cvs-exclude --delete --itemize-changes --port=${{ secrets.PORT }}
-          HOST:  ${{ secrets.USER }}@${{ secrets.HOST }}
+          RSYNC_OPTS: -P -rvzc --cvs-exclude --delete --itemize-changes
+          PORT: ${{ secrets.PORT }}
+          HOST: ${{ secrets.HOST }}
+          USER: ${{ secrets.USER }}
         run: |
-          rsync "${RSYNC_OPTS}" public/ "${HOST}":/public_html
+          rsync ${RSYNC_OPTS} --port="${PORT}" public/ "${USER}"@"${HOST}":/public_html
