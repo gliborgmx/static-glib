@@ -43,16 +43,6 @@ jobs:
           echo "${ID}" > id
           chmod 600 ./id
 
-      - name: Crear directorio de SSH
-        run: |
-          mkdir -p ~/.ssh
-
-      - name: Agregar servidor como host conocido
-        env:
-          HOST: ${{ secrets.HOST }}
-        run: |
-          ssh-keyscan -H "${HOST}" >> ~/.ssh/known_hosts
-
       - name: Desplegar
         env:
           RSYNC_OPTS: -P -rvzc --cvs-exclude --delete --itemize-changes --port=${{ secrets.PORT }}
