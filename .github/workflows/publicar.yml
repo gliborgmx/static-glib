@@ -11,9 +11,13 @@ jobs:
     env:
       ZOLA_VERSION: v0.18.0
     steps:
-      - name: Actualizar sistema a Español
+      - name: Instalar dependencias
         run: |
           sudo apt-get update
+          sudo apt-get install openssh-client rsync
+
+      - name: Actualizar sistema a Español
+        run: |
           sudo locale-gen es_MX.UTF-8
           sudo update-locale
 
@@ -33,17 +37,22 @@ jobs:
           LANG=es_MX.UTF-8 ./zola build
 
       - name: Instalar llave SSH
+        env:
+          ID: ${{ secrets.SSH_ID }}
         run: |
-          echo "${{ secrets.SSH_ID }}" > id
+          echo "${ID}" > id
           chmod 600 ./id
 
       - name: Agregar servidor como host conocido
+        env:
+          HOST: ${{ secrets.HOST }}
         run: |
           mkdir -p ~/.ssh
-          ssh-keyscan -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
+          ssh-keyscan -H ${HOST} >> ~/.ssh/known_hosts
 
       - name: Desplegar
         env:
           RSYNC_OPTS: -P -rvzc --cvs-exclude --delete --itemize-changes --port=${{ secrets.PORT }}
+          HOST:  {{ secrets.USER }}@${{ secrets.HOST }}
         run: |
-          rsync ${RSYNC_OPTS} public/ ${{ secrets.HOST }}:/public_html
+          rsync ${RSYNC_OPTS} public/ ${HOST}:/public_html
