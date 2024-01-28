@@ -47,7 +47,6 @@ jobs:
         env:
           HOST: ${{ secrets.HOST }}
         run: |
-          mkdir -p ~/.ssh
           ssh-keyscan -H "${HOST}" >> ~/.ssh/known_hosts
 
       - name: Desplegar
