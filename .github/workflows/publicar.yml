@@ -43,20 +43,10 @@ jobs:
 
       - name: Instalar llave SSH
         uses: shimataro/ssh-key-action@v2
-        env:
-          HOST: ${{ secrets.HOST }}
-          USER: ${{ secrets.USER }}
-          PORT: ${{ secrets.PORT }}
         with:
           key: ${{ secrets.SSH_ID }}
           name: id_deploy
           known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
-          config: |
-            Host deploy
-              Hostname "$HOST"
-              User "$USER"
-              Port "$PORT"
-              IdentityFile ~/.ssh/id_deploy
 
       - name: Generar known_hosts
         env:
@@ -65,6 +55,14 @@ jobs:
         run: |
           ssh-keyscan -p "$PORT" -H "$HOST" >> ~/.ssh/known_hosts
 
+      - name: Generar configuración SSH
+        env:
+          HOST: ${{ secrets.HOST }}
+          USER: ${{ secrets.USER }}
+          PORT: ${{ secrets.PORT }}
+        run: |
+          echo -e "Host deploy\n  Hostname "$HOST"\n  User "$USER"\n  Port "$PORT"\n  IdentityFile ~/.ssh/id_deploy" > ~/.ssh/config
+        
       - name: Desplegar en servidor
         run: |
           rsync -P -rvzc --delete  public/ deploy:~/public_html
