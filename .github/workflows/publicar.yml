@@ -53,10 +53,10 @@ jobs:
           known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
           config: |
             Host deploy
-            HostName "$HOST"
-            User "$USER"
-            Port "$PORT"
-            IdentityFile ~/.ssh/id_deploy
+              Hostname "$HOST"
+              User "$USER"
+              Port "$PORT"
+              IdentityFile ~/.ssh/id_deploy
 
       - name: Generar known_hosts
         env:
