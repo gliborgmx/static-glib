@@ -48,11 +48,11 @@ jobs:
           HOST: ${{ secrets.HOST }}
         run: |
           mkdir -p ~/.ssh
-          ssh-keyscan -H ${HOST} >> ~/.ssh/known_hosts
+          ssh-keyscan -H "${HOST}" >> ~/.ssh/known_hosts
 
       - name: Desplegar
         env:
           RSYNC_OPTS: -P -rvzc --cvs-exclude --delete --itemize-changes --port=${{ secrets.PORT }}
           HOST:  "{{ secrets.USER }}@${{ secrets.HOST }}"
         run: |
-          rsync ${RSYNC_OPTS} public/ ${HOST}:/public_html
+          rsync ${RSYNC_OPTS} public/ "${HOST}":/public_html
