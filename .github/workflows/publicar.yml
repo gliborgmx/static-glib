@@ -36,18 +36,15 @@ jobs:
         run: |
           LANG=es_MX.UTF-8 ./zola build
 
-      - name: Instalar llave SSH
+      - name: Desplegar en servidor
+        uses: up9cloud/action-rsync@master
         env:
-          ID: ${{ secrets.SSH_ID }}
-        run: |
-          echo "${ID}" > id
-          chmod 600 ./id
-
-      - name: Desplegar
-        env:
-          RSYNC_OPTS: -P -rvzc --cvs-exclude --delete --itemize-changes
-          PORT: ${{ secrets.PORT }}
           HOST: ${{ secrets.HOST }}
           USER: ${{ secrets.USER }}
-        run: |
-          rsync ${RSYNC_OPTS} --port="${PORT}" public/ "${USER}"@"${HOST}":/public_html
+          PORT: ${{ secrets.PORT }}
+          KEY: ${{ secrets.SSH_ID }}
+          SOURCE: public
+          TARGET: ~/public_html
+          VERBOSE: true
+          ARGS: -P -rvzc --cvs-exclude --delete --itemize-changes
+          
