@@ -40,6 +40,7 @@ jobs:
       - name: Construir sitio web
         run: |
           LANG=es_MX.UTF-8 ./zola build
+          find public
 
       - name: Instalar llave SSH
         env:
@@ -55,6 +56,6 @@ jobs:
           PORT: ${{ secrets.PORT }}
         run: |
           rsync -P -rvzc --delete \
-            -e 'ssh -i ./deploy_key -p '"$PORT"' -o StrictHostKeyChecking=no' \
+            -e 'ssh -i ./deploy_key -p 6789 -o StrictHostKeyChecking=no' \
             public/ "$USER"@"$HOST":~/public_html
           
