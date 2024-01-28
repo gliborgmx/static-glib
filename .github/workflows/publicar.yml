@@ -62,9 +62,7 @@ jobs:
           PORT: ${{ secrets.PORT }}
         run: |
           echo -e "Host deploy\n  Hostname "$HOST"\n  User "$USER"\n  Port "$PORT"\n  IdentityFile ~/.ssh/id_deploy" > ~/.ssh/config
-          cat ~/.ssh/config
         
       - name: Desplegar en servidor
         run: |
-          ssh -v deploy
-          rsync -P -rvzc --delete  public/ deploy:~/public_html
+          rsync -P -rvzc --delete -e 'ssh -v'  --itemize-changes public/ deploy:~/public_html
