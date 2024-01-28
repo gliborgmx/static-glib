@@ -43,9 +43,9 @@ jobs:
           echo "${ID}" > id
           chmod 600 ./id
 
-      - name: Crear archivo de hosts conocidos
+      - name: Crear directorio de SSH
         run: |
-          mkdir -p ~/.ssh/known_hosts
+          mkdir -p ~/.ssh
 
       - name: Agregar servidor como host conocido
         env:
