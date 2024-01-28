@@ -43,6 +43,10 @@ jobs:
           echo "${ID}" > id
           chmod 600 ./id
 
+      - name: Crear archivo de hosts conocidos
+        run: |
+          mkdir -p ~/.ssh/known_hosts
+
       - name: Agregar servidor como host conocido
         env:
           HOST: ${{ secrets.HOST }}
