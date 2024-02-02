@@ -54,7 +54,9 @@ jobs:
         env:
           ARCHIVOS_MD_CAMBIADOS: ${{ steps.archivos-md-modificados.outputs.all_changed_files }}
         run: |
-          python -m pyspelling -n ortografia -S $ARCHIVOS_MD_CAMBIADOS
+          for ARCHIVO in $ARCHIVOS_MD_CAMBIADOS; do
+            python -m pyspelling -n ortografia -S $ARCHIVO
+          done
 
       - name: Descargar Zola
         run: |
