@@ -54,7 +54,7 @@ jobs:
         env:
           ARCHIVOS_MD_CAMBIADOS: ${{ steps.archivos-md-modificados.outputs.all_changed_files }}
         run: |
-          for ARCHIVO in $ARCHIVOS_MD_CAMBIADOS; do
+          for ARCHIVO in "$ARCHIVOS_MD_CAMBIADOS"; do
             python -m pyspelling -n ortografia -S $ARCHIVO
           done
 
