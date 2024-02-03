@@ -5,7 +5,7 @@
     {% set tema = page.taxonomies.tema[0] | lower %}
     <a rel="bookmark" href="{{ get_taxonomy_url(kind="tema", name=page.taxonomies.tema[0], trailing_slash=false) }}"><img src="{{ get_url(path='/topics/' ~ tema ~ '.png', trailing_slash=false) }}" /></a>
     {% endif %}
-    <time datetime="{{ page.date }}" itemprop="datePublished">{{ page.date | date(format="%A, %d %B %Y @ %H:%M") }}</time>
+    <time datetime="{{ page.date }}" itemprop="datePublished">{{ page.date | date(format="%A, %d %B %Y @ %H:%M", locale="es_MX") }}</time>
     {% if page.taxonomies.autor[0] %}
     <address itemscope itemtype="http://schema.org/Person"><a href="{{ get_taxonomy_url(kind="autor", name=page.taxonomies.autor[0], trailing_slash=false) }}">{{ page.taxonomies.autor[0] }}</a></address>
     {% endif %}
