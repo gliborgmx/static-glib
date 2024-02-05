@@ -66,3 +66,7 @@ jobs:
       - name: Desplegar en servidor
         run: |
           rsync -P -rvzc --delete -e 'ssh -v'  --itemize-changes public/ deploy:/public_html
+
+      - name: Post-despliegue en servidor
+        run: |
+          ssh -v deploy fix-glib
