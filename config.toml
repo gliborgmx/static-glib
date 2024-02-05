@@ -3,13 +3,14 @@ base_url = "https://glib.org.mx/"
 
 default_language = "es_MX"
 
+title = "Grupo Linuxero del Bajío"
+
 taxonomies = [
     {name = "tema", feed = false},
     {name = "autor", feed = false}
 ]
 
 generate_feed = true
-#feed_filename = "backend/geeklog.xml"
 
 compile_sass = true
 
