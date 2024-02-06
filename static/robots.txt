@@ -1,0 +1,57 @@
+User-agent: *
+Disallow: /.well.known/
+Disallow: /humans.txt
+Host: glib.org.mx
+
+User-agent: spbot
+Crawl-delay: 10
+
+User-Agent: MJ12bot
+Disallow: /
+
+User-agent: MauiBot (crawler.feedback+wc@gmail.com)
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: SemrushBot-SA
+Disallow: /
+
+User-agent: AlphaSeoBot
+Disallow: /
+
+User-agent: AlphaSeoBot-SA
+Disallow: /
+
+User-agent: dotbot
+Disallow: /
+
+User-agent: rogerbot
+Disallow: /
+
+User-agent: serpstatbot
+Disallow: /
+
+User-agent: SEOkicks
+Disallow: /
+
+User-agent: Twitterbot
+Allow: /blog/data/
+
+User-agent: barkrowler
+Crawl-Delay: 10
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: adsbot
+Disallow: /
+
+User-agent: Buck
+Disallow: /
+
+Sitemap: https://glib.org.mx/sitemap.xml

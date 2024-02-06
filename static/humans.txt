@@ -1,0 +1,12 @@
+/* TEAM */
+
+	Administrator: GLiB crew
+	Contact: glib [at] glib /d/ org /d/ mx
+	Twitter: @GLiB_
+	Location: Región Bajío, México
+
+/* SITE */
+
+	Software: Zola
+	Language: Spanish
+	IDE: emacs, gimp
