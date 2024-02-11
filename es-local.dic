@@ -44,6 +44,7 @@ Ciao
 Cluster
 CommonMark
 Comp
+Connect
 Constraints
 Consultants
 Core
@@ -89,6 +90,7 @@ GLOBALyTI
 GLiB
 GNOME
 GPL
+GStreamer
 GT
 GULEV
 Galeon
@@ -107,6 +109,7 @@ Guadalajara
 Guanajuato
 HTML
 HURD
+Haskell
 High
 Host
 Hugo
@@ -142,12 +145,16 @@ Kokeros
 Konqueror
 Kuaninj
 LDAP
+LLVM
 LPI
 LSB
 Language
 Lara
 Ledger
+Linaro
+Linus
 Linxe
+Lisp
 LiveCD
 Lizama
 Lockheed
@@ -188,6 +195,7 @@ Notibero
 Novell
 ODBC
 Object
+Ojeda
 Online
 Open
 OpenBSD
@@ -271,6 +279,7 @@ Telmex
 Theory
 Tomcat
 Topspin
+Torvalds
 Tragadera
 Trejo
 Tulsipop
@@ -284,6 +293,7 @@ USB
 UTSOE
 Ubuntu
 Unified
+VlSkZYBeK
 Voltaire
 Vázquez
 Wednet
@@ -304,18 +314,22 @@ baguettes
 based
 bash
 beer
+bindings
 bio
 blog
 boot
 bootear
+buffer
 building
 by
+búfer
 chorizón
 click
 clusters
 clúster
 comments
 computing
+conditions
 condor
 cueritos
 cyber
@@ -326,6 +340,7 @@ dummies
 eth
 etno
 for
+framework
 from
 geeks
 genómica
@@ -333,6 +348,7 @@ geo
 git
 grid
 hacker
+heap
 ib
 in
 intranet
@@ -342,10 +358,12 @@ kFreeBSD
 kWh
 laptop
 laptops
+leaks
 libpq
 linuxero
 log
 main
+memory
 mini
 mod
 monitoring
@@ -353,6 +371,7 @@ mruiz
 multi
 ninjas
 of
+ownership
 packaged
 pantallazo
 parametrizadas
@@ -369,6 +388,7 @@ push
 pvfs
 qlogic
 queueing
+race
 related
 request
 requests
@@ -385,7 +405,10 @@ stack
 support
 switch
 system
+tags
 throughput
+tipado
+toolchain
 tools
 topspin
 trailer
@@ -396,4 +419,5 @@ viz
 voltaire
 wiki
 wtf
+youtube
 Álvaro
