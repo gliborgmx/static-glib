@@ -47,7 +47,7 @@ jobs:
         env:
           ARCHIVOS_MD_CAMBIADOS: ${{ steps.archivos-md-modificados.outputs.all_changed_files }}
         run: |
-          pymarkdown -d MD041 scan $ARCHIVOS_MD_CAMBIADOS
+          pymarkdown scan $ARCHIVOS_MD_CAMBIADOS
 
       - name: Revisar ortografia
         if: steps.archivos-md-modificados.outputs.any_changed == 'true'
