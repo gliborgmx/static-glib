@@ -63,3 +63,25 @@ main {
         }
     }
 }
+
+/* youtube */
+.youtube {
+    max-width: 640px;
+    margin: auto;
+    position: relative;
+}
+
+@mixin youtube($youtube-aspect-ratio) {
+    iframe {
+        aspect-ratio: $youtube-aspect-ratio;
+	      width: 100%;
+    }
+}
+
+.youtube-16x9 {
+    @include youtube(16/9) /* inverse of 16:9 aspect ratio */
+}
+
+.youtube-4x3 {
+    @include youtube(4/3)   /* inverse of 4:3 aspect ratio */
+}
