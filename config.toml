@@ -19,4 +19,4 @@ paths = "safe"
 
 [extra]
 # Put all your custom variables here
-defaul_og_image = "logo.png"
+default_og_image = "logo.png"
