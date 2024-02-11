@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://glib.org.mx/"
+base_url = "https://glib.org.mx"
 
 default_language = "es_MX"
 
