@@ -2,4 +2,5 @@ plugins:
   md041:
     enabled: false
   md013:
-    code_block_line_length: 160
+    code_blocks: false
+    tables: false
