@@ -50,6 +50,8 @@ main {
                 li {
                     display: inline;
                     list-style: none;
+                    overflow: hidden;
+                    white-space: nowrap;
                 }
                 .previous {
                     float: left;
@@ -64,6 +66,13 @@ main {
         ul {
             width: 100%;
             justify-content: center;
+
+            li {
+                display: inline;
+                list-style: none;
+                overflow: hidden;
+                white-space: nowrap;
+            }
         }
         .previous {
             float: left;
