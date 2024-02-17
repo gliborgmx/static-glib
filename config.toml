@@ -4,6 +4,7 @@ base_url = "https://glib.org.mx"
 default_language = "es_MX"
 
 title = "Grupo Linuxero del Bajío"
+description = "Sitio del Grupo Linuxero del Bajío. Software libre para el Bajío."
 
 taxonomies = [
     {name = "tema", feed = false},
