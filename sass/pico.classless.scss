@@ -27,6 +27,16 @@ $enable-classes: false;
     }
 }
 
+.main__footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        font-size: small;
+    }
+}
+
 main {
     article {
         header {
