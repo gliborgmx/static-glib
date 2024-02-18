@@ -28,11 +28,8 @@ $enable-classes: false;
 }
 
 .main__footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     p {
+        text-align: center;
         font-size: small;
     }
 }
