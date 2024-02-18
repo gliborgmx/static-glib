@@ -117,7 +117,12 @@ main {
         }
         ul {
             li {
-                list-style: disc;
+                list-style: none;
+            }
+            figure {
+                width: 100%;
+                display: inline-block;
+                text-align: center;
             }
         }
     }
