@@ -20,7 +20,7 @@ $enable-classes: false;
     }
 
     h1::before {
-        content: url("logo.png");
+        content: url("/logo.png");
         display: inline-block;
         margin-right: .2em;
         width: 100px;
@@ -35,18 +35,21 @@ $enable-classes: false;
                 border-right: 2px solid var(--card-border-color);
             }
             li {
+                a:hover {
+                    text-decoration: underline;
+                }
                 a[href^="https://github.com"] {
-                    content: url("icons/github.svg");
+                    content: url("/imgs/github.svg");
                     width: 2em;
                     height: 2em;
                 }
                 a[href^="https://twitter.com"] {
-                    content: url("icons/x.svg");
+                    content: url("/imgs/x.svg");
                     width: 2em;
                     height: 2em;
                 }
                 a[href$="atom.xml"] {
-                    content: url("icons/rss.svg");
+                    content: url("/imgs/rss.svg");
                     width: 2em;
                     height: 2em;
                 }
