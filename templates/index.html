@@ -55,7 +55,7 @@
             <nav>
                 <ul>
                     <li><a rel="bookmark" title="Inicio" href="{{ config.base_url | safe }}">Inicio</a></li>
-                    {% for taxonomy in config.taxonomies %}
+                    {% for taxonomy in config.taxonomies | sort(attribute="name") %}
                       {% set permalink = config.base_url ~ "/" ~ taxonomy.slug | safe %}
                     <li><a title="{{ taxonomy.name | capitalize }}" href="{{ permalink }}">{{ taxonomy.name | capitalize }}</a></li>
                     {% endfor %}
