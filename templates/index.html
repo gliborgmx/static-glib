@@ -51,7 +51,21 @@
 
     <body>
         <header class="main__header">
-            <h1><a rel="bookmark" href="{{ config.base_url | safe }}"><img src="{{ get_url(path='logo.png', trailing_slash=false) }}"></a> Grupo Linuxero del Bajío</h1>
+            <h1 title="{{ config.title }}">{{ config.title }}</h1>
+            <nav>
+                <ul>
+                    <li><a rel="bookmark" title="Inicio" href="{{ config.base_url | safe }}">Inicio</a></li>
+                    {% for taxonomy in config.taxonomies %}
+                      {% set permalink = config.base_url ~ "/" ~ taxonomy.slug | safe %}
+                    <li><a title="{{ taxonomy.name | capitalize }}" href="{{ permalink }}">{{ taxonomy.name | capitalize }}</a></li>
+                    {% endfor %}
+                    <li><a rel="me" title="GitHub" href="https://github.com/gliborgmx">GitHub</a></li>
+                    <li><a rel="me" title="Twitter" href="https://twitter.com/GLiB_">Twitter</a></li>
+                    {% if config.generate_feed %}
+                    <li><a rel="alternate" title="RSS" type={% if config.feed_filename == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %} title="RSS" href="{{ get_url(path=config.feed_filename) | safe }}">RSS</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
         </header>
 
         <main aria-label="Content">
