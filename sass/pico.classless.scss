@@ -14,16 +14,44 @@ $enable-classes: false;
 
 .main__header {
     height: 10em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
     h1 {
-        margin: 0;
+        text-align: center;
     }
 
-    img {
+    h1::before {
+        content: url("logo.png");
+        display: inline-block;
+        margin-right: .2em;
+        width: 100px;
+        height: 99px;
         vertical-align: middle;
+    }
+
+    nav {
+        ul {
+            margin: 0 auto;
+            li:not(:last-child) {
+                border-right: 2px solid var(--card-border-color);
+            }
+            li {
+                a[href^="https://github.com"] {
+                    content: url("icons/github.svg");
+                    width: 2em;
+                    height: 2em;
+                }
+                a[href^="https://twitter.com"] {
+                    content: url("icons/x.svg");
+                    width: 2em;
+                    height: 2em;
+                }
+                a[href$="atom.xml"] {
+                    content: url("icons/rss.svg");
+                    width: 2em;
+                    height: 2em;
+                }
+            }
+        }
     }
 }
 
