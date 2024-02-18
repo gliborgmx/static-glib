@@ -1,8 +1,18 @@
 {% extends "index.html" %}
 
 {% block content %}
-<h2>Temas</h2>
+<section>
+    <h2>Temas</h2>
+    <ul role="list">
 {% for category in terms %}
-<p><img alt="{{ category.name }}" src="{{ get_url(path='/topics/' ~ category.name ~ '.png', trailing_slash=false) }}" /><a rel="bookmakr" href="{{ category.permalink }}">{{ category.name | capitalize }}</a> ({{ category.page_count }})</p>
+  {% set name = category.name | lower  %}
+        <li role="listitem">
+            <figure>
+                <a rel="bookmark" title="{{ category.name }}" href="{{ category.permalink }}"><img alt="{{ category.name }}" src="{{ get_url(path='/topics/' ~ name ~ '.png', trailing_slash=false) }}" /></a>
+                <figcaption><a rel="bookmark" title="{{ category.name }}" href="{{ category.permalink }}">{{ category.name | capitalize }}</a> ({{ category.page_count }})</figcaption>
+            </figure>
+        </li>
 {% endfor %}
+    </ul>
+</section>
 {% endblock content %}
