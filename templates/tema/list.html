@@ -1,8 +1,8 @@
 {% extends "index.html" %}
 
 {% block content %}
-{{ terms | length }} temas
+<h2>Temas</h2>
 {% for category in terms %}
-<a href="{{ category.permalink }}">{{ category.name }}</a> ({{ category.page_count }})
+<p><img alt="{{ category.name }}" src="{{ get_url(path='/topics/' ~ category.name ~ '.png', trailing_slash=false) }}" /><a rel="bookmakr" href="{{ category.permalink }}">{{ category.name | capitalize }}</a> ({{ category.page_count }})</p>
 {% endfor %}
 {% endblock content %}
