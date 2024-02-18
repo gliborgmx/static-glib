@@ -1,9 +1,12 @@
 {% extends "index.html" %}
 
 {% block content %}
-<h2>{{ term.name }}</h2>
-{% for page in term.pages %}
-<p>{{ page.date | date(format="%F") }}</p>
-<a href="{{ page.permalink }}">{{ page.title }}</a>
-{% endfor %}
+<section>
+    <h2>{{ term.name }} ({{ term.page_count }})</h2>
+    <ul role="list">
+    {% for page in term.pages %}
+        <li role="listitem"><a href="{{ page.permalink }}">{{ page.title }}</a> <time datetime="{{ page.date }}" itemprop="datePublished">{{ page.date | date(format="%A, %d %B %Y @ %H:%M", locale="es_MX") }}</time></li>
+    {% endfor %}
+    </ul>
+</section>
 {% endblock content %}
