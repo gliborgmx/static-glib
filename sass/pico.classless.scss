@@ -110,6 +110,17 @@ main {
             float: right;
         }
     }
+
+    section {
+        h2 {
+            text-align: center;
+        }
+        ul {
+            li {
+                list-style: disc;
+            }
+        }
+    }
 }
 
 /* youtube */
