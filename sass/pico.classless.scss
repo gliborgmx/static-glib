@@ -13,10 +13,11 @@ $enable-classes: false;
 @import "pico";
 
 .main__header {
-    height: 10em;
-
     h1 {
         text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        margin: 0;
     }
 
     h1::before {
