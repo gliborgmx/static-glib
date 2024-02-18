@@ -54,7 +54,7 @@
             <h1><a rel="bookmark" href="{{ config.base_url | safe }}"><img src="{{ get_url(path='logo.png', trailing_slash=false) }}"></a> Grupo Linuxero del Bajío</h1>
         </header>
 
-        <main>
+        <main aria-label="Content">
             {% block content %}
             {% for page in paginator.pages %}
             <article>
@@ -71,11 +71,11 @@
                 <ul>
                     {% if paginator.previous %}
                     <li><a href="{{ paginator.first | safe }}">« Primero</a></li>
-                    <li><a href="{{ paginator.previous | safe }}">‹ Anterior</a></li>
+                    <li><a rel="prev" href="{{ paginator.previous | safe }}">‹ Anterior</a></li>
                     {% endif %}
                     <li> |
                     {% if paginator.next %}
-                    <li><a href="{{ paginator.next | safe }}">Siguiente ›</a></li>
+                    <li><a rel="next" href="{{ paginator.next | safe }}">Siguiente ›</a></li>
                     <li><a href="{{ paginator.last | safe }}">Último »</a></li>
                     {% endif %}
                 </ul>
