@@ -8,8 +8,8 @@
   {% set name = category.name | lower  %}
         <li role="listitem">
             <figure>
-                <a rel="bookmark" title="{{ category.name }}" href="{{ category.permalink }}"><img alt="{{ category.name }}" src="{{ get_url(path='/topics/' ~ name ~ '.png', trailing_slash=false) }}" /></a>
-                <figcaption><a rel="bookmark" title="{{ category.name }}" href="{{ category.permalink }}">{{ category.name | capitalize }}</a> ({{ category.page_count }})</figcaption>
+                <a rel="bookmark" title="{{ category.name }}" href="{{ category.permalink | safe }}"><img alt="{{ category.name }}" src="{{ get_url(path='/topics/' ~ name ~ '.png', trailing_slash=false) }}" /></a>
+                <figcaption><a rel="bookmark" title="{{ category.name }}" href="{{ category.permalink | safe }}">{{ category.name | capitalize }}</a> ({{ category.page_count }})</figcaption>
             </figure>
         </li>
 {% endfor %}

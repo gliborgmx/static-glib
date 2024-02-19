@@ -6,7 +6,7 @@
     <h2>Autores ({{ terms | length }})</h2>
     <ul role="list">
 {% for autor in terms | sort(attribute="name") %}
-    <li role="listitem"><a rel="bookmark" href="{{ autor.permalink }}">{{ autor.name }}</a> ({{ autor.page_count }})</li>
+    <li role="listitem"><a rel="bookmark" href="{{ autor.permalink | safe }}">{{ autor.name }}</a> ({{ autor.page_count }})</li>
 {% endfor %}
     </ul>
 </section>

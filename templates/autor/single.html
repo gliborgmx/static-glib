@@ -5,7 +5,14 @@
     <h2>{{ term.name }} ({{ term.page_count }})</h2>
     <ul role="list">
     {% for page in term.pages %}
-        <li role="listitem"><a href="{{ page.permalink }}">{{ page.title }}</a> <time datetime="{{ page.date }}" itemprop="datePublished">{{ page.date | date(format="%A, %d %B %Y @ %H:%M %z", locale="es_MX") }}</time></li>
+      {% set tema = page.taxonomies.tema[0] | lower %}
+        <li role="listitem">
+            <a href="{{ page.permalink | safe }}">{{ page.title }}</a><br/>
+            <time datetime="{{ page.date }}" itemprop="datePublished">{{ page.date | date(format="%A, %d %B %Y @ %H:%M %z", locale="es_MX") }}</time>
+            <address>
+                <a rel="bookmark" href="{{ get_taxonomy_url(kind="tema", name=page.taxonomies.tema[0], trailing_slash=false) }}"><img src="{{ get_url(path='/topics/' ~ tema ~ '.png', trailing_slash=false) }}" /></a>
+            </address>
+        </li>
     {% endfor %}
     </ul>
 </section>
