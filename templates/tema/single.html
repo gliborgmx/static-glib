@@ -5,7 +5,7 @@
     <h2>{{ term.name | capitalize }} ({{ term.page_count }})</h2>
     <ul role="list">
 {% for page in term.pages %}
-        <li role="listitem"><a href="{{ page.permalink }}">{{ page.title }}</a> <time datetime="{{ page.date }}" itemprop="datePublished">{{ page.date | date(format="%A, %d %B %Y @ %H:%M", locale="es_MX") }}</time></li>
+        <li role="listitem"><a href="{{ page.permalink | safe }}">{{ page.title }}</a> <time datetime="{{ page.date }}" itemprop="datePublished">{{ page.date | date(format="%A, %d %B %Y @ %H:%M %z", locale="es_MX") }}</time> / <address itemscope itemtype="http://schema.org/Person"><a href="{{ get_taxonomy_url(kind="autor", name=page.taxonomies.autor[0], trailing_slash=false) }}">{{ page.taxonomies.autor[0] }}</a></address></li>
 {% endfor %}
     </ul>
 </section>
