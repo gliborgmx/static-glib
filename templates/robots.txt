@@ -1,7 +1,6 @@
 User-agent: *
 Disallow: /.well.known/
 Disallow: /humans.txt
-Host: glib.org.mx
 
 User-agent: spbot
 Crawl-delay: 10
@@ -39,9 +38,6 @@ Disallow: /
 User-agent: SEOkicks
 Disallow: /
 
-User-agent: Twitterbot
-Allow: /blog/data/
-
 User-agent: barkrowler
 Crawl-Delay: 10
 
@@ -54,4 +50,4 @@ Disallow: /
 User-agent: Buck
 Disallow: /
 
-Sitemap: https://glib.org.mx/sitemap.xml
+Sitemap: {{ get_url(path="sitemap.xml") }}
