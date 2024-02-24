@@ -84,13 +84,19 @@
             <nav>
                 <ul>
                     {% if paginator.previous %}
-                    <li><a href="{{ paginator.first | safe }}">« Primero</a></li>
+                    <li><a href="{{ paginator.first | safe }}">«</a></li>
                     <li><a rel="prev" href="{{ paginator.previous | safe }}">‹ Anterior</a></li>
+                    {% else %}
+                    <li>«</li>
+                    <li>‹ Anterior</li>
                     {% endif %}
-                    <li> |
+                    <li>| {{ paginator.current_index}} de {{ paginator.number_pagers }} |</li>
                     {% if paginator.next %}
                     <li><a rel="next" href="{{ paginator.next | safe }}">Siguiente ›</a></li>
-                    <li><a href="{{ paginator.last | safe }}">Último »</a></li>
+                    <li><a href="{{ paginator.last | safe }}">»</a></li>
+                    {% else %}
+                    <li>Siguiente ›</li>
+                    <li>»</li>
                     {% endif %}
                 </ul>
             </nav>
