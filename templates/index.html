@@ -61,6 +61,7 @@
                       {% set permalink = config.base_url ~ "/" ~ taxonomy.slug | safe %}
                     <li><a title="{{ taxonomy.name | capitalize }}" href="{{ permalink | safe }}">{{ taxonomy.name | capitalize }}</a></li>
                     {% endfor %}
+                    <li><a rel="bookmark" title="Contribuir" href="{{ config.base_url ~ '/' ~ 'contribuir' | safe }}">Contribuir</a></li>
                     <li><a rel="me" title="GitHub" href="https://github.com/gliborgmx">GitHub</a></li>
                     <li><a rel="me" title="Mastodon" href="https://floss.social/@glib">Mastodon</a></li>
                     {% if config.generate_feed %}
