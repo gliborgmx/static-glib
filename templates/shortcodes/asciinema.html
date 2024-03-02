@@ -1,0 +1,19 @@
+<div id="{{ id }}">
+    <script type="text/javascript" src="{{ get_url(path='asciinema-player.min.js') }}" data-speed="2" data-theme="solarized-dark"></script>
+    <script  type="text/javascript">
+     var link = document.createElement('link');
+     link.type = 'text/css';
+     link.rel = 'stylesheet';
+     link.href = "{{ get_url(path='asciinema-player.css') | safe }}";
+
+     document.head.appendChild(link);
+
+     AsciinemaPlayer.create('{{ "/" ~ page.colocated_path ~ file | safe }}',
+                            document.getElementById('{{ id }}'), {
+                                speed: 2,
+                                cols: 80,
+                                rows: 24,
+                                poster: 'npt:1:23',
+     });
+    </script>
+</div>
