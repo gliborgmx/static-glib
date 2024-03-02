@@ -64,6 +64,14 @@
                     {% if config.generate_feed %}
                     <li><a rel="alternate" title="RSS" type={% if config.feed_filename == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %} title="RSS" href="{{ get_url(path=config.feed_filename) | safe }}">RSS</a></li>
                     {% endif %}
+                    <li>
+                        <div class="caja-de-busqueda">
+                            <input type="search" id="busqueda" placeholder="búsqueda" />
+                            <div class="resultados-busqueda">
+                                <div class="resultados-busqueda__items"></div>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -109,5 +117,9 @@
             <p>Desarrollado con <a rel="external" href="https://www.getzola.org/">Zola</a> y <a rel="external" href="https://picocss.com/">PicoCSS</a>.</p>
         </footer>
         {% endblock footer %}
+        <script type="text/javascript" src="{{ get_url(path='elasticlunr.min.js') }}"></script>
+        <script type="text/javascript" src="{{ get_url(path='lunr.stemmer.support.js') }}"></script>
+        <script type="text/javascript" src="{{ get_url(path='lunr.es.js') }}"></script>
+        <script type="text/javascript" src="{{ get_url(path='search.js') }}"></script>
     </body>
 </html>
