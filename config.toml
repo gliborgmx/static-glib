@@ -1,7 +1,7 @@
 # The URL the site will be built for
 base_url = "https://glib.org.mx"
 
-default_language = "es_MX"
+default_language = "es"
 
 title = "Grupo Linuxero del Bajío"
 description = "Sitio del Grupo Linuxero del Bajío. Software libre para el Bajío."
@@ -15,8 +15,13 @@ generate_feed = true
 
 compile_sass = true
 
+build_search_index = true
+
 [slugify]
 paths = "safe"
+
+[search]
+index_format = "elasticlunr_json"
 
 [extra]
 # Put all your custom variables here
