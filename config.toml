@@ -17,6 +17,9 @@ compile_sass = true
 
 build_search_index = true
 
+smart_punctuation = true
+render_emoji = true
+
 [slugify]
 paths = "safe"
 
