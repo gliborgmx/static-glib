@@ -57,7 +57,7 @@
                     <li><a rel="bookmark" title="Inicio" href="{{ config.base_url | safe }}">Inicio</a></li>
                     {% for taxonomy in config.taxonomies | sort(attribute="name") %}
                       {% set permalink = config.base_url ~ "/" ~ taxonomy.slug | safe %}
-                    <li><a title="{{ taxonomy.name | capitalize }}" href="{{ permalink }}">{{ taxonomy.name | capitalize }}</a></li>
+                    <li><a title="{{ taxonomy.name | capitalize }}" href="{{ permalink | safe }}">{{ taxonomy.name | capitalize }}</a></li>
                     {% endfor %}
                     <li><a rel="me" title="GitHub" href="https://github.com/gliborgmx">GitHub</a></li>
                     <li><a rel="me" title="Twitter" href="https://twitter.com/GLiB_">Twitter</a></li>
@@ -83,7 +83,7 @@
                 {{ post_macros::title(page=page) }}
                 {% if page.summary %}
                 {{ page.summary | safe }}
-                <a href="{{ page.permalink }}">Leer más...</a>
+                <a href="{{ page.permalink | safe }}">Leer más...</a>
                 {% else %}
                 {{ page.content | safe }}
                 {% endif %}
