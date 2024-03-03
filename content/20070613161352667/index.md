@@ -100,7 +100,7 @@ banda ancha, ya que van a descargar al menos los discos base. Después se les
 pide información sobre el clúster, cosas típicas, por ejemplo el nuestro quedó
 así:
 
-```shell
+```bash
 Fully-Qualified Host Name: blackmamba.ira.cinvestav.mx
 Cluster Name: blackmamba
 Certificate Organization: CINVESTAV
@@ -125,7 +125,7 @@ Los demás datos son sobre la contraseña de administrador (root) y la zona
 horaria, las particiones que pueden hacerse en automático, coloca así las
 particiones:
 
-```shell
+```bash
 / 8 GB
 /var 4 GB
 swap 1 GB
@@ -173,7 +173,7 @@ base de datos con PHPAdmin, e incluso generar una plantilla de etiquetas para
 cada nodo y así rápidamente identificarlos. Para apagar el sistema deben apagar
 primero los nodos esclavos y luego el maestro, la forma fácil es como root:
 
-```{shell}
+```bash
 cluster-fork shutdown -h now
 shutdown -h now
 ```

@@ -69,7 +69,7 @@ PostgreSQL utilizando libpq [5].
 
 Supongamos que tenemos la tabla ciudad con este esquema:
 
-```{sql}
+```sql
 CREATE TABLE ciudades (
   nombre         varchar(80),
   estado       varchar(80)
@@ -80,7 +80,7 @@ Entonces ahora tenemos que crear 2 clases por cada relación con la que nuestra
 aplicación tendrá acceso: el acceso a datos y el transporte de datos. Expongamos
 primero la especificación de la clase de transporte de datos:
 
-```{C++}
+```c++
 class Ciudades {
   private:
     string nombre;
@@ -103,7 +103,7 @@ class Ciudades {
 La implementación de esta clase es trivial y podrá imaginarse fácilmente. Ahora
 veamos la definición de la clase de acceso a datos:
 
-```{C++}
+```c++
 class CiudadesDAO {
   private:
     PGconn *pgconn;
@@ -127,7 +127,7 @@ class CiudadesDAO {
 
 Veamos, con el fin de ilustrar, la implementación del método `find`:
 
-```{C++}
+```c++
 Ciudades CiudadesDAO::find (string nombre)
 {
   PGresult *res;
@@ -169,7 +169,7 @@ y resultados.
 Para redondear escribamos una sencilla función donde se empleen estas dos
 clases:
 
-```{C++}
+```c++
 void getCelaya (PGconn *conn)
 {
   try {
