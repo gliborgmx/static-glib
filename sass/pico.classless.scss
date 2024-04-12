@@ -146,6 +146,20 @@ main {
                 }
             }
         }
+        figure {
+            img {
+                display: block;
+                margin: auto;
+            }
+            figcaption {
+                p {
+                    font-size: 0.8125rem;
+                    color: #424242;
+                    text-align: center;
+                    font-style: italic;
+                }
+            }
+        }
     }
     nav {
         ul {
