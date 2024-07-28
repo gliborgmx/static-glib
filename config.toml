@@ -11,7 +11,8 @@ taxonomies = [
     {name = "autor", feed = false}
 ]
 
-generate_feed = true
+generate_feeds = true
+feed_filenames = [ "atom.xml", "rss.xml" ]
 
 compile_sass = true
 
