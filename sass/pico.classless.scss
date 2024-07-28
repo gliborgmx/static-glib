@@ -49,7 +49,7 @@ $enable-classes: false;
                     width: 2em;
                     height: 2em;
                 }
-                a[href$="atom.xml"] {
+                a[href$=".xml"] {
                     content: url("/imgs/rss.svg");
                     width: 2em;
                     height: 2em;
