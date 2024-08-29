@@ -13,7 +13,7 @@ jobs:
       name: despliegue
 
     env:
-      ZOLA_VERSION: v0.19.1
+      ZOLA_VERSION: v0.19.2
 
     steps:
       - name: Instalar dependencias
