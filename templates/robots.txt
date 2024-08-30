@@ -1,6 +1,8 @@
 User-agent: *
 Disallow: /.well.known/
 Disallow: /humans.txt
+Host: glib.org.mx
+Sitemap: {{ get_url(path="sitemap.xml") }}
 
 User-agent: spbot
 Crawl-delay: 10
@@ -38,8 +40,6 @@ Disallow: /
 User-agent: SEOkicks
 Disallow: /
 
-User-agent: barkrowler
-Crawl-Delay: 10
 
 User-agent: AhrefsBot
 Disallow: /
@@ -50,4 +50,21 @@ Disallow: /
 User-agent: Buck
 Disallow: /
 
-Sitemap: {{ get_url(path="sitemap.xml") }}
+User-agent: GPTBot
+Disallow: /
+
+User-agent: barkrowler
+Disallow: /
+
+
+User-agent: DataForSeoBot
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
