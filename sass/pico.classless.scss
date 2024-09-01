@@ -224,3 +224,11 @@ main {
 .youtube-4x3 {
     @include youtube(4/3)   /* inverse of 4:3 aspect ratio */
 }
+
+/* grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    place-items: center;
+    place-content: center;
+}
