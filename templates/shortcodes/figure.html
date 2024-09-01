@@ -1,6 +1,11 @@
 {% if src %}
+{%   if src is starting_with("http")            %}
+{%      set img_src = src                       %}
+{%   else                                       %}
+{%      set img_src = get_url(path=page.colocated_path ~ src, trailing_slash=false) %}
+{%   endif                                      %}
 <figure class="{% if position %}{{ position }}{% else -%} center {%- endif %}" >
-    <img src="{{ src | safe }}"{% if alt %} alt="{{ alt }}"{% endif %}{% if style %} style="{{ style }}"{% endif %} />
+    <img src="{{ img_src | safe }}"{% if alt %} alt="{{ alt }}"{% endif %}{% if style %} style="{{ style }}"{% endif %} />
     {% if caption %}
     <figcaption class="{% if caption_position %}{{ caption_position }}{% else -%} center {%- endif %}"{% if caption_style %} style="{{ caption_style | safe }}"{% endif %}>{{ caption | markdown() | safe }}</figcaption>
     {% endif %}
