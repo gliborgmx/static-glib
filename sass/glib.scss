@@ -1,0 +1,234 @@
+// Config
+// --------------------
+
+// Enable <header>, <main>, <footer> inside $semantic-root-element as containers
+$enable-semantic-container: true;
+
+// Enable .classes
+$enable-classes: false;
+
+// Pico Lib
+// --------------------
+
+@import "pico";
+
+.main__header {
+    h1 {
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    h1::before {
+        content: url("/logo.png");
+        display: inline-block;
+        margin-right: .2em;
+        width: 100px;
+        height: 99px;
+        vertical-align: middle;
+    }
+
+    nav {
+        ul {
+            margin: 0 auto;
+            li:not(:last-child) {
+                border-right: 2px solid var(--card-border-color);
+            }
+            li {
+                a:hover {
+                    text-decoration: underline;
+                }
+                a[href^="https://github.com"] {
+                    content: url("/imgs/github.svg");
+                    width: 2em;
+                    height: 2em;
+                }
+                a[href^="https://twitter.com"] {
+                    content: url("/imgs/x.svg");
+                    width: 2em;
+                    height: 2em;
+                }
+                a[href$=".xml"] {
+                    content: url("/imgs/rss.svg");
+                    width: 2em;
+                    height: 2em;
+                }
+
+                .caja-de-busqueda {
+                    position: relative;
+
+                    input {
+                        height: 2em;
+                        width: 2em;
+                        border-style: none;
+                        border: 0px;
+                        border-radius: 0px;
+                        outline: none;
+                        transition: all .5s ease-in-out;
+                    }
+
+                    input:focus {
+                        width: 15em;
+                        border-radius: 0px;
+                        background-color: transparent;
+                        border-bottom: 1px solid black;
+                        transition: all 500ms;
+                    }
+
+                    .resultados-busqueda {
+                        display: none;
+                        position: absolute;
+                        background: white;
+                        padding: 1rem;
+                        box-shadow: 2px 2px 2px 0 rgba(0,0,0,.5);
+                        max-height: 500px;
+                        overflow: auto;
+                        width: 20em;
+                        right: 0;
+
+                        .resultados-busqueda__items {
+                            list-style:none;
+                            margin-bottom: 1rem;
+
+                            li {
+                                width: 100%;
+                                margin-top: 1rem;
+                                border-bottom: 1px solid #ccc;
+                                font-size: .9rem;
+                                a {
+                                    font-size: 1.2rem;
+                                    display: inline-block;
+                                    margin-bottom: .5rem
+                                }
+                            }
+
+                            li:first-of-type {
+                                margin-top: 0;
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.main__footer {
+    p {
+        text-align: center;
+        font-size: small;
+    }
+}
+
+main {
+    article {
+        header {
+            img {
+                float: left;
+                padding-right: 1em;
+            }
+        }
+        footer {
+            ul {
+                li {
+                    display: inline;
+                    list-style: none;
+                    overflow: hidden;
+                    white-space: nowrap;
+                }
+                .previous {
+                    float: left;
+                }
+                .next {
+                    float: right;
+                }
+            }
+        }
+        figure {
+            img {
+                display: block;
+                margin: auto;
+            }
+            figcaption {
+                p {
+                    font-size: 0.8125rem;
+                    color: #424242;
+                    text-align: center;
+                    font-style: italic;
+                }
+            }
+        }
+    }
+    nav {
+        ul {
+            width: 100%;
+            justify-content: center;
+
+            li {
+                display: inline;
+                list-style: none;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+        }
+        .previous {
+            float: left;
+        }
+        .next {
+            float: right;
+        }
+    }
+
+    section {
+        h2 {
+            text-align: center;
+        }
+        ul {
+            li {
+                list-style: none;
+                figure {
+                    width: 100%;
+                    display: inline-block;
+                    text-align: center;
+                }
+                address, time {
+                    font-size: small;
+                    font-style: italic;
+                    padding-left: 1em;
+                }
+            }
+        }
+    }
+}
+
+/* youtube */
+.youtube {
+    max-width: 640px;
+    margin: auto;
+    position: relative;
+}
+
+@mixin youtube($youtube-aspect-ratio) {
+    iframe {
+        aspect-ratio: $youtube-aspect-ratio;
+	      width: 100%;
+    }
+}
+
+.youtube-16x9 {
+    @include youtube(16/9) /* inverse of 16:9 aspect ratio */
+}
+
+.youtube-4x3 {
+    @include youtube(4/3)   /* inverse of 4:3 aspect ratio */
+}
+
+/* grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    place-items: center;
+    place-content: center;
+}
