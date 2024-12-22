@@ -1,16 +1,20 @@
-// Config
-// --------------------
-
-// Enable <header>, <main>, <footer> inside $semantic-root-element as containers
-$enable-semantic-container: true;
-
-// Enable .classes
-$enable-classes: false;
-
-// Pico Lib
-// --------------------
-
-@import "pico";
+@use "index" with (
+    $enable-semantic-container: true,
+    $enable-responsive-spacings: true,
+    $enable-classes: false,
+    $theme-color: "azure",
+    $modules: (
+        "forms/input-color": false,
+        "forms/input-date": false,
+        "forms/input-file": false,
+        "forms/input-range": false,
+        "components/dropdown": false,
+        "components/loading": false,
+        "components/modal": false,
+        "components/progress": false,
+        "utilities/reduce-motion": false
+    )
+);
 
 .main__header {
     h1 {
