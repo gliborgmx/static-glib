@@ -19,7 +19,7 @@ jobs:
       - name: Instalar dependencias
         run: |
           sudo apt-get update
-          sudo apt-get install openssh-client rsync
+          sudo apt-get install openssh-client rsync minify
 
       - name: Actualizar sistema a Español
         run: |
@@ -40,6 +40,10 @@ jobs:
       - name: Construir sitio web
         run: |
           LANG=es_MX.UTF-8 ./zola build
+
+      - name: Minificar HTML, CSS y JavaScript
+        run: |
+          minify -r -a -o public/ public
 
       - name: Instalar llave SSH
         uses: shimataro/ssh-key-action@v2
