@@ -43,7 +43,7 @@ jobs:
 
       - name: Minificar HTML, CSS y JavaScript
         run: |
-          minify -r -a -o public/ public
+          minify -r -a -o ./ public
 
       - name: Instalar llave SSH
         uses: shimataro/ssh-key-action@v2
