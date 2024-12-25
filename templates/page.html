@@ -7,9 +7,15 @@
 
 <article>
     {{ post_macros::title(page=page) }}
-    {{ page.content | safe }}
+    <section>
+        {{ page.content | safe }}
+    </section>
 
     {% block page_before_footer %}
+    <script data-isso-lang="es" data-isso="https://glib.org.mx/comments" src="https://glib.org.mx/embed.min.js"></script>
+    <section id="isso-thread" data-isso-id="{{ page.slug }}">
+        <noscript>Se require Javascript activado para ver los comentarios.</noscript>
+    </section>
     {% endblock page_before_footer %}
 
     {% block page_footer %}
