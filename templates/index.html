@@ -62,7 +62,7 @@
                     <li><a title="{{ taxonomy.name | capitalize }}" href="{{ permalink | safe }}">{{ taxonomy.name | capitalize }}</a></li>
                     {% endfor %}
                     <li><a rel="me" title="GitHub" href="https://github.com/gliborgmx">GitHub</a></li>
-                    <li><a rel="me" title="Twitter" href="https://twitter.com/GLiB_">Twitter</a></li>
+                    <li><a rel="me" title="Mastodon" href="https://floss.social/@glib">Mastodon</a></li>
                     {% if config.generate_feed %}
                       {% for feed_filename in config.feed_filenames %}
                     <li><a rel="alternate" type={% if feed_filename == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %} title={% if feed_filename == "atom.xml" %}"Atom"{% else %}"RSS"{% endif %} href="{{ get_url(path=feed_filename) | safe }}">{% if feed_filename == "atom.xml" %}Atom{% else %}RSS{% endif %}</a></li>
