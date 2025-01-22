@@ -37,7 +37,7 @@ jobs:
 
       - name: Obtener archivos markdown modificados
         id:  archivos-md-modificados
-        uses: tj-actions/changed-files@v42
+        uses: tj-actions/changed-files@v45
         with:
           files: |
             content/**.md
