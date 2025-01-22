@@ -28,6 +28,8 @@ jobs:
 
       - name: Extraer repositorio
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
 
       - name: Descargar Zola
         run: |
@@ -74,3 +76,38 @@ jobs:
       - name: Post-despliegue en servidor
         run: |
           ssh -v deploy fix-glib
+
+  anunciar:
+    needs: publicar
+
+    runs-on: ubuntu-latest
+
+    environment:
+      name: anunciar
+
+    steps:
+      - name: Instalar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Actualizar Python
+        run: |
+          python3 -m pip install --upgrade pip setuptools requests
+
+      - name: Obtener nuevos archivos markdown
+        id:  archivos-md-modificados
+        uses: tj-actions/changed-files@v45
+        with:
+          files: |
+            content/**.md
+
+      - name: Anunciar nuevas publicaciones en Mastodon
+        if: steps.archivos-md-modificados.outputs.added_files_count != 0
+        env:
+          ARCHIVOS_MD_NUEVOS: ${{ steps.archivos-md-modificados.outputs.added_files }}
+          ACCESS_TOKEN: ${{ secrets.MASTODON_ACCESS_TOKEN }}
+        run: |
+          for ARCHIVO in ${ARCHIVOS_MD_NUEVOS}; do
+            python mastodon.py $ARCHIVO
+          done
