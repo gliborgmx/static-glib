@@ -30,29 +30,38 @@ jobs:
           python3 -m pip install --upgrade pip setuptools
           python3 -m pip install pyspelling pymarkdownlnt
 
+      - name: Número de commits más 1 (merge commit)
+        run: echo "PR_FETCH_DEPTH=$(( ${{ github.event.pull_request.commits }} + 1 ))" >> "${GITHUB_ENV}"
+
       - name: Extraer repositorio
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          fetch-depth: ${{ env.PR_FETCH_DEPTH }}
 
       - name: Obtener archivos markdown modificados
         id:  archivos-md-modificados
-        uses: tj-actions/changed-files@v42
-        with:
-          files: |
-            content/**.md
+        env:
+          BRANCH_MAIN: ${{ github.event.pull_request.base.sha }}
+          BRANCH_TOPIC: ${{ github.event.pull_request.head.sha }}
+        run: |
+          {
+            echo 'archivos_modificados<<EOF'
+            git log --oneline --name-only ${BRANCH_MAIN}..${BRANCH_TOPIC} -- content/** | grep '\.md$' | sort | uniq
+            echo EOF
+          } >> "$GITHUB_OUTPUT"
+          echo "numero_de_cambios=$(echo $ARCIHVOS_MODIFICADOS | wc -l)" >> "$GITHUB_OUTPUT"
 
       - name: Revisar formato markdown
-        if: steps.archivos-md-modificados.outputs.any_changed == 'true'
+        if: steps.archivos-md-modificados.outputs.numero_de_cambios != 0
         env:
-          ARCHIVOS_MD_CAMBIADOS: ${{ steps.archivos-md-modificados.outputs.all_changed_files }}
+          ARCHIVOS_MD_CAMBIADOS: ${{ steps.archivos-md-modificados.outputs.archivos_modificados }}
         run: |
           pymarkdown scan $ARCHIVOS_MD_CAMBIADOS
 
       - name: Revisar ortografia
-        if: steps.archivos-md-modificados.outputs.any_changed == 'true'
+        if: steps.archivos-md-modificados.outputs.numero_de_cambios != 0
         env:
-          ARCHIVOS_MD_CAMBIADOS: ${{ steps.archivos-md-modificados.outputs.all_changed_files }}
+          ARCHIVOS_MD_CAMBIADOS: ${{ steps.archivos-md-modificados.outputs.archivos_modificados }}
         run: |
           for ARCHIVO in ${ARCHIVOS_MD_CAMBIADOS}; do
             python -m pyspelling -n ortografia -S $ARCHIVO
