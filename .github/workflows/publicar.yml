@@ -92,7 +92,6 @@ jobs:
           BEFORE: ${{ github.event.before }}
         run: |
           git fetch origin main && git checkout main
-          git log --oneline --name-status
           echo 'added_files<<EOF' >> "$GITHUB_OUTPUT"
           git diff --name-only --diff-filter=A ${BEFORE}..HEAD  -- content >> "$GITHUB_OUTPUT"
           echo 'EOF' >> "$GITHUB_OUTPUT"
