@@ -111,7 +111,5 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.MASTODON_ACCESS_TOKEN }}
         run: |
           for ARCHIVO in ${ARCHIVOS_MD_NUEVOS}; do
-            echo $ARCHIVO
             python3 mastodon.py $ARCHIVO
-            echo $?
           done
