@@ -28,8 +28,6 @@ jobs:
 
       - name: Extraer repositorio
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 2
 
       - name: Descargar Zola
         run: |
@@ -86,6 +84,11 @@ jobs:
       name: anunciar
 
     steps:
+      - name: Extraer repositorio
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
       - name: Instalar Python
         uses: actions/setup-python@v5
         with:
