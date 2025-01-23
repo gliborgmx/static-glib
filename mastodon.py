@@ -17,7 +17,7 @@ META_RE = re.compile(r'^[ ]{0,3}(?P<key>[A-Za-z0-9_-]+)\s*=\s*"(?P<value>.*)"$')
 BEGIN_RE = re.compile(r'^\+{3}(\s.*)?')
 END_RE = re.compile(r'^(\+{3}|\.{3})(\s.*)?')
 
-ACCESS_TOKEN = ""
+ACCESS_TOKEN = None;
 
 def publish(meta: dict) -> bool:
     # https://docs.joinmastodon.org/methods/statuses/#headers
@@ -34,7 +34,15 @@ def publish(meta: dict) -> bool:
             "language": "es",
         }
     except KeyError as e:
+        print("meta doesn't contain title or slug")
         return False
+
+    try:
+        if meta['draft'] and meta['draft'][0] in ['true', 'True', 'yes', 'Yes', '1']:
+            print(f"article {meta['slug'][0]} is a draft")
+            return True
+    except:
+        pass
 
     response = requests.post(BASE_URL, headers=headers, data=form_data)
     if response.status_code == requests.codes.ok:
@@ -61,6 +69,7 @@ def get_meta(fname: str) -> Optional[dict]:
                             meta[key].append(value)
                         except KeyError:
                             meta[key] = [value]
+    print(f"No metada data found in {fname}")
     return None
 
 def process(fname: str) -> int:
@@ -74,10 +83,12 @@ def main() -> int:
         global ACCESS_TOKEN
         ACCESS_TOKEN = os.environ["ACCESS_TOKEN"]
     except KeyError as e:
+        print('No ACCESS_TOKEN env var found')
         return -1
 
-    if len(sys.argv) == 2:
+    if ACCESS_TOKEN and len(sys.argv) == 2:
         return process(sys.argv[1])
+    print('No access token or missing parameter')
     return -1
 
 if __name__ == '__main__':
