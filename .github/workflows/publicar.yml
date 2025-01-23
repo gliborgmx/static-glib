@@ -84,13 +84,18 @@ jobs:
       - name: Extraer repositorio
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          ref: ${{ github.event.before }}
 
       - name: Listar commits
+        id: archivos-md
+        env:
+          BEFORE: ${{ github.event.before }}
         run: |
-          git log --oneline
-          git diff --diff-filter=A --name-only HEAD^ -- content
-          git diff --name-status HEAD^
+          git fetch origin main && git checkout main
+          git log --oneline --name-status
+          echo 'added_files<<EOF' >> "$GITHUB_OUTPUT"
+          git diff --name-only --diff-filter=A ${BEFORE}..HEAD  -- content >> "$GITHUB_OUTPUT"
+          echo 'EOF' >> "$GITHUB_OUTPUT"
 
       - name: Instalar Python
         uses: actions/setup-python@v5
@@ -101,17 +106,9 @@ jobs:
         run: |
           python3 -m pip install --upgrade pip setuptools requests
 
-      - name: Obtener nuevos archivos markdown
-        id:  archivos-md-modificados
-        uses: tj-actions/changed-files@v45
-        with:
-          files: |
-            content/**.md
-
       - name: Anunciar nuevas publicaciones en Mastodon
         env:
-          ARCHIVOS_MD_NUEVOS: ${{ steps.archivos-md-modificados.outputs.added_files }}
-          ARCHIVOS_MD_CAMBIADOS: ${{ steps.archivos-md-modificados.outputs.all_changed_files }}
+          ARCHIVOS_MD_NUEVOS: ${{ steps.archivos-md.outputs.added_files }}
           ACCESS_TOKEN: ${{ secrets.MASTODON_ACCESS_TOKEN }}
         run: |
           for ARCHIVO in ${ARCHIVOS_MD_NUEVOS}; do
