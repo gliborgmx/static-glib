@@ -59,7 +59,6 @@ def get_meta(fname: str) -> Optional[dict]:
             while line:
                 line = next(fn).strip()
                 if END_RE.match(line):
-                    print(meta)
                     return meta
                 else:
                     m1 = META_RE.match(line)

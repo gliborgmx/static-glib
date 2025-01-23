@@ -107,7 +107,7 @@ jobs:
 
       - name: Anunciar nuevas publicaciones en Mastodon
         env:
-          ARCHIVOS_MD_NUEVOS: "content/202501230857.md" #${{ steps.archivos-md.outputs.added_files }}
+          ARCHIVOS_MD_NUEVOS: ${{ steps.archivos-md.outputs.added_files }}
           ACCESS_TOKEN: ${{ secrets.MASTODON_ACCESS_TOKEN }}
         run: |
           for ARCHIVO in ${ARCHIVOS_MD_NUEVOS}; do
