@@ -46,10 +46,10 @@ def publish(meta: dict) -> bool:
 
     response = requests.post(BASE_URL, headers=headers, data=form_data)
     if response.status_code == requests.codes.ok:
-        return 0
+        return True
 
     print(f"Request error: {response.text}")
-    return -1
+    return False
 
 def get_meta(fname: str) -> Optional[dict]:
     meta: dict[str, list[str]] = {}
@@ -77,6 +77,7 @@ def process(fname: str) -> int:
     meta = get_meta(fname)
     if meta and publish(meta):
         return 0
+    print('Unknown error')
     return -1
 
 def main() -> int:
