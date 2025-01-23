@@ -7,8 +7,12 @@ on:
 jobs:
   revisar:
     runs-on: ubuntu-latest
+
+    secrets: inherit
+
     env:
       ZOLA_VERSION: v0.19.2
+
     steps:
       - name: Actualizar sistema
         run: |
@@ -55,7 +59,20 @@ jobs:
           ARCHIVOS_MD_CAMBIADOS: ${{ steps.archivos-md-modificados.outputs.all_changed_files }}
         run: |
           for ARCHIVO in ${ARCHIVOS_MD_CAMBIADOS}; do
-            python -m pyspelling -n ortografia -S $ARCHIVO
+            python3 -m pyspelling -n ortografia -S $ARCHIVO
+          done
+
+      - name: Instalar python requests
+        run: python3 -m pip install requests
+
+      - name: Anunciar nuevas publicaciones en Mastodon
+        if: steps.archivos-md-modificados.outputs.added_files_count != 0
+        env:
+          ARCHIVOS_MD_NUEVOS: ${{ steps.archivos-md-modificados.outputs.added_files }}
+          ACCESS_TOKEN: ${{ secrets.MASTODON_ACCESS_TOKEN }}
+        run: |
+          for ARCHIVO in ${ARCHIVOS_MD_NUEVOS}; do
+            python3 mastodon.py $ARCHIVO
           done
 
       - name: Descargar Zola
