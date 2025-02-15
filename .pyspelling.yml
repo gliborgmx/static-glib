@@ -1,9 +1,15 @@
 matrix:
   - name: ortografia
+    sources:
+      - content/*/index.mdgs
+      # ignorar textos anteriores al 2009 - demasiados errores
+      - content/20[1-9]*.md
     aspell:
       lang: es
       mode: markdown
       ignore-case: true
+      ignore: 3
+      d: es
     dictionary:
       wordlists:
       - es-local.dic
