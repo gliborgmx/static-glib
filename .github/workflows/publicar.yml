@@ -93,7 +93,7 @@ jobs:
         run: |
           git fetch origin main && git checkout main
           echo 'added_files<<EOF' >> "$GITHUB_OUTPUT"
-          git diff --name-only --diff-filter=A ${BEFORE}..HEAD  -- content >> "$GITHUB_OUTPUT"
+          git diff --name-only --diff-filter=A ${BEFORE}..HEAD  -- 'content/***.md' >> "$GITHUB_OUTPUT"
           echo 'EOF' >> "$GITHUB_OUTPUT"
 
       - name: Instalar Python
