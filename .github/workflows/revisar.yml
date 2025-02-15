@@ -41,6 +41,7 @@ jobs:
         with:
           files: |
             content/**.md
+            content/**/**.md
 
       - name: Revisar formato markdown
         if: steps.archivos-md-modificados.outputs.any_changed == 'true'
