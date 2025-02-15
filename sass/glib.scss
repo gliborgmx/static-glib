@@ -164,6 +164,16 @@ main {
                 }
             }
         }
+        section {
+            h2 {
+                text-align: inherit;
+            }
+            ul {
+                li {
+                    list-style: inherit;
+                }
+            }
+        }
     }
     nav {
         ul {
