@@ -13,11 +13,17 @@ lo mejor de todo es que esta disponible en español de México.
 
 El punto de reunión es Plaza de los Fundadores y la dirección es:
 
-Avenida Revolución y Calle Fernando Dávila, Irapuato Guanajuato en punto de las
-3:00 p.m. , de ahí salimos hacia donde se llevara la fiesta firefox.
+Avenida Revolución y Calle Fernando Dávila
 
-La dirección del lugar donde se llevara a cabo la fiesta firefox es: ANTONIO
-TORRES 627 FRACC. GUERRERO, Irapuato Guanajuato en punto de las 4:30 p.m.
+Irapuato Guanajuato en punto de las 3:00 p.m.
+
+de ahí salimos hacia donde se llevara la fiesta firefox.
+
+La dirección del lugar donde se llevara a cabo la fiesta Firefox es:
+
+ANTONIO TORRES 627 FRACC. GUERRERO
+
+Irapuato Guanajuato en punto de las 4:30 p.m.
 
 El sitio de preguntas mas frecuentes (FAQ) pueden consultarlo en esta liga
 <http://mozilla-mexico.sourceforge.net/?page_id=139>
@@ -29,7 +35,7 @@ El evento ya está registrado para el próximo 11 de julio.
 
 EL itinerario en el lugar de la reunión de celebración es el siguiente:
 
-- First Talk: "Mozilla Firefox - Past, Present and Future "
+- First Talk: "Mozilla Firefox - Past, Present and Future"
 - Second Talk: "Web 2.0 and Firefox"
 - Third Talk: "Firefox, because the Open Source and Software Libre Matters"
 - Four Talk: "Firefox Addons"
@@ -43,8 +49,8 @@ La fiesta firefox que celebramos el año pasado en 2008 la pueden consultar en l
 siguiente liga
 <http://frenesssi.wordpress.com/2008/06/29/reunion-glib-firefox-party-2008/>
 
-UPDATE: Se cancelan de nueva cuenta todoas las fiestas firefox hasta no tengamos
-los paquetes firefox, este fue un comunicado por mozilla mexico, asi que hay que
+UPDATE: Se cancelan de nueva cuenta todas las fiestas Firefox hasta no tengamos
+los paquetes Firefox, este fue un comunicado por Mozilla México, así que hay que
 esperar una semana aproximadamente.
 
-!! Los esperamos todos somos bienvenidos y celebremos juntos !!
+¡¡ Los esperamos todos somos bienvenidos y celebremos juntos !!
