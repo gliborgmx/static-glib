@@ -25,15 +25,15 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Actualizar Python
-        run: |
-          python3 -m pip install --upgrade pip setuptools
-          python3 -m pip install pyspelling pymarkdownlnt
-
       - name: Extraer repositorio
         uses: actions/checkout@v4
         with:
           fetch-depth: 2
+
+      - name: Actualizar Python
+        run: |
+          python3 -m pip install --upgrade pip setuptools
+          python3 -m pip install -r requirements.txt
 
       - name: Obtener archivos markdown modificados
         id:  archivos-md-modificados
