@@ -88,7 +88,7 @@
                 {{ post_macros::title(page=page) }}
                 {% if page.summary %}
                 {{ page.summary | safe }}
-                <a href="{{ page.permalink | safe }}">Leer más...</a>
+                <p class="text-centered"><a href="{{ page.permalink | safe }}">Continuar leyendo…</a></p>
                 {% else %}
                 {{ page.content | safe }}
                 {% endif %}
