@@ -13,7 +13,6 @@
 
     {% block page_before_footer %}
     <script data-isso-lang="es" data-isso="https://glib.org.mx/comments" src="https://glib.org.mx/comments/js/embed.min.js"></script>
-    <a href="#isso-thread"></a>
     <section id="isso-thread" data-isso-id="{{ page.path | trim_end_matches(pat='/') | safe }}">
         <noscript>Se require Javascript activado para desplegar los comentarios.</noscript>
     </section>
