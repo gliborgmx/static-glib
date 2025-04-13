@@ -93,7 +93,7 @@
                 {{ page.content | safe }}
                 {% endif %}
                 <p class="text-centered">
-                    <a href="{{ page.permalink | safe }}#isso-thread"></a>
+                    <a href="{{ page.permalink | safe }}#comentarios" data-isso-lang="es" data-isso-id="{{ page.path | trim_end_matches(pat='/') | safe }}"></a>
                     {% if page.summary %} | <a href="{{ page.permalink | safe }}">Continuar leyendo…</a>{% endif %}
                 </p>
             </article>
