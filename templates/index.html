@@ -92,10 +92,14 @@
                 {% else %}
                 {{ page.content | safe }}
                 {% endif %}
-                <p class="text-centered">
-                    <a href="{{ page.permalink | safe }}#isso-thread" data-isso-lang="es" data-isso-id="{{ page.path | trim_end_matches(pat='/') | safe }}"></a>
-                    {% if page.summary %} | <a href="{{ page.permalink | safe }}">Continuar leyendo…</a>{% endif %}
-                </p>
+                <footer>
+                    <nav>
+                        <ul>
+                            <li><a href="{{ page.permalink | safe }}#isso-thread" data-isso-lang="es" data-isso-id="{{ page.path | trim_end_matches(pat='/') | safe }}">comentarios</a></li>
+                            {% if page.summary %}<li>|</li><li><a href="{{ page.permalink | safe }}">Continuar leyendo…</a></li>{% endif %}
+                        </ul>
+                    </nav>
+                </footer>
             </article>
             {% endfor %}
             <nav>
