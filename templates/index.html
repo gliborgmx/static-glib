@@ -49,6 +49,7 @@
                  s.parentNode.insertBefore(g, s);
              })();
         </script>
+        <script src="https://glib.org.mx/comments/js/count.min.js"></script>
     </head>
 
     <body>
@@ -88,10 +89,13 @@
                 {{ post_macros::title(page=page) }}
                 {% if page.summary %}
                 {{ page.summary | safe }}
-                <p class="text-centered"><a href="{{ page.permalink | safe }}">Continuar leyendo…</a></p>
                 {% else %}
                 {{ page.content | safe }}
                 {% endif %}
+                <p class="text-centered">
+                    <a href="{{ page.permalink | safe }}#isso-thread"></a>
+                    {% if page.summary %} | <a href="{{ page.permalink | safe }}">Continuar leyendo…</a>{% endif %}
+                </p>
             </article>
             {% endfor %}
             <nav>
