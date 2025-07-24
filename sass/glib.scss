@@ -155,13 +155,11 @@ main {
                 display: block;
                 margin: auto;
             }
-            figcaption {
-                p {
-                    font-size: 0.8125rem;
-                    color: #424242;
-                    text-align: center;
-                    font-style: italic;
-                }
+            figcaption, p {
+              font-size: 0.8125rem;
+              color: #424242;
+              text-align: center;
+              font-style: italic;
             }
         }
         section {
@@ -222,6 +220,13 @@ main {
     max-width: 640px;
     margin: auto;
     position: relative;
+
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        border-bottom: 2px solid #888;
+    }
 }
 
 @mixin youtube($youtube-aspect-ratio) {
