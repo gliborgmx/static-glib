@@ -255,3 +255,8 @@ main {
 .text-centered {
   text-align: center;
 }
+
+.ncolumns {
+  column-count: 3;
+  column-width: 20em;
+}
