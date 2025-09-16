@@ -21,10 +21,12 @@ jobs:
           sudo apt-get install openssh-client rsync minify
 
       - name: Descargar artefacto del sitio web
-        uses: actions/download-artifact@v5
+        uses: dawidd6/action-download-artifact@v11
         with:
+          workflow: revisar.yml
           name: web
           path: public
+          use_unzip: true
 
       - name: Minificar HTML, CSS y JavaScript
         run: |
