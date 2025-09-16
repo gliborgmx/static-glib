@@ -7,8 +7,10 @@ on:
 jobs:
   revisar:
     runs-on: ubuntu-latest
+
     env:
-      ZOLA_VERSION: v0.20.0
+      ZOLA_VERSION: v0.21.0
+
     steps:
       - name: Actualizar sistema
         run: |
