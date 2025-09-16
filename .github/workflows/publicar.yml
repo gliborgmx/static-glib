@@ -14,19 +14,34 @@ jobs:
     environment:
       name: despliegue
 
+    env:
+      ZOLA_VERSION: v0.21.0
+
     steps:
       - name: Instalar dependencias
         run: |
           sudo apt-get update
           sudo apt-get install openssh-client rsync minify
 
-      - name: Descargar artefacto del sitio web
-        uses: dawidd6/action-download-artifact@v11
-        with:
-          workflow: revisar.yml
-          name: web
-          path: public
-          use_unzip: true
+      - name: Actualizar sistema a Español
+        run: |
+          sudo locale-gen es_MX.UTF-8
+          sudo update-locale
+
+      - name: Extraer repositorio
+        uses: actions/checkout@v4
+
+      - name: Descargar Zola
+        run: |
+          wget "https://github.com/getzola/zola/releases/download/${ZOLA_VERSION}/zola-${ZOLA_VERSION}-x86_64-unknown-linux-gnu.tar.gz"
+
+      - name: Instalar Zola
+        run: |
+          tar vxzf ./zola-${ZOLA_VERSION}-x86_64-unknown-linux-gnu.tar.gz
+
+      - name: Construir sitio web
+        run: |
+          LANG=es_MX.UTF-8 ./zola build
 
       - name: Minificar HTML, CSS y JavaScript
         run: |
