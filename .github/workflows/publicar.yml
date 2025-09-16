@@ -7,6 +7,8 @@ on:
 
 jobs:
   publicar:
+    if: github.repository == 'gliborgmx/static-glib'
+
     runs-on: ubuntu-latest
 
     environment:
