@@ -52,5 +52,8 @@
 
 // Display color as RGB
 @function display-rgb($color) {
-  @return unquote("rgb(" + red($color) + ", " + green($color) + ", " + blue($color) + ")");
+  @return unquote(
+    "rgb(" + color.channel($color, "red") + ", " + color.channel($color, "green") + ", " +
+      color.channel($color, "blue") + ")"
+  );
 }
