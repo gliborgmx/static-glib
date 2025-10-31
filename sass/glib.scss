@@ -119,6 +119,28 @@
     }
 }
 
+
+@media (prefers-color-scheme: dark) {
+  .main__header {
+    nav {
+      ul {
+        li {
+          a[href^="https://github.com"] {
+            content: url("/imgs/github-dark.svg");
+          }
+          a[href^="https://floss.social"] {
+            content: url("/imgs/mastodon-dark.svg");
+          }
+          a[href$=".xml"] {
+            content: url("/imgs/rss-dark.svg");
+          }
+        }
+      }
+    }
+  }
+}
+
+
 .main__footer {
     p {
         text-align: center;
