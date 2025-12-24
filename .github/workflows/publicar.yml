@@ -113,5 +113,5 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.MASTODON_ACCESS_TOKEN }}
         run: |
           for ARCHIVO in ${ARCHIVOS_MD_NUEVOS}; do
-            python3 mastodon.py $ARCHIVO
+            python3 scripts/mastodon.py $ARCHIVO
           done
