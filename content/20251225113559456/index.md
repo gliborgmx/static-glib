@@ -8,8 +8,6 @@ autor = ["Víctor Manuel Jáquez Leal"]
 tema = ["glib"]
 +++
 
-# Bebeboy: Elogio
-
 A menudo me pregunto cuál es la razón de mantener en pie este sitio web, si el
 GLiB no opera desde hace muchos años. Hoy creo que hay un motivo de peso: la
 memoria. La memoria de lo que quizás fue uno de los grupos de usuarios Linux más
