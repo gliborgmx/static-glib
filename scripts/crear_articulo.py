@@ -266,8 +266,7 @@ def main():
     # Write the file
     with open(filepath, "w", encoding="utf-8") as f:
         f.write(front_matter)
-        f.write(f'# {args.title}\n\n')
-        f.write("Comienza a escribir tu artículo desde aquí.\n")
+        f.write("\nComienza a escribir tu artículo desde aquí.\n")
 
     print(f"Nuevo archivo creado: {filepath}")
 
