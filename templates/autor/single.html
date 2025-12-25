@@ -3,7 +3,7 @@
 {% block content %}
 <section>
     <h2>{{ term.name }} ({{ term.page_count }})</h2>
-  {% for year, pages in term.pages | group_by(attribute="year") %}
+  {% for year, pages in term.pages | sort(attribute="year") | reverse | group_by(attribute="year") %}
         <h3>{{ year }}</h3>
         <details {%- if loop.index == 1 %} open{% endif %}>
             <summary>Expandir ({{ pages | length }}):</summary>
