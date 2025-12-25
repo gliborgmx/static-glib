@@ -79,6 +79,51 @@ def generate_filename():
     return f"{timestamp}{random_num}.md"
 
 
+def get_rfc3339_date(date_str=None):
+    """
+    Return an RFC3339 formatted date string.
+    If date_str is provided, try to parse it.
+    Otherwise, use current time in UTC.
+    """
+    if date_str is None:
+        dt = datetime.datetime.now().astimezone()
+    else:
+        try:
+            # Try to parse the date string using dateutil.parser if available
+            try:
+                import dateutil.parser
+                dt = dateutil.parser.parse(date_str)
+            except ImportError:
+                # Fallback to datetime's fromisoformat for ISO-like strings
+                # Try to parse common formats
+                formats = [
+                    "%Y-%m-%d",
+                    "%Y-%m-%d %H:%M",
+                    "%Y-%m-%d %H:%M:%S",
+                    "%Y-%m-%dT%H:%M:%S",
+                    "%Y-%m-%dT%H:%M:%SZ",
+                ]
+                dt = None
+                for fmt in formats:
+                    try:
+                        dt = datetime.datetime.strptime(date_str, fmt)
+                        break
+                    except ValueError:
+                        continue
+                if dt is None:
+                    raise ValueError(f"Could not parse date: {date_str}")
+
+            # If no timezone info, assume UTC
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=datetime.timezone.utc)
+        except Exception as e:
+            print(f"Couldn't parse '{date_str}': {e}. Using current time.",
+                  file=sys.stderr)
+            dt = datetime.datetime.now().astimezone()
+
+    return dt.isoformat()
+
+
 @dataclass
 class Metadata():
     """Class for holding article's metadata"""
@@ -93,8 +138,8 @@ class Metadata():
 
 def create_front_matter(metadata: Metadata):
     """Create TOML front matter for Zola article."""
-    if metadata.date is None:
-        metadata.date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+    # Format date according to RFC3339
+    metadata.date = get_rfc3339_date(metadata.date)
 
     front_matter = "+++\n"
 
@@ -103,7 +148,7 @@ def create_front_matter(metadata: Metadata):
         front_matter += f'title = "{metadata.title}"\n'
     if metadata.slug:
         front_matter += f'slug = "{metadata.slug}"\n'
-    front_matter += f'date = {metadata.date}\n'
+    front_matter += f'date = "{metadata.date}"\n'
     front_matter += f'draft = {str(metadata.draft).lower()}\n'
 
     front_matter += '[taxonomies]\n'
@@ -221,7 +266,7 @@ def main():
     # Write the file
     with open(filepath, "w", encoding="utf-8") as f:
         f.write(front_matter)
-        f.write("# Título\n\n")
+        f.write(f'# {args.title}\n\n')
         f.write("Comienza a escribir tu artículo desde aquí.\n")
 
     print(f"Nuevo archivo creado: {filepath}")
