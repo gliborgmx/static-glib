@@ -28,7 +28,7 @@ preparábamos la chimenea, y cocinábamos la cena, una notificación de Facebook
 Me había etiquetado en la tristísima noticia que comunicaba el fallecimiento de
 Luis Rey Lara.
 
-{{ figure(src="luis_rey_lara.jpg" alt="Luis Rey Lara.") }}
+{{ figure(src="luis_rey_lara.jpg" alt="Luis Rey Lara." caption="Luis Rey Lara") }}
 
 Y de repente todos esos recuerdos se me agolparon de pronto. Bebeboy, como se
 hacía llamar en aquellos días, ha muerto. Y con la ayuda de este sitio web me
