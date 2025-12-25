@@ -38,12 +38,12 @@ organización de las reuniones. Terminaba sus posts y comentarios con la pregunt
 las reuniones, conversaciones y debates. Recordar aquella ambición que todos
 compartíamos y que tal vez nunca perdimos del todo.
 
-Al menos no la perdió Luis Rey, que fue profesor en la Universidad Politécnica de 
-Juventino Rosas además de programador; constantemente se interesaba en aprender 
-nuevas cosas, como atestigua su propio 
-[diario tecnológico](https://luisreylara.github.io/another-page.html)
-en GitHub. Buscando en las redes sociales encuentro a varios de sus alumnos lamentando 
-su pérdida. Definitivamente dejó huella entre quienes lo conocieron.
+Al menos no la perdió Luis Rey, que fue profesor en la Universidad Politécnica
+de Juventino Rosas además de programador; constantemente se interesaba en
+aprender nuevas cosas, como atestigua su propio [diario
+tecnológico](https://luisreylara.github.io/another-page.html) en GitHub.
+Buscando en las redes sociales encuentro a varios de sus alumnos lamentando su
+pérdida. Definitivamente dejó huella entre quienes lo conocieron.
 
 Falleció Luis Rey pero este sitio mantiene parte de su memoria, memoria de
 aquellos días que buscábamos brillar y conquistar, aunque careciéramos de los
