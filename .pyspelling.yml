@@ -1,7 +1,7 @@
 matrix:
   - name: ortografia
     sources:
-      - content/*/index.mdgs
+      - content/*/index.md
       # ignorar textos anteriores al 2009 - demasiados errores
       - content/20[1-9]*.md
     aspell:
