@@ -164,6 +164,7 @@ def create_front_matter(metadata: Metadata):
 
     # Extra custom fields
     if metadata.extra_fields:
+        front_matter += '[extra]\n'
         for key, value in metadata.extra_fields.items():
             if isinstance(value, str):
                 front_matter += f'{key} = "{value}"\n'
