@@ -8,25 +8,25 @@
         <!-- Enable responsiveness on mobile devices-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        {% if page %}
-        {% if page.description %}
+  {% if page %}
+    {% if page.description %}
         <meta name="description" content="{{ page.description }}" />
-        {% elif config.description %}
+    {% elif config.description %}
         <meta name="description" content="{{ config.description }}" />
-        {% endif %}
-        {% elif config.description %}
+    {% endif %}
+  {% elif config.description %}
         <meta name="description" content="{{ config.description }}" />
-        {% endif %}
+  {% endif %}
 
         {{ og_macros::open_graph(config=config) }}
 
         <title>{% block title %}{{ config.title }}{% endblock title %}</title>
 
-        {% if config.generate_feed %}
-        {% for feed_filename in config.feed_filenames %}
+  {% if config.generate_feed %}
+    {% for feed_filename in config.feed_filenames %}
         <link rel="alternate" type={% if feed_filename == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %} title={% if feed_filename == "atom.xml" %}"atom"{% else %}"RSS"{% endif %} href="{{ get_url(path=feed_filename) | safe }}" />
-        {% endfor %}
-        {% endif %}
+    {% endfor %}
+  {% endif %}
 
         <link rel="stylesheet" href="{{ get_url(path='glib.css', trailing_slash=false) }}" />
         <link rel="shortcut icon" href="{{ get_url(path='favicon.ico', trailing_slash=false) }}" />
@@ -54,24 +54,50 @@
 
     <body>
         <div class="main__header">
-            <h1 title="{{ config.title }}">{{ config.title }}</h1>
+            <h1 title="{{ config.title }}">
+                {{ config.title }}
+            </h1>
             <nav>
                 <ul>
-                    <li><a rel="bookmark" title="Inicio" href="{{ config.base_url | safe }}">Inicio</a></li>
-                    {% for taxonomy in config.taxonomies | sort(attribute="name") %}
-                      {% set permalink = config.base_url ~ "/" ~ taxonomy.slug | safe %}
-                    <li><a title="{{ taxonomy.name | capitalize }}" href="{{ permalink | safe }}">{{ taxonomy.name | capitalize }}</a></li>
-                    {% endfor %}
-                    <li><a rel="bookmark" title="Contribuir" href="{{ config.base_url ~ '/' ~ 'contribuir' | safe }}">Contribuir</a></li>
-                    <li><a rel="me" title="GitHub" href="https://github.com/gliborgmx">GitHub</a></li>
-                    <li><a rel="me" title="Mastodon" href="https://floss.social/@glib">Mastodon</a></li>
-                    {% if config.generate_feed %}
-                      {% for feed_filename in config.feed_filenames %}
-                    <li><a rel="alternate" type={% if feed_filename == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %} title={% if feed_filename == "atom.xml" %}"Atom"{% else %}"RSS"{% endif %} href="{{ get_url(path=feed_filename) | safe }}">{% if feed_filename == "atom.xml" %}Atom{% else %}RSS{% endif %}</a></li>
-                      {% endfor %}
-                    {% endif %}
                     <li>
-                        <div class="caja-de-busqueda">
+                        <a rel="bookmark" title="Inicio" href="{{ config.base_url | safe }}">
+                            Inicio
+                        </a>
+                    </li>
+  {% for taxonomy in config.taxonomies | sort(attribute="name") %}
+    {% set permalink = config.base_url ~ "/" ~ taxonomy.slug | safe %}
+                    <li>
+                        <a title="{{ taxonomy.name | capitalize }}" href="{{ permalink | safe }}">
+                            {{ taxonomy.name | capitalize }}
+                        </a>
+                    </li>
+  {% endfor %}
+                    <li>
+                        <a rel="bookmark" title="Contribuir" href="{{ config.base_url ~ '/' ~ 'contribuir' | safe }}">
+                            Contribuir
+                        </a>
+                    </li>
+                    <li>
+                        <a rel="me external noopener noreferrer nofollow" title="GitHub" href="https://github.com/gliborgmx">
+                            GitHub
+                        </a>
+                    </li>
+                    <li>
+                        <a rel="me external noopener noreferrer nofollow" title="Mastodon" href="https://floss.social/@glib">
+                            Mastodon
+                        </a>
+                    </li>
+  {% if config.generate_feed %}
+    {% for feed_filename in config.feed_filenames %}
+                    <li>
+                        <a rel="alternate" type={% if feed_filename == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %} title={% if feed_filename == "atom.xml" %}"Atom"{% else %}"RSS"{% endif %} href="{{ get_url(path=feed_filename) | safe }}">
+                            {% if feed_filename == "atom.xml" %}Atom{% else %}RSS{% endif %}
+                        </a>
+                    </li>
+    {% endfor %}
+  {% endif %}
+                    <li>
+                        <div role="search" aria-label="Sitewide" class="caja-de-busqueda">
                             <input type="search" id="busqueda" placeholder="búsqueda" />
                             <div class="resultados-busqueda">
                                 <div class="resultados-busqueda__items"></div>
@@ -83,53 +109,94 @@
         </div>
 
         <main aria-label="Content">
-            {% block content %}
-            {% for page in paginator.pages %}
+  {% block content %}
+    {% for page in paginator.pages %}
             <article>
                 {{ post_macros::title(page=page) }}
-                {% if page.summary %}
+      {% if page.summary %}
                 {{ page.summary | safe }}
-                {% else %}
+      {% else %}
                 {{ page.content | safe }}
-                {% endif %}
+      {% endif %}
                 <footer>
                     <nav>
                         <ul>
-                            <li><a href="{{ page.permalink | safe }}#isso-thread" data-isso-lang="es" data-isso-id="{{ page.path | trim_end_matches(pat='/') | safe }}">comentarios</a></li>
-                            {% if page.summary %}<li>|</li><li><a href="{{ page.permalink | safe }}">Continuar leyendo…</a></li>{% endif %}
+                            <li>
+                                <a href="{{ page.permalink | safe }}#isso-thread" data-isso-lang="es" data-isso-id="{{ page.path | trim_end_matches(pat='/') | safe }}">
+                                    comentarios
+                                </a>
+                            </li>
+      {% if page.summary %}
+                            <li>
+                                |
+                            </li>
+                            <li>
+                                <a href="{{ page.permalink | safe }}">
+                                    Continuar leyendo…
+                                </a>
+                            </li>
+      {% endif %}
                         </ul>
                     </nav>
                 </footer>
             </article>
-            {% endfor %}
+    {% endfor %}
+
             <nav>
                 <ul>
-                    {% if paginator.previous %}
-                    <li><a href="{{ paginator.first | safe }}">«</a></li>
-                    <li><a rel="prev" href="{{ paginator.previous | safe }}">‹ Anterior</a></li>
-                    {% else %}
-                    <li>«</li>
-                    <li>‹ Anterior</li>
-                    {% endif %}
-                    <li>| {{ paginator.current_index}} de {{ paginator.number_pagers }} |</li>
-                    {% if paginator.next %}
-                    <li><a rel="next" href="{{ paginator.next | safe }}">Siguiente ›</a></li>
-                    <li><a href="{{ paginator.last | safe }}">»</a></li>
-                    {% else %}
-                    <li>Siguiente ›</li>
-                    <li>»</li>
-                    {% endif %}
+    {% if paginator.previous %}
+                    <li>
+                        <a href="{{ paginator.first | safe }}">
+                            «
+                        </a>
+                    </li>
+                    <li>
+                        <a rel="prev" href="{{ paginator.previous | safe }}">
+                            ‹ Anterior
+                        </a>
+                    </li>
+    {% else %}
+                    <li>
+                        «
+                    </li>
+                    <li>
+                        ‹ Anterior
+                    </li>
+    {% endif %}
+                    <li>
+                        | {{ paginator.current_index}} de {{ paginator.number_pagers }} |
+                    </li>
+    {% if paginator.next %}
+                    <li>
+                        <a rel="next" href="{{ paginator.next | safe }}">
+                            Siguiente ›
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ paginator.last | safe }}">
+                            »
+                        </a>
+                    </li>
+    {% else %}
+                    <li>
+                        Siguiente ›
+                    </li>
+                    <li>
+                        »
+                    </li>
+    {% endif %}
                 </ul>
             </nav>
-            {% endblock content %}
+  {% endblock content %}
         </main>
 
-        {% block footer %}
+  {% block footer %}
         <footer class="main__footer" role="contentinfo">
             <p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"></a></p>
-            <p>Desarrollado con <a rel="external" href="https://www.getzola.org/">Zola</a> y <a rel="external" href="https://picocss.com/">PicoCSS</a>.</p>
+            <p>Desarrollado con <a rel="external  noopener noreferrer nofollow" href="https://www.getzola.org/">Zola</a> y <a rel="external noopener noreferrer nofollow" href="https://picocss.com/">PicoCSS</a>.</p>
         </footer>
-        {% endblock footer %}
+  {% endblock footer %}
+
         <script type="text/javascript" src="{{ get_url(path='elasticlunr.min.js') }}"></script>
         <script type="text/javascript" src="{{ get_url(path='lunr.stemmer.support.js') }}"></script>
         <script type="text/javascript" src="{{ get_url(path='lunr.es.js') }}"></script>

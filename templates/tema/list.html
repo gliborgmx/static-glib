@@ -2,17 +2,25 @@
 
 {% block content %}
 <section>
-    <h2>Temas</h2>
+    <h2>
+        Temas
+    </h2>
     <div role="list" class="grid">
-{% for category in terms %}
-  {% set name = category.name | lower  %}
+  {% for category in terms %}
+    {% set name = category.name | lower  %}
         <div role="listitem">
             <figure>
-                <a rel="bookmark" title="{{ category.name }}" href="{{ category.permalink | safe }}"><img alt="{{ category.name }}" src="{{ get_url(path='/topics/' ~ name ~ '.png', trailing_slash=false) }}" /></a>
-                <figcaption><a rel="bookmark" title="{{ category.name }}" href="{{ category.permalink | safe }}">{{ category.name | capitalize }}</a> ({{ category.page_count }})</figcaption>
+                <a rel="bookmark" title="{{ category.name }}" href="{{ category.permalink | safe }}">
+                    <img alt="{{ category.name }}" src="{{ get_url(path='/topics/' ~ name ~ '.png', trailing_slash=false) }}" />
+                </a>
+                <figcaption>
+                    <a rel="bookmark" title="{{ category.name }}" href="{{ category.permalink | safe }}">
+                        {{ category.name | capitalize }}
+                    </a> ({{ category.page_count }})
+                </figcaption>
             </figure>
         </div>
-{% endfor %}
+  {% endfor %}
     </div>
 </section>
 {% endblock content %}
