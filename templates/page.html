@@ -24,10 +24,18 @@
         <nav>
             <ul>
                 {% if page.lower %}
-                <li><a class="previous" rel="prev" href="{{ page.lower.permalink | safe }}">‹ {{ page.lower.title }}</a></li>
+                <li>
+                    <a class="previous" rel="prev" href="{{ page.lower.permalink | safe }}">
+                        ‹ {{ page.lower.title }}
+                    </a>
+                </li>
                 {% endif %}
                 {% if page.higher %}
-                <li><a class="next" rel="next" href="{{ page.higher.permalink | safe }}">{{ page.higher.title }} ›</a></li>
+                <li>
+                    <a class="next" rel="next" href="{{ page.higher.permalink | safe }}">
+                        {{ page.higher.title }} ›
+                    </a>
+                </li>
                 {% endif %}
             </ul>
         </nav>
