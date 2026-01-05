@@ -151,10 +151,21 @@
 main {
     article {
         header {
+          div {
+            display: flex;
+            align-items: center;
+            font-size: 90%;
             img {
-                float: left;
-                padding-right: 1em;
+                margin-right: 1em;
             }
+            div {
+              display: block;
+              * {
+                padding: 0;
+                margin: 0;
+              }
+            }
+          }
         }
         footer {
             ul {
