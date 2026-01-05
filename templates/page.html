@@ -29,8 +29,17 @@
                         ‹ {{ page.lower.title }}
                     </a>
                 </li>
+                <li>
+                    |
+                </li>
                 {% endif %}
+                <li>
+                    {{ edit_macros::edit(page=page) }}
+                </li>
                 {% if page.higher %}
+                <li>
+                    |
+                </li>
                 <li>
                     <a class="next" rel="next" href="{{ page.higher.permalink | safe }}">
                         {{ page.higher.title }} ›

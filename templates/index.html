@@ -1,5 +1,6 @@
 {% import "macros/post.html" as post_macros %}
 {% import "macros/og.html" as og_macros %}
+{% import "macros/edit.html" as edit_macros %}
 
 <!DOCTYPE html>
 <html lang="es">
@@ -136,6 +137,12 @@
                                 </a>
                             </li>
       {% endif %}
+                            <li>
+                                |
+                            </li>
+                            <li>
+                                {{ edit_macros::edit(page=page) }}
+                            </li>
                         </ul>
                     </nav>
                 </footer>
