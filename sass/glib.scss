@@ -168,20 +168,17 @@ main {
           }
         }
         footer {
+          font-size: 90%;
+          nav {
             ul {
-                li {
-                    display: inline;
-                    list-style: none;
-                    overflow: hidden;
-                    white-space: nowrap;
-                }
-                .previous {
-                    float: left;
-                }
-                .next {
-                    float: right;
-                }
+              li {
+                display: inline;
+                list-style: none;
+                overflow: hidden;
+                white-space: nowrap;
+              }
             }
+          }
         }
         figure {
             img {
