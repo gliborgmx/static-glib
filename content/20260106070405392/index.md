@@ -197,3 +197,9 @@ Y eso es todo. Gracias por leer hasta aquí. Espero que te haya sido útil.
 Recuerda que este es solo un ejemplo y Docker es una herramienta más. Lo
 importante son los conceptos, que se aplican de forma similar en otros sistemas
 como [podman](https://podman.io/) o [flatpak](https://flatpak.org/).
+
+Postdata:
+
+Docker tiene su implementación de la especificación de *distribution*, cuya
+interfaz web es <https://hub.docker.com/>, donde puedes buscar imágenes para
+instalar y usar.
