@@ -855,6 +855,7 @@ boot
 bootear
 booteas
 boxes
+branches
 broadcast
 bttv
 buffer
@@ -872,6 +873,7 @@ captcha
 card
 carnitas
 cast
+cgroups
 chambear
 chance
 charset
@@ -980,6 +982,7 @@ fault
 fediverso
 feels
 fierros
+filesystems
 finally
 fixes
 fixing
@@ -1119,6 +1122,8 @@ motherboard
 mruiz
 msfconsole
 multi
+namespace
+namespaces
 nautilus
 need
 netdiscover
@@ -1321,6 +1326,7 @@ two
 type
 udev
 underground
+union
 upcoming
 upstream
 uptime

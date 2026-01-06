@@ -99,6 +99,21 @@ estándar*:
 > cualquier *runtime* compatible pueda ejecutarlo sin dependencias adicionales,
 > independientemente de la máquina subyacente y del contenido del contenedor.
 
+A nivel de kernel, para implementar un *runtime* de contenedores eficiente, se
+desarrollaron subsistemas clave:
+
+- namespaces
+  - Aíslan recursos del kernel, haciendo que cada conjunto de procesos en un
+    *namespace* vea un conjunto único de recursos (procesos, red, sistema de
+    archivos, etc.).
+- cgroups
+  - Limita, contabiliza y aísla el uso de recursos (CPU, memoria, E/S de disco,
+    etc.) de un conjunto de procesos.
+- union filesystems
+  - Permiten superponer varios sistemas de archivos (*branches*) de forma
+    transparente, creando un único sistema de archivos virtual donde los
+    directorios coincidentes se combinan.
+
 Finalmente, apliquemos estos conceptos a un ejemplo con Docker.
 
 Supongamos que quiero *contenerizar* una aplicación web hecha con **Flask**.
