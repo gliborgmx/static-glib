@@ -146,20 +146,20 @@ correspondiente. Finalmente, se indica cómo ejecutarla.
 
 Para construir la imagen en Docker, usamos:
 
-```shell
+```sh
 docker image build -t hello:0.1 .
 ```
 
 Este comando hace que el demonio de Docker genere la imagen y la almacene en su
 repositorio interno. Podemos listar las imágenes disponibles con:
 
-```shell
+```sh
 docker image list
 ```
 
 Para ejecutar la aplicación como contenedor:
 
-```shell
+```sh
 docker container run -p 8000:8000 hello:0.1
 ```
 
@@ -168,7 +168,7 @@ contenedor se expone en el mismo puerto del sistema.
 
 Para listar los contenedores en ejecución:
 
-```shell
+```sh
 docker container list
 ```
 
@@ -177,19 +177,19 @@ gestionarlo.
 
 Para detener un contenedor:
 
-```shell
+```sh
 docker container stop <container id>
 ```
 
 Un contenedor detenido sigue disponible para reiniciarse. Para eliminarlo:
 
-```shell
+```sh
 docker container rm <container id>
 ```
 
 Finalmente, para eliminar una imagen del repositorio:
 
-```shell
+```sh
 docker image rm hello:0.1
 ```
 
