@@ -40,6 +40,7 @@ Associates
 AsteriskNow
 Atheros
 Athlon
+Attacks
 Attorney
 Audigy
 Avaaz
@@ -72,7 +73,9 @@ Bluesky
 Boltzmann
 Bonobo
 Boot
+Bounds
 Bradley
+Branch
 Break
 Brendan
 Brescia
@@ -80,6 +83,7 @@ Broadcom
 Brooks
 Btrfs
 Burch
+Bypass
 CD
 CDLibre
 CDROM
@@ -108,9 +112,11 @@ Center
 Cervantes
 Ceyusa
 Change
+Channel
 Chaos
 Chat
 Chavos
+Check
 Checkspam
 Chepix
 Chrome
@@ -204,6 +210,7 @@ Elisp
 Elon
 Embedded
 Engine
+Enhanced
 Enterprise
 Enzo
 Eric
@@ -214,7 +221,9 @@ Estocolmo
 Et
 Everything
 Excellence
+Execution
 Experience
+Exploiting
 FAQ
 FFmpeg
 FLAC
@@ -236,9 +245,11 @@ Firewall
 First
 Five
 Flask
+Flush
 Flynn
 Fonapo
 Food
+Foreshadow
 Foundation
 Founder
 Four
@@ -315,7 +326,9 @@ Harmattan
 Haskel
 Haskell
 High
+Hipervisor
 Hitachi
+Horn
 Host
 Hosts
 Hugo
@@ -336,9 +349,11 @@ ITESI
 Icaza
 Igalia
 Indication
+Indirect
 InfiniBand
 Information
 Initiative
+Injection
 Inkscape
 Instagram
 Install
@@ -381,6 +396,7 @@ Julinuxhack
 Juventino
 Jáquez
 KDE
+KPTI
 Kane
 Kate
 Katy
@@ -455,6 +471,7 @@ Mastodon
 Matrix
 Matters
 Mauricio
+Meltdown
 Michael
 Michoacán
 Microsoft
@@ -535,6 +552,7 @@ PROMT
 PVFS
 Pack
 Palmerín
+Paper
 ParallelKnoppix
 Particionar
 Party
@@ -565,11 +583,13 @@ Power
 Prefix
 Present
 Presentation
+Probe
 Process
 Prodigy
 Professional
 Programming
 Progress
+Protection
 PulseAudio
 PyGreSQL
 Python
@@ -598,9 +618,12 @@ Raymond
 RedHat
 Reddit
 Redmond
+Reload
 Renderizado
 Report
 Requiem
+Restricted
+Return
 Revolution
 Richard
 Robbins
@@ -652,6 +675,7 @@ Shirky
 Shorewall
 Shrinivasan
 Sibelius
+Side
 Sievers
 Silex
 Silis
@@ -668,6 +692,9 @@ Souvenirs
 Space
 Specialized
 Specification
+Spectre
+Speculation
+Speculative
 SpiderOak
 Sports
 Spotify
@@ -697,6 +724,7 @@ TOC
 TV
 Talk
 Tamaulipas
+Target
 Tec
 Tecolote
 Teletronics
@@ -748,8 +776,10 @@ Utils
 VAAPI
 VDPAU
 VLAN
+VMSpectre
 VTuber
 Vala
+Variant
 Velarde
 Vendor
 Veracruz
@@ -805,6 +835,7 @@ Yupi
 ZACATENCO
 Zacatecas
 Zapote
+Zero
 Zola
 able
 account
@@ -823,6 +854,7 @@ applet
 application
 aptitude
 area
+array
 aspx
 attack
 attacked
@@ -860,6 +892,7 @@ boot
 bootear
 booteas
 boxes
+branch
 branches
 broadcast
 bttv
@@ -873,8 +906,10 @@ busybox
 by
 búfer
 cabalidad
+cachés
 cacti
 captcha
+caption
 card
 carnitas
 cast
@@ -948,6 +983,7 @@ debuggers
 debugging
 decks
 decrypt
+deep
 default
 defragmenta
 demonizamos
@@ -962,6 +998,7 @@ dialup
 distribution
 distro
 distros
+dive
 dmesg
 doing
 draw
@@ -1007,6 +1044,8 @@ friend
 from
 fuck
 fully
+gadget
+gadgets
 geek
 geeks
 genómica
@@ -1017,6 +1056,7 @@ gobject
 government
 graph
 grid
+guest
 guillot
 hackeaban
 hackeaelaula
@@ -1036,6 +1076,7 @@ heap
 hell
 hernandez
 himself
+hipervisor
 hippies
 hosteo
 hosting
@@ -1112,11 +1153,13 @@ makes
 manager
 managers
 measure
+meltdon
 memes
 memory
 metadatos
 metasploit
 mexican
+microarquitectónico
 midi
 mini
 mirynet
@@ -1154,6 +1197,7 @@ oops
 organizations
 ossim
 other
+overflows
 overreach
 ownership
 packaged
@@ -1194,6 +1238,8 @@ posters
 posteó
 posts
 precautionary
+prediction
+predictor
 premiación
 printf
 proactiva
@@ -1227,6 +1273,7 @@ request
 requests
 reset
 resolve
+retpoline
 retransmisor
 rippear
 romitenses
@@ -1274,6 +1321,7 @@ spain
 spamassasin
 spammers
 spamming
+spectre
 speech
 sshd
 stack
