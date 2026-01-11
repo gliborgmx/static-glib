@@ -2,7 +2,6 @@
 title = "Ataques de canal lateral en Linux"
 slug = "20260111080118208"
 date = "2026-01-11T08:01:18.395011+01:00"
-draft = true
 [taxonomies]
 autor = ["Víctor Manuel Jáquez Leal"]
 tema = ["articulos"]
