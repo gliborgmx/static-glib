@@ -187,14 +187,14 @@ def open_in_editor(filepath):
     if sys.platform == 'win32':
         os.startfile(filepath)
     elif sys.platform == 'darwin':  # macOS
-        subprocess.run(['open', filepath])
+        subprocess.run(['open', filepath], check=True)
     else:  # Linux and other Unix-like
         # Try to use xdg-open, or fall back to $EDITOR
         try:
-            subprocess.run(['xdg-open', filepath])
+            subprocess.run(['xdg-open', filepath], check=True)
         except FileNotFoundError:
             editor = os.environ.get('EDITOR', 'vi')
-            subprocess.run([editor, filepath])
+            subprocess.run([editor, filepath], check=True)
 
 
 def get_branch_name(title, slug):
