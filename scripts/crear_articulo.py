@@ -5,6 +5,7 @@ Generates a filename with timestamp and random number, creates front matter,
 and opens the file in the default editor.
 """
 
+import re
 import os
 import sys
 import datetime
@@ -197,7 +198,92 @@ def open_in_editor(filepath):
             subprocess.run([editor, filepath])
 
 
+def get_branch_name(title, slug):
+    """Create branch name from title or slug"""
+    if title:
+        # Clean title for branch name: lowercase, replace spaces with hyphens,
+        # remove special chars
+        branch_name = re.sub(r'[^a-z0-9-]', '',
+                             title.lower().replace(' ', '-'))
+        # Limit length
+        return branch_name[:30]
+    return f"article-{slug}"
+
+
+def is_git_repository():
+    """Check if we're in a git repository"""
+    try:
+        # Check if we're in a git repository
+        subprocess.run(['git', 'rev-parse', '--git-dir'],
+                       check=True,
+                       capture_output=True)
+    except subprocess.CalledProcessError:
+        print("¡No se encuentra un repositorio Git!", file=sys.stderr)
+        return False
+    return True
+
+
+def update_repositories():
+    """Update branches of all repositories"""
+    try:
+        subprocess.run(['git', 'remote', 'update', '-p'], check=True)
+    except subprocess.CalledProcessError:
+        pass
+
+
+def run_git_operations(title, slug):
+    """Handle Git operations: stash, checkout main, pull, create new branch."""
+    if not is_git_repository():
+        return
+
+    update_repositories()
+
+    # Stash any uncommitted changes
+    try:
+        subprocess.run(['git',
+                        'stash',
+                        'push',
+                        '-m',
+                        'Auto-stash by crear_articulo.py'],
+                       check=True,
+                       capture_output=True)
+    except subprocess.CalledProcessError:
+        pass
+
+    # Switch to main branch
+    try:
+        subprocess.run(['git', 'checkout', 'main'], check=True)
+    except subprocess.CalledProcessError:
+        print("  → Error al cambiar a main.", file=sys.stderr)
+        return
+
+    # Pull latest changes
+    try:
+        subprocess.run(['git', 'pull'], check=True)
+    except subprocess.CalledProcessError:
+        print("  → Error al hacer pull. Continuando…", file=sys.stderr)
+
+    branch_name = get_branch_name(title, slug)
+
+    # Create and checkout new branch
+    try:
+        subprocess.run(['git', 'checkout', '-b', branch_name], check=True)
+    except subprocess.CalledProcessError:
+        try:
+            subprocess.run(['git', 'checkout', branch_name], check=True)
+        except subprocess.CalledProcessError:
+            print("  → No se pudo crear o cambiar a la rama. Continuando…",
+                  file=sys.stderr)
+
+    # Apply stash if there was one
+    try:
+        subprocess.run(['git', 'stash', 'pop'], check=True)
+    except subprocess.CalledProcessError:
+        pass
+
+
 def main():
+    """Main function"""
     parser = argparse.ArgumentParser(description="Crear un artículo en GLiB")
     parser.add_argument("--title", "-t", help="Título de artículo")
     parser.add_argument(
@@ -231,6 +317,11 @@ def main():
         default="content",
         help="Directorio de artículos (default: content)",
     )
+    parser.add_argument(
+        "--no-git",
+        action="store_true",
+        help="Saltar operaciones Git (stash, checkout main, pull, crear rama)",
+    )
 
     args = parser.parse_args()
 
@@ -243,6 +334,7 @@ def main():
     # Generate filename
     filename = generate_filename()
     slug = filename[:-3]  # Remove .md extension
+
     output_dir = Path(args.output_dir)
     output_dir.mkdir(exist_ok=True)
     filepath = output_dir / filename
@@ -251,6 +343,10 @@ def main():
     if filepath.exists():
         print(f"Error: El archivo {filepath} ya existe!", file=sys.stderr)
         sys.exit(1)
+
+    # Run Git operations unless --no-git is specified
+    if not args.no_git:
+        run_git_operations(args.title, slug)
 
     # Create front matter
     front_matter = create_front_matter(
