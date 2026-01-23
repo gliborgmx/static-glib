@@ -45,30 +45,27 @@ def get_default_author():
         pass
 
     # Fallback to OS method if Git doesn't provide a name
+    if sys.platform == 'win32':
+        # Windows: try to get full name from environment or use username
+        full_name = os.getenv('USERNAME', getpass.getuser())
+        return full_name
+    # Unix-like systems (Linux, macOS)
+    username = getpass.getuser()
     try:
-        if sys.platform == 'win32':
-            # Windows: try to get full name from environment or use username
-            full_name = os.getenv('USERNAME', getpass.getuser())
-            return full_name
+        # Try to import pwd (not available on Windows)
+        import pwd  # pylint: disable=import-outside-toplevel
+
+        # Try to get GECOS field (full name)
+        gecos = pwd.getpwnam(username).pw_gecos
+        if gecos and ',' in gecos:
+            # GECOS often has comma-separated fields: full name,
+            # office, etc.
+            full_name = gecos.split(',')[0]
         else:
-            # Unix-like systems (Linux, macOS)
-            username = getpass.getuser()
-            try:
-                # Try to import pwd (not available on Windows)
-                import pwd
-                # Try to get GECOS field (full name)
-                gecos = pwd.getpwnam(username).pw_gecos
-                if gecos and ',' in gecos:
-                    # GECOS often has comma-separated fields: full name,
-                    # office, etc.
-                    full_name = gecos.split(',')[0]
-                else:
-                    full_name = gecos or username
-                return full_name
-            except (KeyError, AttributeError, ImportError):
-                return username
-    except Exception:
-        return getpass.getuser()  # Fallback to username
+            full_name = gecos or username
+        return full_name
+    except (KeyError, AttributeError, ImportError):
+        return username
 
 
 def generate_filename():
