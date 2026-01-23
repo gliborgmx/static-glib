@@ -18,9 +18,8 @@ compile_sass = true
 
 build_search_index = true
 
-[markdown]
-highlight_code = true
-highlight_theme = "solarized-light"
+[markdown.highlighting]
+theme = "solarized-light"
 smart_punctuation = true
 render_emoji = true
 
