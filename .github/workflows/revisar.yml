@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      ZOLA_VERSION: v0.21.0
+      ZOLA_VERSION: v0.22.1
 
     steps:
       - name: Actualizar sistema
