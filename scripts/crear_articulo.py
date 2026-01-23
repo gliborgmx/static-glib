@@ -17,6 +17,8 @@ from pathlib import Path
 from dataclasses import dataclass
 from typing import Optional
 
+import dateutil.parser
+
 # Allowed tema values
 ALLOWED_TEMAS = ['anuncios',
                  'articulos',
@@ -89,9 +91,8 @@ def get_rfc3339_date(date_str=None):
         try:
             # Try to parse the date string using dateutil.parser if available
             try:
-                import dateutil.parser
                 dt = dateutil.parser.parse(date_str)
-            except ImportError:
+            except ImportError as e:
                 # Fallback to datetime's fromisoformat for ISO-like strings
                 # Try to parse common formats
                 formats = [
@@ -109,12 +110,13 @@ def get_rfc3339_date(date_str=None):
                     except ValueError:
                         continue
                 if dt is None:
-                    raise ValueError(f"Could not parse date: {date_str}")
+                    raise ValueError(f"Could not parse date: {date_str}") \
+                        from e
 
             # If no timezone info, assume UTC
             if dt.tzinfo is None:
                 dt = dt.replace(tzinfo=datetime.timezone.utc)
-        except Exception as e:
+        except Exception as e:  # pylint: disable=broad-exception-caught
             print(f"Couldn't parse '{date_str}': {e}. Using current time.",
                   file=sys.stderr)
             dt = datetime.datetime.now().astimezone()
