@@ -24,6 +24,7 @@ Address
 After
 Aider
 Aldo
+Alexei
 Alfresco
 Alonzo
 Amazon
@@ -33,6 +34,7 @@ Anita
 Antitrust
 Apple
 Apps
+Architecture
 Art
 Asahi
 Aspell
@@ -63,7 +65,9 @@ Bebeboy
 Becker
 Bellard
 Beowulf
+Berkeley
 Beryl
+Binary
 Bioinformatics
 Bitcoin
 Bitcoins
@@ -124,6 +128,7 @@ Chrome
 Chromium
 Church
 Ciao
+Cilium
 Cinvestav
 ClaroVideo
 Clay
@@ -131,10 +136,12 @@ Clearcom
 Cluster
 Code
 Coding
+Collection
 Colombia
 CommonMark
 Communication
 Comp
+Compiler
 Compiz
 Computer
 Connect
@@ -180,8 +187,10 @@ Delabre
 Dell
 Demand
 Denger
+Dependecia
 Desk
 DeveloperWorks
+Developers
 Development
 DiHe
 Dinner
@@ -225,6 +234,7 @@ Ernesto
 Estocolmo
 Et
 Everything
+Everywhere
 Excellence
 Execution
 Experience
@@ -240,10 +250,12 @@ FTP
 Fabrice
 Facebook
 Factory
+Falco
 Federico
 Fediverse
 Fedora
 Fest
+Filter
 Finale
 Firefox
 Firewall
@@ -314,14 +326,17 @@ González
 Google
 Graphics
 Grass
+Gregg
 Grid
 Guadalajara
 Guadalupe
 Guanajuato
+Guide
 GuruPlug
 Gómez
 HOWTO
 HTML
+HTTP
 HTTPS
 HURD
 Hamburgo
@@ -383,6 +398,7 @@ JUMPER
 JVM
 Jackalope
 Jacob
+Jacobson
 Jalisco
 Jansen
 Jaunty
@@ -398,6 +414,7 @@ Juana
 Judith
 Julian
 Julinuxhack
+Just
 Juventino
 Jáquez
 KDE
@@ -478,6 +495,7 @@ Mastodon
 Matrix
 Matters
 Mauricio
+McCanne
 Meltdown
 Michael
 Michoacán
@@ -486,6 +504,7 @@ Mireya
 Mixxx
 Model
 Modeling
+Monitoreo
 Moonlight
 Morelos
 Morrigan
@@ -517,6 +536,7 @@ NetWare
 Netbooks
 Netflix
 Netscape
+Networking
 Neumann
 Notibero
 Novell
@@ -549,6 +569,7 @@ OpenVZ
 Orozco
 Oscar
 Oseguera
+Overhead
 PC
 PCMCIA
 PDF
@@ -558,6 +579,7 @@ PQexecParams
 PROMT
 PVFS
 Pack
+Packet
 Palmerín
 Paper
 ParallelKnoppix
@@ -570,6 +592,7 @@ Performance
 Perl
 Photos
 Pixelview
+Pixie
 Play
 PlayOnLinux
 Player
@@ -626,6 +649,7 @@ Raymond
 RedHat
 Reddit
 Redmond
+Reference
 Reload
 Renderizado
 Report
@@ -712,6 +736,8 @@ Standard
 Stanford
 Star
 StarOffice
+Starovoitov
+Steven
 Store
 Street
 Studios
@@ -900,6 +926,7 @@ boot
 bootear
 booteas
 boxes
+bpftrace
 branch
 branches
 broadcast
@@ -912,6 +939,7 @@ building
 bull
 busybox
 by
+bytecode
 búfer
 cabalidad
 cachés
@@ -971,6 +999,7 @@ crc
 criptomoneda
 criptomonedas
 cron
+crucialmente
 cryptsetup
 cuates
 cueritos
@@ -1014,12 +1043,14 @@ draw
 drgn
 drop
 dummies
+eBPF
 each
 edgy
 emacs
 encarrerado
 end
 enrich
+enrutamiento
 enter
 envoltoria
 epris
@@ -1037,6 +1068,7 @@ feels
 fierros
 filesystems
 finally
+firewalls
 fixes
 fixing
 flask
@@ -1055,6 +1087,7 @@ friend
 from
 fuck
 fully
+gRPC
 gadget
 gadgets
 geek
@@ -1089,6 +1122,7 @@ hernandez
 himself
 hipervisor
 hippies
+hooks
 hosteo
 hosting
 hosts
@@ -1103,6 +1137,7 @@ in
 incident
 include
 indecibilidad
+indetectable
 index
 indexador
 inet
@@ -1114,6 +1149,7 @@ instalacion
 interoperabilidad
 intimidation
 intranet
+introduction
 introspection
 involucramiento
 iptables
@@ -1132,6 +1168,7 @@ kWh
 karmic
 keynote
 koala
+kube
 kubunteros
 laptop
 laptops
@@ -1144,6 +1181,7 @@ learnt
 legacy
 lessons
 letsencrypt
+level
 libccid
 libdvdcss
 liblzma
@@ -1165,6 +1203,7 @@ main
 makes
 manager
 managers
+mapeos
 measure
 meltdon
 memes
@@ -1191,6 +1230,7 @@ need
 netdiscover
 netfilter
 netmask
+networking
 news
 next
 ninjas
@@ -1211,6 +1251,7 @@ organizations
 ossim
 other
 overflows
+overhead
 overreach
 ownership
 packaged
@@ -1264,6 +1305,7 @@ project
 prompt
 proof
 prosecutorial
+prototipado
 proxy
 public
 pull
@@ -1294,6 +1336,7 @@ rippear
 romitenses
 rompope
 root
+rootkit
 rrdtools
 runtime
 runtimes
@@ -1369,6 +1412,7 @@ testing
 tethering
 that
 the
+thorough
 thought
 throughput
 ticks
