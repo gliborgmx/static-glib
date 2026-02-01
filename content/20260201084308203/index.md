@@ -206,8 +206,6 @@ la mejor manera de experimentar su magia sin ahogarse en la complejidad.
 * **Aprendizaje Práctico:**
   * [Brendan Gregg's Blog](https://www.brendangregg.com/ebpf.html) - La fuente
     principal de ejemplos y casos de uso de rendimiento. Imprescindible.
-  * [eBPF For Developers (LFD)](https://training.linuxfoundation.org/training/ebpf-for-developers-lfd259/)
-    \- Un curso de formación de la Linux Foundation.
 * **Historia y Contexto:**
   * [The BSD Packet Filter: A New Architecture for User-level Packet Capture (1992)](https://www.tcpdump.org/papers/bpf-usenix93.pdf)
     \- El artículo original de McCanne y Jacobson.
