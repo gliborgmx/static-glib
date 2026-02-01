@@ -10,7 +10,8 @@
 
      AsciinemaPlayer.create('{{ "/" ~ page.colocated_path ~ file | safe }}',
                             document.getElementById('{{ id }}'), {
-                                speed: 2,
+                                speed: 1.5,
+                                idleTimeLimit: 0.5,
                                 cols: 80,
                                 rows: 24,
                                 poster: 'npt:1:23',
