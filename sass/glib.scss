@@ -181,7 +181,7 @@ main {
           }
         }
         figure {
-            img {
+            iframe, img, video {
                 display: block;
                 margin: auto;
             }
