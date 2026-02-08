@@ -47,6 +47,7 @@ Athlon
 Attacks
 Attorney
 Audigy
+Authorities
 Avaaz
 Availability
 Awarded
@@ -100,6 +101,7 @@ CIMAT
 CISSP
 CKAN
 CMS
+CNAs
 CONSOL
 COVID
 CPAN
@@ -107,6 +109,8 @@ CPEUM
 CPUs
 CSS
 CVE
+CVEs
+CVSS
 Cairo
 Calc
 Caligaris
@@ -141,6 +145,7 @@ Code
 Coding
 Collection
 Colombia
+Common
 CommonMark
 Communication
 Comp
@@ -156,6 +161,7 @@ Core
 CoreDuo
 Corel
 Corp
+Corporation
 Count
 Create
 Creative
@@ -201,6 +207,7 @@ Directory
 Disc
 Disqus
 Docker
+Documentation
 Docutils
 Dominguez
 Domínguez
@@ -243,6 +250,7 @@ Excellence
 Execution
 Experience
 Exploiting
+Exposures
 FAQ
 FFmpeg
 FLAC
@@ -351,6 +359,7 @@ Hamburgo
 Hangouts
 Hans
 Harmattan
+Hartman
 Haskel
 Haskell
 High
@@ -438,6 +447,7 @@ Know
 Kokeros
 Konqueror
 Kristian
+Kroah
 Kuaninj
 Kubernetes
 Kubuntu
@@ -551,6 +561,7 @@ Networking
 Neumann
 Notibero
 Novell
+Numbering
 OAth
 ODBC
 ODSL
@@ -838,6 +849,7 @@ View
 VoIP
 Voltaire
 Vulkan
+Vulnerabilities
 Vázquez
 WAMP
 WARNING
@@ -905,6 +917,7 @@ application
 aptitude
 area
 array
+asignadores
 aspx
 attack
 attacked
@@ -994,6 +1007,7 @@ codec
 codecs
 comments
 commit
+commits
 companies
 compress
 computing
@@ -1029,6 +1043,7 @@ daemons
 damage
 dapper
 db
+dead
 death
 debianitas
 debug
@@ -1207,10 +1222,12 @@ like
 linuxero
 linuxeros
 list
+live
 log
 loggea
 logging
 logs
+long
 love
 luisilloDavid
 machirulos
@@ -1256,6 +1273,7 @@ noatime
 noscript
 notmch
 notmuch
+numbers
 of
 office
 officially
@@ -1349,6 +1367,7 @@ reset
 resolve
 retpoline
 retransmisor
+retroportan
 rippear
 romitenses
 rompope
@@ -1450,9 +1469,11 @@ trailer
 transform
 transpilador
 trapito
+trazabilidad
 tristísima
 tropicalizado
 tuner
+turning
 tutorial
 tutoriales
 tweets
