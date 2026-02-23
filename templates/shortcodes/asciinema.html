@@ -1,5 +1,7 @@
+{% if nth == 1 %}
+<script type="text/javascript" src="{{ get_url(path='asciinema-player.min.js') }}" data-speed="2" data-theme="solarized-dark"></script>
+{% endif %}
 <div id="{{ id }}">
-    <script type="text/javascript" src="{{ get_url(path='asciinema-player.min.js') }}" data-speed="2" data-theme="solarized-dark"></script>
     <script  type="text/javascript">
      var link = document.createElement('link');
      link.type = 'text/css';
