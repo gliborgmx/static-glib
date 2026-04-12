@@ -20,3 +20,21 @@ repos:
   rev: v0.9.28
   hooks:
     -   id: pymarkdown
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  rev: v0.15.10
+  hooks:
+    -   id: ruff
+        args: [--fix]
+        files: ^scripts/
+    -   id: ruff-format
+        files: ^scripts/
+- repo: local
+  hooks:
+    -   id: pylint
+        name: pylint
+        entry: pylint
+        language: python
+        types: [python]
+        files: ^scripts/
+        args: [--rcfile=/dev/null]
+        additional_dependencies: [pylint, requests, python-dateutil]
