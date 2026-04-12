@@ -1,3 +1,7 @@
 pre-commit
+pylint
 pymarkdownlnt
 pyspelling
+python-dateutil
+requests
+ruff
