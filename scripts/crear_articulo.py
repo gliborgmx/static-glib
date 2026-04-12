@@ -17,16 +17,23 @@ from pathlib import Path
 from dataclasses import dataclass
 from typing import Optional
 
-import dateutil.parser
+try:
+    import dateutil.parser
+
+    DATEUTIL_AVAILABLE = True
+except ImportError:
+    DATEUTIL_AVAILABLE = False
 
 # Allowed tema values
-ALLOWED_TEMAS = ['anuncios',
-                 'articulos',
-                 'educacion',
-                 'noticias',
-                 'glib',
-                 'preguntas',
-                 'seguridad']
+ALLOWED_TEMAS = [
+    "anuncios",
+    "articulos",
+    "educacion",
+    "noticias",
+    "glib",
+    "preguntas",
+    "seguridad",
+]
 
 
 def get_default_author():
@@ -34,10 +41,10 @@ def get_default_author():
     try:
         # Try to get the name from Git configuration
         result = subprocess.run(
-            ['git', 'config', '--get', 'user.name'],
+            ["git", "config", "--get", "user.name"],
             capture_output=True,
             text=True,
-            check=False  # Don't raise exception on non-zero exit
+            check=False,  # Don't raise exception on non-zero exit
         )
         if result.returncode == 0 and result.stdout.strip():
             # Successfully got name from Git
@@ -47,9 +54,9 @@ def get_default_author():
         pass
 
     # Fallback to OS method if Git doesn't provide a name
-    if sys.platform == 'win32':
+    if sys.platform == "win32":
         # Windows: try to get full name from environment or use username
-        full_name = os.getenv('USERNAME', getpass.getuser())
+        full_name = os.getenv("USERNAME", getpass.getuser())
         return full_name
     # Unix-like systems (Linux, macOS)
     username = getpass.getuser()
@@ -59,10 +66,10 @@ def get_default_author():
 
         # Try to get GECOS field (full name)
         gecos = pwd.getpwnam(username).pw_gecos
-        if gecos and ',' in gecos:
+        if gecos and "," in gecos:
             # GECOS often has comma-separated fields: full name,
             # office, etc.
-            full_name = gecos.split(',')[0]
+            full_name = gecos.split(",")[0]
         else:
             full_name = gecos or username
         return full_name
@@ -89,12 +96,10 @@ def get_rfc3339_date(date_str=None):
         dt = datetime.datetime.now().astimezone()
     else:
         try:
-            # Try to parse the date string using dateutil.parser if available
-            try:
+            if DATEUTIL_AVAILABLE:
                 dt = dateutil.parser.parse(date_str)
-            except ImportError as e:
-                # Fallback to datetime's fromisoformat for ISO-like strings
-                # Try to parse common formats
+            else:
+                # Fallback to datetime's strptime for common formats
                 formats = [
                     "%Y-%m-%d",
                     "%Y-%m-%d %H:%M",
@@ -110,30 +115,32 @@ def get_rfc3339_date(date_str=None):
                     except ValueError:
                         continue
                 if dt is None:
-                    raise ValueError(f"Could not parse date: {date_str}") \
-                        from e
+                    raise ValueError(f"Could not parse date: {date_str}")
 
             # If no timezone info, assume UTC
             if dt.tzinfo is None:
                 dt = dt.replace(tzinfo=datetime.timezone.utc)
         except Exception as e:  # pylint: disable=broad-exception-caught
-            print(f"Couldn't parse '{date_str}': {e}. Using current time.",
-                  file=sys.stderr)
+            print(
+                f"Couldn't parse '{date_str}': {e}. Using current time.",
+                file=sys.stderr,
+            )
             dt = datetime.datetime.now().astimezone()
 
     return dt.isoformat()
 
 
 @dataclass
-class Metadata():
+class Metadata:
     """Class for holding article's metadata"""
+
     title: str
     date: str
     draft: bool
     autor: str
     slug: str
     extra_fields: Optional[dict] = None
-    tema: str = 'articulos'
+    tema: str = "articulos"
 
 
 def create_front_matter(metadata: Metadata):
@@ -149,9 +156,9 @@ def create_front_matter(metadata: Metadata):
     if metadata.slug:
         front_matter += f'slug = "{metadata.slug}"\n'
     front_matter += f'date = "{metadata.date}"\n'
-    front_matter += f'draft = {str(metadata.draft).lower()}\n'
+    front_matter += f"draft = {str(metadata.draft).lower()}\n"
 
-    front_matter += '[taxonomies]\n'
+    front_matter += "[taxonomies]\n"
 
     # Author field (always included)
     if metadata.autor is None:
@@ -164,19 +171,19 @@ def create_front_matter(metadata: Metadata):
 
     # Extra custom fields
     if metadata.extra_fields:
-        front_matter += '[extra]\n'
+        front_matter += "[extra]\n"
         for key, value in metadata.extra_fields.items():
             if isinstance(value, str):
                 front_matter += f'{key} = "{value}"\n'
             elif isinstance(value, bool):
-                front_matter += f'{key} = {str(value).lower()}\n'
+                front_matter += f"{key} = {str(value).lower()}\n"
             elif isinstance(value, (int, float)):
-                front_matter += f'{key} = {value}\n'
+                front_matter += f"{key} = {value}\n"
             elif isinstance(value, list):
-                front_matter += f'{key} = [\n'
+                front_matter += f"{key} = [\n"
                 for item in value:
                     front_matter += f'    "{item}",\n'
-                front_matter += ']\n'
+                front_matter += "]\n"
 
     front_matter += "+++\n\n"
     return front_matter
@@ -184,16 +191,16 @@ def create_front_matter(metadata: Metadata):
 
 def open_in_editor(filepath):
     """Open the file in the default editor based on the platform."""
-    if sys.platform == 'win32':
+    if sys.platform == "win32":
         os.startfile(filepath)
-    elif sys.platform == 'darwin':  # macOS
-        subprocess.run(['open', filepath], check=True)
+    elif sys.platform == "darwin":  # macOS
+        subprocess.run(["open", filepath], check=True)
     else:  # Linux and other Unix-like
         # Try to use xdg-open, or fall back to $EDITOR
         try:
-            subprocess.run(['xdg-open', filepath], check=True)
+            subprocess.run(["xdg-open", filepath], check=True)
         except FileNotFoundError:
-            editor = os.environ.get('EDITOR', 'vi')
+            editor = os.environ.get("EDITOR", "vi")
             subprocess.run([editor, filepath], check=True)
 
 
@@ -202,8 +209,7 @@ def get_branch_name(title, slug):
     if title:
         # Clean title for branch name: lowercase, replace spaces with hyphens,
         # remove special chars
-        branch_name = re.sub(r'[^a-z0-9-]', '',
-                             title.lower().replace(' ', '-'))
+        branch_name = re.sub(r"[^a-z0-9-]", "", title.lower().replace(" ", "-"))
         # Limit length
         return branch_name[:30]
     return f"article-{slug}"
@@ -213,9 +219,14 @@ def is_git_repository():
     """Check if we're in a git repository"""
     try:
         # Check if we're in a git repository
-        subprocess.run(['git', 'rev-parse', '--git-dir'],
-                       check=True,
-                       capture_output=True)
+        subprocess.run(
+            ["git", "rev-parse", "--git-dir"], check=True, capture_output=True
+        )
+    except FileNotFoundError:
+        print(
+            "Error: git no está instalado o no se encuentra en PATH.", file=sys.stderr
+        )
+        return False
     except subprocess.CalledProcessError:
         print("¡No se encuentra un repositorio Git!", file=sys.stderr)
         return False
@@ -225,7 +236,7 @@ def is_git_repository():
 def update_repositories():
     """Update branches of all repositories"""
     try:
-        subprocess.run(['git', 'remote', 'update', '-p'], check=True)
+        subprocess.run(["git", "remote", "update", "-p"], check=True)
     except subprocess.CalledProcessError:
         pass
 
@@ -239,26 +250,24 @@ def run_git_operations(title, slug):
 
     # Stash any uncommitted changes
     try:
-        subprocess.run(['git',
-                        'stash',
-                        'push',
-                        '-m',
-                        'Auto-stash by crear_articulo.py'],
-                       check=True,
-                       capture_output=True)
+        subprocess.run(
+            ["git", "stash", "push", "-m", "Auto-stash by crear_articulo.py"],
+            check=True,
+            capture_output=True,
+        )
     except subprocess.CalledProcessError:
         pass
 
     # Switch to main branch
     try:
-        subprocess.run(['git', 'checkout', 'main'], check=True)
+        subprocess.run(["git", "checkout", "main"], check=True)
     except subprocess.CalledProcessError:
         print("  → Error al cambiar a main.", file=sys.stderr)
         return
 
     # Pull latest changes
     try:
-        subprocess.run(['git', 'pull'], check=True)
+        subprocess.run(["git", "pull"], check=True)
     except subprocess.CalledProcessError:
         print("  → Error al hacer pull. Continuando…", file=sys.stderr)
 
@@ -266,17 +275,19 @@ def run_git_operations(title, slug):
 
     # Create and checkout new branch
     try:
-        subprocess.run(['git', 'checkout', '-b', branch_name], check=True)
+        subprocess.run(["git", "checkout", "-b", branch_name], check=True)
     except subprocess.CalledProcessError:
         try:
-            subprocess.run(['git', 'checkout', branch_name], check=True)
+            subprocess.run(["git", "checkout", branch_name], check=True)
         except subprocess.CalledProcessError:
-            print("  → No se pudo crear o cambiar a la rama. Continuando…",
-                  file=sys.stderr)
+            print(
+                "  → No se pudo crear o cambiar a la rama. Continuando…",
+                file=sys.stderr,
+            )
 
     # Apply stash if there was one
     try:
-        subprocess.run(['git', 'stash', 'pop'], check=True)
+        subprocess.run(["git", "stash", "pop"], check=True)
     except subprocess.CalledProcessError:
         pass
 
@@ -285,12 +296,9 @@ def main():
     """Main function"""
     parser = argparse.ArgumentParser(description="Crear un artículo en GLiB")
     parser.add_argument("--title", "-t", help="Título de artículo")
+    parser.add_argument("--date", "-d", help="Fecha de publicación (YYYY-MM-DD)")
     parser.add_argument(
-        "--date", "-d", help="Fecha de publicación (YYYY-MM-DD)")
-    parser.add_argument(
-        "--no-draft",
-        action="store_true",
-        help="Marcar artículo como no borrador"
+        "--no-draft", action="store_true", help="Marcar artículo como no borrador"
     )
     parser.add_argument(
         "--author",
@@ -335,7 +343,13 @@ def main():
     slug = filename[:-3]  # Remove .md extension
 
     output_dir = Path(args.output_dir)
-    output_dir.mkdir(exist_ok=True)
+    try:
+        output_dir.mkdir(exist_ok=True, parents=True)
+    except (PermissionError, OSError) as e:
+        print(
+            f"Error: No se pudo crear el directorio {output_dir}: {e}", file=sys.stderr
+        )
+        sys.exit(1)
     filepath = output_dir / filename
 
     # Check if file already exists (unlikely but possible)
@@ -360,9 +374,13 @@ def main():
     )
 
     # Write the file
-    with open(filepath, "w", encoding="utf-8") as f:
-        f.write(front_matter)
-        f.write("\nComienza a escribir tu artículo desde aquí.\n")
+    try:
+        with open(filepath, "w", encoding="utf-8") as f:
+            f.write(front_matter)
+            f.write("\nComienza a escribir tu artículo desde aquí.\n")
+    except IOError as e:
+        print(f"Error: No se pudo escribir el archivo {filepath}: {e}", file=sys.stderr)
+        sys.exit(1)
 
     print(f"Nuevo archivo creado: {filepath}")
 
@@ -372,5 +390,5 @@ def main():
         open_in_editor(filepath)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
