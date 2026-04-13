@@ -2,7 +2,7 @@
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v5.0.0
+    rev: v6.0.0
     hooks:
       - id: trailing-whitespace
       - id: end-of-file-fixer
@@ -10,18 +10,18 @@ repos:
       - id: mixed-line-ending
         args: [--fix=lf]
   - repo: https://github.com/facelessuser/pyspelling
-    rev: f6ae60bf
+    rev: 2.12.1
     hooks:
       - id: pyspelling
         verbose: true
         pass_filenames: false
         args: ['-n', 'ortografia']
   - repo: https://github.com/jackdewinter/pymarkdown
-    rev: v0.9.28
+    rev: v0.9.36
     hooks:
       - id: pymarkdown
   - repo: https://github.com/adrienverge/yamllint
-    rev: v1.35.1
+    rev: v1.38.0
     hooks:
       - id: yamllint
   - repo: https://github.com/astral-sh/ruff-pre-commit
