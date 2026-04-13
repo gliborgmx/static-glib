@@ -8,34 +8,24 @@ jobs:
   revisar:
     runs-on: ubuntu-latest
 
-    env:
-      ZOLA_VERSION: v0.22.1
-
     steps:
-      - name: Actualizar sistema
-        run: |
-          sudo apt-get update
-          sudo apt-get install aspell aspell-es
-
-      - name: Actualizar sistema a Español
-        run: |
-          sudo locale-gen es_MX.UTF-8
-          sudo update-locale
-
-      - name: Instalar Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
       - name: Extraer repositorio
         uses: actions/checkout@v4
         with:
           fetch-depth: 2
 
-      - name: Actualizar Python
+      - name: Configurar entorno
+        uses: ./.github/actions/setup
+        with:
+          setup-python: true
+          setup-zola: true
+          setup-locale: true
+          install-system-packages: 'aspell aspell-es'
+
+      - name: Revisar calidad de código Python
         run: |
-          python3 -m pip install --upgrade pip setuptools
-          python3 -m pip install -r requirements.txt
+          python3 -m ruff check scripts/
+          python3 -m pylint scripts/
 
       - name: Obtener archivos markdown modificados
         id: archivos-md-modificados
@@ -60,14 +50,6 @@ jobs:
           for ARCHIVO in ${ARCHIVOS_MD_CAMBIADOS}; do
             python3 -m pyspelling -n ortografia -S $ARCHIVO
           done
-
-      - name: Descargar Zola
-        run: |
-          wget "https://github.com/getzola/zola/releases/download/${ZOLA_VERSION}/zola-${ZOLA_VERSION}-x86_64-unknown-linux-gnu.tar.gz"
-
-      - name: Instalar Zola
-        run: |
-          tar vxzf ./zola-${ZOLA_VERSION}-x86_64-unknown-linux-gnu.tar.gz
 
       - name: Construir sitio web
         run: |
