@@ -44,6 +44,11 @@ jobs:
           python3 -m pip install --upgrade pip setuptools
           python3 -m pip install -r requirements.txt
 
+      - name: Revisar calidad de código Python
+        run: |
+          python3 -m ruff check scripts/
+          python3 -m pylint scripts/
+
       - name: Obtener archivos markdown modificados
         id: archivos-md-modificados
         uses: tj-actions/changed-files@v45
