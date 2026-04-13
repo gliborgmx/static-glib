@@ -12,23 +12,23 @@ matrix:
       d: es
     dictionary:
       wordlists:
-      - es-local.dic
+        - es-local.dic
     default_encoding: utf-8
     pipeline:
-    - pyspelling.filters.context:
-        context_visible_first: true
-        escapes: '\\[\\`~]'
-        delimiters:
-        # Ignore multiline content between fences (fences can have 3 or more plus)
-        # +++
-        # content
-        # +++
-        - open: '(?s)^(?P<open> *[\+\-]{3,})$'
-          close: '^(?P=open)$'
-        # Ignore text between inline pluses
-        - open: '(?P<open>\++)'
-          close: '(?P=open)'
-        # Ignore text between inline {{ }}
-        - open: '^\{\{'
-          content: '.+'
-          close: '\}\}$'
+      - pyspelling.filters.context:
+          context_visible_first: true
+          escapes: '\\[\\`~]'
+          delimiters:
+            # Ignore multiline content between fences (fences can have 3 or more plus)
+            # +++
+            # content
+            # +++
+            - open: '(?s)^(?P<open> *[\+\-]{3,})$'
+              close: '^(?P=open)$'
+            # Ignore text between inline pluses
+            - open: '(?P<open>\++)'
+              close: '(?P=open)'
+            # Ignore text between inline {{ }}
+            - open: '^\{\{'
+              content: '.+'
+              close: '\}\}$'

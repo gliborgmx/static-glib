@@ -1,40 +1,40 @@
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
--   repo: https://github.com/pre-commit/pre-commit-hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
     hooks:
-    -   id: trailing-whitespace
-    -   id: end-of-file-fixer
-    -   id: requirements-txt-fixer
-    -   id: mixed-line-ending
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: requirements-txt-fixer
+      - id: mixed-line-ending
         args: [--fix=lf]
--   repo: https://github.com/facelessuser/pyspelling
+  - repo: https://github.com/facelessuser/pyspelling
     rev: f6ae60bf
     hooks:
-    -   id: pyspelling
+      - id: pyspelling
         verbose: true
         pass_filenames: false
         args: ['-n', 'ortografia']
-- repo: https://github.com/jackdewinter/pymarkdown
-  rev: v0.9.28
-  hooks:
-    -   id: pymarkdown
-- repo: https://github.com/adrienverge/yamllint
-  rev: v1.35.1
-  hooks:
-    -   id: yamllint
-- repo: https://github.com/astral-sh/ruff-pre-commit
-  rev: v0.15.10
-  hooks:
-    -   id: ruff
+  - repo: https://github.com/jackdewinter/pymarkdown
+    rev: v0.9.28
+    hooks:
+      - id: pymarkdown
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.35.1
+    hooks:
+      - id: yamllint
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.10
+    hooks:
+      - id: ruff
         args: [--fix]
         files: ^scripts/
-    -   id: ruff-format
+      - id: ruff-format
         files: ^scripts/
-- repo: local
-  hooks:
-    -   id: pylint
+  - repo: local
+    hooks:
+      - id: pylint
         name: pylint
         entry: pylint
         language: python
