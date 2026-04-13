@@ -32,6 +32,13 @@ jobs:
         with:
           fetch-depth: 2
 
+      - name: Cache pip packages
+        id: cache-pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-${{ hashFiles('requirements.txt') }}
+
       - name: Actualizar Python
         run: |
           python3 -m pip install --upgrade pip setuptools
