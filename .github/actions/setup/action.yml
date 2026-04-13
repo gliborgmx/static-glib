@@ -1,0 +1,90 @@
+name: 'Configurar entorno GLiB'
+description: 'Configurar entorno común para flujos de trabajo GLiB incluyendo localización en español, Python y Zola'
+
+inputs:
+  setup-python:
+    description: 'Configurar entorno Python'
+    required: false
+    default: 'false'
+  setup-zola:
+    description: 'Configurar generador de sitios estáticos Zola'
+    required: false
+    default: 'false'
+  setup-locale:
+    description: 'Configurar localización en español'
+    required: false
+    default: 'false'
+  python-version:
+    description: 'Versión de Python a usar'
+    required: false
+    default: '3.12'
+  zola-version:
+    description: 'Versión de Zola a usar'
+    required: false
+    default: 'v0.22.1'
+  install-system-packages:
+    description: 'Paquetes adicionales del sistema a instalar (separados por espacios)'
+    required: false
+    default: ''
+  python-packages:
+    description: 'Paquetes de Python a instalar (por defecto -r requirements.txt)'
+    required: false
+    default: '-r requirements.txt'
+
+runs:
+  using: composite
+  steps:
+    - name: Actualizar e instalar paquetes del sistema
+      if: inputs.install-system-packages != ''
+      shell: bash
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y ${{ inputs.install-system-packages }}
+
+    - name: Configurar localización en español
+      if: inputs.setup-locale == 'true'
+      shell: bash
+      run: |
+        sudo locale-gen es_MX.UTF-8
+        sudo update-locale
+
+    - name: Configurar Python
+      if: inputs.setup-python == 'true'
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ inputs.python-version }}
+
+    - name: Almacenar en cache paquetes de pip
+      if: inputs.setup-python == 'true'
+      id: cache-pip
+      uses: actions/cache@v4
+      with:
+        path: ~/.cache/pip
+        key: pip-${{ hashFiles('requirements.txt') }}
+
+    - name: Actualizar e instalar dependencias de Python
+      if: inputs.setup-python == 'true'
+      shell: bash
+      run: |
+        python3 -m pip install --upgrade pip setuptools
+        python3 -m pip install ${{ inputs.python-packages }}
+
+    - name: Almacenar en cache Zola
+      if: inputs.setup-zola == 'true'
+      id: cache-zola
+      uses: actions/cache@v4
+      with:
+        path: ./zola-${{ inputs.zola-version }}-x86_64-unknown-linux-gnu.tar.gz
+        key: zola-${{ inputs.zola-version }}
+
+    - name: Descargar Zola
+      if: inputs.setup-zola == 'true' && steps.cache-zola.outputs.cache-hit != 'true'
+      shell: bash
+      run: |
+        wget "https://github.com/getzola/zola/releases/download/${{ inputs.zola-version }}/zola-${{ inputs.zola-version }}-x86_64-unknown-linux-gnu.tar.gz"
+
+    - name: Descomprimir Zola
+      if: inputs.setup-zola == 'true'
+      shell: bash
+      run: |
+        tar vxzf ./zola-${{ inputs.zola-version }}-x86_64-unknown-linux-gnu.tar.gz
