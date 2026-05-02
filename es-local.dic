@@ -1,4 +1,5 @@
 personal_ws-1.1 es 0 utf-8
+AEAD
 AJAX
 ALSA
 ALT
@@ -17,6 +18,7 @@ Access
 Acrobat
 Action
 ActionScript
+Actions
 ActivityPub
 ActivityStreams
 Adaptive
@@ -37,8 +39,10 @@ Andreas
 Android
 Anita
 Antitrust
+AppArmor
 Apple
 Apps
+Arch
 Architecture
 Art
 Asahi
@@ -74,6 +78,7 @@ Bellard
 Beowulf
 Berkeley
 Beryl
+Between
 Binary
 Bioinformatics
 Bitcoin
@@ -104,6 +109,7 @@ CDROM
 CESDIS
 CETIS
 CIMAT
+CISA
 CISSP
 CKAN
 CMS
@@ -271,6 +277,7 @@ FTP
 Fabrice
 Facebook
 Factory
+Fail
 Falco
 Federico
 Fediverse
@@ -340,10 +347,12 @@ Gilded
 Gina
 Giovanni
 GitHub
+GitLab
 Glade
 Glide
 Globus
 Gmail
+GnuTLS
 Golang
 Goldratt
 Gomez
@@ -395,9 +404,11 @@ IMSS
 INFO
 IP
 IPs
+IPsec
 ITESI
 Icaza
 Igalia
+Incorrect
 Indication
 Indirect
 InfiniBand
@@ -433,6 +444,7 @@ Jalisco
 Jansen
 Jaunty
 JavaScript
+Jenkins
 Jeremy
 Jhbuild
 Jia
@@ -607,6 +619,7 @@ OpenSSL
 OpenSUSE
 OpenSource
 OpenVZ
+Oracle
 Orozco
 Oscar
 Oseguera
@@ -676,6 +689,7 @@ Quezada
 QuickJS
 Quijas
 Quixmati
+RHEL
 RIIA
 ROCKS
 RPM
@@ -699,22 +713,26 @@ Reload
 Renderizado
 Report
 Requiem
+Resource
 Restricted
 Return
 Revolution
 Richard
 Robbins
 Robinson
+Rocky
 Rodríguez
 Roll
 Romita
 Rosita
 Rsync
 Ruby
+Runners
 Rust
 Ruíz
 SCO
 SDK
+SELinux
 SIG
 SIMD
 SISD
@@ -726,6 +744,7 @@ SSE
 SSH
 SUSE
 SWIFT
+SaaS
 Sahib
 Sally
 Salvatiera
@@ -774,6 +793,7 @@ Specification
 Spectre
 Speculation
 Speculative
+Spheres
 SpiderOak
 Sports
 Spotify
@@ -818,6 +838,7 @@ Telnet
 Tequisquiapan
 Tests
 Theodore
+Theori
 Theory
 Third
 This
@@ -828,6 +849,7 @@ Torvalds
 Toshiba
 Totem
 Tragadera
+Transfer
 Transmeta
 Trejo
 Trovalds
@@ -905,6 +927,7 @@ Wire
 Wired
 Wired
 Wolvic
+XFRM
 XFree
 XGL
 XKCD
@@ -914,6 +937,7 @@ Xalapa
 Xan
 Xbitcarry
 Xeon
+Xint
 Xmame
 Xorg
 Xpress
@@ -958,6 +982,7 @@ backdoor
 backend
 backends
 background
+backported
 backtrack
 backtrack
 baguettes
@@ -1043,6 +1068,7 @@ companies
 compress
 computing
 concentrate
+condition
 conditions
 condor
 connacionales
@@ -1062,6 +1088,7 @@ criptomoneda
 criptomonedas
 cron
 crucialmente
+crypt
 cryptsetup
 cuates
 cueritos
@@ -1125,6 +1152,7 @@ exim
 exploit
 exploits
 extremely
+fail
 fairer
 fault
 fediverso
@@ -1230,9 +1258,11 @@ journalctl
 jumper
 justice
 kFreeBSD
+kTLS
 kWh
 karmic
 keynote
+keyring
 koala
 kube
 kubunteros
@@ -1269,6 +1299,7 @@ machirulos
 made
 mail
 main
+mainline
 makes
 manager
 managers
@@ -1311,6 +1342,7 @@ nmap
 noatime
 nodes
 noscript
+notebooks
 notmch
 notmuch
 numbers
@@ -1319,6 +1351,7 @@ office
 officially
 officials
 offlineimap
+offsets
 on
 ooffice
 oops
@@ -1333,6 +1366,7 @@ overreach
 ownership
 packaged
 packets
+page
 pantallazo
 parametrizadas
 parsea
@@ -1417,6 +1451,7 @@ rompope
 root
 rootkit
 rrdtools
+runner
 runtime
 runtimes
 ruteo
@@ -1426,15 +1461,18 @@ satelital
 sbin
 scale
 scanning
+scatterlist
 scene
 scrappers
 script
 scripts
+seccomp
 section
 security
 segmentation
 sense
 server
+serverless
 services
 sge
 shapper
@@ -1552,6 +1590,7 @@ vmware
 voilà
 voltaire
 volume
+websec
 weirds
 were
 what
@@ -1563,6 +1602,7 @@ window
 wine
 with
 work
+workstations
 world
 wrapped
 writer
