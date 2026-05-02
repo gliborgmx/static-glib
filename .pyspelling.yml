@@ -32,3 +32,7 @@ matrix:
             - open: '^\{\{'
               content: '.+'
               close: '\}\}$'
+            # Ignore text between inline < >
+            - open: '<'
+              content: '.+'
+              close: '>'
