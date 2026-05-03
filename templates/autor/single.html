@@ -8,7 +8,7 @@
         <details {%- if loop.index == 1 %} open{% endif %}>
             <summary>Expandir ({{ pages | length }}):</summary>
             <ul role="list">
-    {% for page in pages %}
+    {% for page in pages | sort(attribute="date") | reverse %}
       {% set tema = page.taxonomies.tema[0] | lower %}
                 <li role="listitem">
                     <a href="{{ page.permalink | safe }}">{{ page.title }}</a><br/>
