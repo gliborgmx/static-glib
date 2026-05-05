@@ -35,6 +35,7 @@
 
     nav {
         ul {
+            flex-wrap: wrap;
             margin: 0 auto;
             li:not(:last-child) {
                 border-right: 2px solid var(--card-border-color);
@@ -171,6 +172,7 @@ main {
           font-size: 90%;
           nav {
             ul {
+              flex-wrap: wrap;
               li {
                 display: inline;
                 list-style: none;
@@ -207,6 +209,7 @@ main {
         ul {
             width: 100%;
             justify-content: center;
+            flex-wrap: wrap;
 
             li {
                 display: inline;
