@@ -26,10 +26,6 @@ inputs:
     description: 'Paquetes adicionales del sistema a instalar (separados por espacios)'
     required: false
     default: ''
-  python-packages:
-    description: 'Paquetes de Python a instalar (por defecto -r requirements.txt)'
-    required: false
-    default: '-r requirements.txt'
 
 runs:
   using: composite
@@ -48,26 +44,22 @@ runs:
         sudo locale-gen es_MX.UTF-8
         sudo update-locale
 
-    - name: Configurar Python
+    - name: Instalar uv
       if: inputs.setup-python == 'true'
-      uses: actions/setup-python@v6
+      uses: astral-sh/setup-uv@v5
       with:
-        python-version: ${{ inputs.python-version }}
+        version: "latest"
+        enable-cache: true
 
-    - name: Almacenar en cache paquetes de pip
-      if: inputs.setup-python == 'true'
-      id: cache-pip
-      uses: actions/cache@v5
-      with:
-        path: ~/.cache/pip
-        key: pip-${{ hashFiles('requirements.txt') }}
-
-    - name: Actualizar e instalar dependencias de Python
+    - name: Instalar Python
       if: inputs.setup-python == 'true'
       shell: bash
-      run: |
-        python3 -m pip install --upgrade pip setuptools
-        python3 -m pip install ${{ inputs.python-packages }}
+      run: uv python install ${{ inputs.python-version }}
+
+    - name: Instalar dependencias con uv
+      if: inputs.setup-python == 'true'
+      shell: bash
+      run: uv sync --frozen
 
     - name: Almacenar en cache Zola
       if: inputs.setup-zola == 'true'

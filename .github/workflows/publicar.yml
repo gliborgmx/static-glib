@@ -91,7 +91,6 @@ jobs:
           setup-python: true
           setup-zola: false
           setup-locale: false
-          python-packages: 'requests'
 
       - name: Anunciar nuevas publicaciones en Mastodon
         env:
@@ -99,5 +98,5 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.MASTODON_ACCESS_TOKEN }}
         run: |
           for ARCHIVO in ${ARCHIVOS_MD_NUEVOS}; do
-            python3 scripts/mastodon.py $ARCHIVO
+            uv run python scripts/mastodon.py $ARCHIVO
           done
