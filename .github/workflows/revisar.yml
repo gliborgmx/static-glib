@@ -24,8 +24,8 @@ jobs:
 
       - name: Revisar calidad de código Python
         run: |
-          python3 -m ruff check scripts/
-          python3 -m pylint scripts/
+          uv run ruff check scripts/
+          uv run pylint scripts/
 
       - name: Obtener archivos markdown modificados
         id: archivos-md-modificados
@@ -40,7 +40,7 @@ jobs:
         env:
           ARCHIVOS_MD_CAMBIADOS: ${{ steps.archivos-md-modificados.outputs.all_changed_files }}
         run: |
-          pymarkdown scan $ARCHIVOS_MD_CAMBIADOS
+          uv run pymarkdown scan $ARCHIVOS_MD_CAMBIADOS
 
       - name: Revisar ortografía
         if: steps.archivos-md-modificados.outputs.any_changed == 'true'
@@ -48,7 +48,7 @@ jobs:
           ARCHIVOS_MD_CAMBIADOS: ${{ steps.archivos-md-modificados.outputs.all_changed_files }}
         run: |
           for ARCHIVO in ${ARCHIVOS_MD_CAMBIADOS}; do
-            python3 -m pyspelling -n ortografia -S $ARCHIVO
+            uv run pyspelling -n ortografia -S $ARCHIVO
           done
 
       - name: Construir sitio web
