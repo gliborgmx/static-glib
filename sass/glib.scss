@@ -16,12 +16,32 @@
     )
 );
 
+@use "sass:map";
+@use "settings" as *;
+
 .main__header {
     h1 {
         text-align: center;
-        white-space: nowrap;
-        overflow: hidden;
         margin: 0;
+    }
+
+    .title-full,
+    .title-short {
+        display: inline;
+    }
+
+    .title-short {
+        display: none;
+    }
+
+    @media (max-width: map.get(map.get($breakpoints, "sm"), "breakpoint")) {
+        .title-full {
+            display: none;
+        }
+
+        .title-short {
+            display: inline;
+        }
     }
 
     h1::before {
