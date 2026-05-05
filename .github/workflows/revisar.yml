@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Extraer repositorio
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 2
 
@@ -29,7 +29,7 @@ jobs:
 
       - name: Obtener archivos markdown modificados
         id: archivos-md-modificados
-        uses: tj-actions/changed-files@v45
+        uses: tj-actions/changed-files@v47
         with:
           files: |
             content/**.md
