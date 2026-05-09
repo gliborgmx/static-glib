@@ -33,6 +33,7 @@ Address
 Advanced
 Advani
 After
+Agents
 Aguascalientes
 Aguilar
 Agéntica
@@ -109,6 +110,7 @@ Av
 Avaaz
 Availability
 Awarded
+Awesome
 Ayax
 BACKSPACE
 BEGINS
@@ -146,6 +148,7 @@ Bean
 Beaver
 Bebeboy
 Becker
+Beginner
 Bellard
 Beowulf
 Berenger
@@ -231,6 +234,7 @@ CSS
 CSharp
 CTRL
 CUCEI
+CUDA
 CUPs
 CVE
 CVEs
@@ -519,6 +523,7 @@ FSTAB
 FTP
 FUD
 Fabrice
+Face
 Facebook
 Factory
 Fail
@@ -593,6 +598,7 @@ GB
 GCC
 GDT
 GFXBoot
+GGUF
 GIMP
 GLCore
 GLIB
@@ -636,6 +642,8 @@ Gdesklets
 GeForce
 Gecko
 GeekLog
+Gemini
+Gemma
 Generic
 Generics
 Genius
@@ -749,6 +757,7 @@ Hosts
 Hotmail
 House
 Huchepos
+Hugging
 Hugo
 Hulk
 Héctor
@@ -915,6 +924,7 @@ LAN
 LDAP
 LDT
 LG
+LLMHardware
 LLMs
 LLVM
 LLegaron
@@ -966,6 +976,7 @@ Lizama
 Loading
 Lobogris
 LocalAreaSecurity
+Locally
 Lockheed
 Logo
 Logue
@@ -1183,11 +1194,13 @@ OfflineIMAP
 Ogg
 Ojagi
 Ojeda
+Ollama
 OnSite
 OnePlus
 Online
 Opal
 Open
+OpenAI
 OpenBSD
 OpenClaw
 OpenGL
@@ -1334,6 +1347,7 @@ RHEL
 RIIA
 RIPv
 ROCKS
+ROCm
 ROM
 ROMS
 RPM
@@ -1384,6 +1398,7 @@ Return
 Revilla
 Revolution
 Reynosa
+Rhatdan
 Richard
 Rivero
 Robbins
@@ -1694,6 +1709,7 @@ VLAN
 VMSpectre
 VNC
 VNCviwer
+VRAM
 VTuber
 Vala
 Vanessa
@@ -1733,6 +1749,7 @@ WebAssembly
 WebKit
 WebKitGTK
 WebRTC
+WebUI
 Webdesigners
 Webdeveloper
 Webmail
@@ -1871,6 +1888,7 @@ apt
 aptitude
 arch
 area
+around
 arrachera
 arrancable
 array
@@ -1925,6 +1943,7 @@ believe
 benefit
 best
 better
+billion
 bimbo
 bin
 binary
@@ -2088,6 +2107,7 @@ consider
 console
 construído
 contactarnos
+containerized
 contenerización
 contenerizar
 content
@@ -2119,6 +2139,10 @@ crypt
 cryptsetup
 cscope
 ctags
+cuantización
+cuantizado
+cuantizados
+cuantizarlo
 cuaresmeño
 cuartito
 cuate
@@ -2328,6 +2352,7 @@ freshrpms
 friend
 from
 frontend
+frontier
 fs
 fuck
 full
@@ -3209,6 +3234,7 @@ totalizantes
 tragedy
 trailer
 transform
+transformer
 transpilador
 trapito
 traps
@@ -3326,6 +3352,7 @@ working
 workstations
 world
 wrapped
+wrapper
 wrappers
 write
 writer
