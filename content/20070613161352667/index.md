@@ -13,9 +13,10 @@ homogéneo completo con [ROCKS](http://www.rocksclusters.org/). Una disculpa a
 quienes han estado ansiosos con esta continuación, ya que no había tenido tiempo
 de prepararla.
 
-*Continúa ... Actualizado con fotos ....*
+Continúa… Actualizado con fotos.
 
 <!-- more -->
+
 Para recordar en que nos quedamos respecto al [artículo
 anterior](http://www.glib.org.mx/article.php?story=20070320133500387), ya
 contamos con los equipos y se había armado una red pequeña donde el nodo maestro
