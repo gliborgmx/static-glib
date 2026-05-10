@@ -123,9 +123,9 @@ uv sync
 
 ## Normas de estilo para textos
 
-- Los textos deben están orientados a un público que tiene conocimientos medio
-  del uso de computadoras y programación. Conocen algo de *jargon* pero es
-  preferible evitarlo.
+- Los textos deben estar orientados a un público que tiene conocimientos
+  universitarios en el uso de computadoras y programación. Conocen algo de
+  *jargon*, pero es preferible evitarlo.
 - Los textos deben estar escritos en idioma español mexicano.
 - No se deben usar guiones largos `—` ni negritas. Las itálicas son aceptables.
 - Todas las palabras en inglés, rutas, nombres de archivos o programas deben
@@ -138,7 +138,9 @@ uv sync
 - **No asumas nada**. Pregunta todas las dudas que tengas primero.
 - Todas las palabras técnicas deberán tener vínculos a su entrada en Wikipedia,
   de preferencia en español.
-- Recomienda la final una imagen que represente el contenido.
+- Recomienda, al final y comentado, la descripción de una imagen que represente
+  el contenido. Esta recomendación no se contabiliza en el número de palabras
+  del texto.
 
 ## Registro de cambios en git
 
@@ -146,10 +148,10 @@ uv sync
   - Si se trata de un texto `artículo: <título del artículo>` y un muy breve
     resumen del texto.
   - Cambios en scripts `script: <objetivo del script>` y un mensaje
-    completo donde se respondan a las preguntas ¿qué? ¿por qué? y ¿cómo?
+    completo donde se respondan a las preguntas ¿qué?, ¿por qué?, y ¿cómo?
   - Si se trata de cambios en la integración continua `ci: <propósito del
-    cambio>` y un mensaje completo donde se respondan a las preguntas ¿qué? ¿por
-    qué? y ¿cómo?
-  - Cambios en CSS o SASS `css: <descripccióndel cambio>`
+    cambio>` y un mensaje completo donde se respondan a las preguntas ¿qué?,
+    ¿por qué?, y ¿cómo?
+  - Cambios en CSS o SASS `css: <descripcción del cambio>`
   - Cambios en las plantillas `templates: <descripción del cambio>`
 - No debe haber cambios mezclando textos, scripts, ci, css o plantillas.
