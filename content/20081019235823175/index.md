@@ -14,7 +14,7 @@ de muertos, que es el próximo domingo 2 de noviembre, pero en esta ocasión no
 habrá premios ya que en los años pasados, tanto los ganadores como los
 perdedores, no se presentaron por su premio de primer, segundo y tercer lugar.
 
-**Las bases son las siguientes:**
+## Las bases son las siguientes
 
 - No necesariamente deben ser palabras de la jerga Linux/Informática.
 - No hay limite en la extensión de la calavera.

@@ -6,7 +6,7 @@ date = "2026-01-11T08:01:18.395011+01:00"
 autor = ["Víctor Manuel Jáquez Leal"]
 tema = ["articulos"]
 [extra]
-og_image = "meltdon_spectre.png"
+og_image = "meltdown_spectre.png"
 +++
 
 ## Más Allá del Error Lógico
@@ -27,7 +27,7 @@ procesamiento: el tiempo que tarda una operación, el consumo de energía, el
 sonido del ventilador, o, como en los siguientes ejemplos, el estado de las
 cachés del CPU.
 
-{{ figure(src="meltdon_spectre.png" alt="Meltdown & Spectre" caption="Captura de
+{{ figure(src="meltdown_spectre.png" alt="Meltdown & Spectre" caption="Captura de
 pantalla de <https://spectreattack.com/>") }}
 
 ## Ejecución Especulativa
