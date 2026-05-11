@@ -1,8 +1,7 @@
 +++
 title = "¿Quién es djb?"
-slug = "20260511150013714"
-date = "2026-05-11T15:00:16.667395+02:00"
-draft = true
+slug = "20260516163813714"
+date = "2026-05-16T16:38:16.667395+02:00"
 [taxonomies]
 autor = ["Víctor Manuel Jáquez Leal"]
 tema = ["articulos"]
