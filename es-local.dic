@@ -1,4 +1,4 @@
-personal_ws-1.1 es 3305 utf-8
+personal_ws-1.1 es 3339 utf-8
 aaron
 abelson
 abimelec
@@ -244,11 +244,13 @@ beginner
 begins
 believe
 bellard
+bellport
 benefit
 beowulf
 berenger
 berenice
 berkeley
+bernstein
 beryl
 best
 better
@@ -259,10 +261,12 @@ billion
 bimbo
 bin
 binary
+bind
 bindings
 binfmt
 bio
 bioconductor
+biography
 bioinformatics
 bioinformática
 bios
@@ -293,6 +297,7 @@ bluez
 blurb
 blvd
 bocanegra
+bochum
 bogomips
 boltzmann
 bond
@@ -452,6 +457,7 @@ cherokee
 chetos
 chevechas
 cheves
+chicago
 chida
 chidas
 chido
@@ -483,6 +489,7 @@ ciao
 cibercafés
 cibersalmantina
 cicol
+cifradores
 cilium
 cimat
 cinvestav
@@ -625,6 +632,7 @@ creative
 credite
 criptomoneda
 criptomonedas
+criptólogo
 cron
 crossover
 crt
@@ -724,6 +732,7 @@ delphi
 demand
 demonizamos
 demonizar
+dempsky
 denariis
 denger
 depends
@@ -832,6 +841,7 @@ dávila
 díaz
 each
 earth
+east
 easy
 easyurpmi
 ebpf
@@ -1014,6 +1024,7 @@ fisterra
 five
 fixes
 fixing
+fixquotes
 flac
 flag
 flask
@@ -1304,6 +1315,7 @@ hello
 helo
 help
 helped
+hendrik
 henru
 here
 hermanito
@@ -1377,12 +1389,14 @@ idiotización
 idle
 ids
 idt
+ietf
 iftop
 igalia
 ignaciohg
 ignucio
 iis
 ileana
+illinois
 image
 imaging
 imake
@@ -1465,6 +1479,7 @@ ironpython
 ironruby
 irq
 isaacnavarro
+island
 isolated
 isos
 israel
@@ -1651,6 +1666,7 @@ legacy
 lemus
 lennart
 lenny
+lenstra
 leodegario
 leon
 leonardo
@@ -1751,6 +1767,7 @@ lot
 lots
 love
 lovelace
+lowell
 loyola
 lpi
 lsb
@@ -2032,6 +2049,7 @@ niklaus
 ninjas
 nino
 nintendo
+nist
 nitot
 nitsuga
 nmap
@@ -2111,6 +2129,7 @@ open
 openai
 openbsd
 openclaw
+opendns
 opengl
 openinventor
 openmpi
@@ -2191,6 +2210,7 @@ password
 passwords
 past
 patch
+patchogue
 path
 paty
 paul
@@ -2269,6 +2289,7 @@ point
 poisot
 poisson
 polifórum
+poly
 polymarket
 pong
 ponzi
@@ -2278,6 +2299,7 @@ portable
 portables
 portage
 ports
+poscuántica
 posix
 possible
 post
@@ -2374,6 +2396,7 @@ pull
 pulseaudio
 pulseritas
 push
+putnam
 pvfs
 pxe
 pygresql
@@ -2543,6 +2566,7 @@ rsync
 rtorres
 ruby
 rubén
+ruhr
 rulez
 runner
 runners
@@ -2594,6 +2618,7 @@ scheduler
 scheduling
 scheme
 schp
+science
 sciences
 sco
 scott
@@ -2607,6 +2632,7 @@ scripts
 sdk
 seagate
 seamonkey
+search
 seawolf
 seccomp
 second
@@ -2672,6 +2698,7 @@ silverpala
 silverstorm
 simd
 similarly
+simons
 simply
 sincero
 sindicalizador
@@ -2751,6 +2778,7 @@ speech
 speedtouch
 spellcheck
 spheres
+sphincs
 sphinx
 spider
 spideroak
@@ -2788,6 +2816,7 @@ starovoitov
 start
 stateful
 stateless
+states
 steak
 stenberg
 steve
@@ -2864,6 +2893,7 @@ tabo
 tacoweb
 tactites
 tags
+talent
 talk
 tamaulipas
 tanenbaum
@@ -3030,6 +3060,7 @@ unicorn
 unified
 union
 unique
+united
 universe
 universidadperu
 university
@@ -3158,6 +3189,7 @@ wellmax
 wengophone
 were
 werewolf
+westinghouse
 weston
 wget
 what
@@ -3198,6 +3230,7 @@ winrocks
 winsucks
 wire
 wired
+wireguard
 wireless
 wirth
 with
@@ -3277,6 +3310,7 @@ yebra
 yellowdog
 yohabed
 yorch
+york
 yorkshire
 you
 young
