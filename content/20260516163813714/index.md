@@ -10,7 +10,7 @@ og_image = "djb.jpg"
 +++
 
 Continuando el tema de grandes programadores que iniciamos con [Fabrice
-Bellard])[@202508102102.md], ahora hablemos sobre otro grande de la profesión
+Bellard])[@/202508102102.md], ahora hablemos sobre otro grande de la profesión
 que personalmente me ha inspirado y su software contribuyó a generar mis
 primeros ingresos como consultor: Daniel J. Bernstein.
 
