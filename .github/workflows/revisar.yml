@@ -35,6 +35,20 @@ jobs:
             content/**.md
             content/**/**.md
 
+      - name: Revisar que artículos no estén en borrador
+        if: steps.archivos-md-modificados.outputs.any_changed == 'true'
+        env:
+          ARCHIVOS_MD_CAMBIADOS: ${{ steps.archivos-md-modificados.outputs.all_changed_files }}
+        run: |
+          error=0
+          for archivo in ${ARCHIVOS_MD_CAMBIADOS}; do
+            if awk '/^\+\+\+$/{f=1; next} /^\+\+\+$/{f=0} f && /^draft\s*=\s*true/' "$archivo" | grep -q .; then
+              echo "::error file=${archivo}::El artículo tiene 'draft = true', no debe estar en borrador"
+              error=1
+            fi
+          done
+          exit $error
+
       - name: Revisar formato markdown
         if: steps.archivos-md-modificados.outputs.any_changed == 'true'
         env:
