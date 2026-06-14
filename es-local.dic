@@ -1,4 +1,4 @@
-personal_ws-1.1 es 3366 utf-8
+personal_ws-1.1 es 3402 utf-8
 aaron
 abelson
 abimelec
@@ -18,6 +18,7 @@ actions
 actionscript
 activation
 activitypub
+activitypump
 activitystreams
 adaptive
 added
@@ -308,6 +309,7 @@ bond
 bonifacio
 bonobo
 bonus
+bookwyrm
 boost
 boot
 bootear
@@ -582,6 +584,7 @@ configuring
 congresogulmich
 connacionales
 connect
+connected
 connectedmonitor
 consider
 consol
@@ -699,6 +702,7 @@ daniel
 danielitos
 dao
 dapper
+darius
 darkangel
 darkbcd
 darkbug
@@ -905,6 +909,7 @@ engineer
 engineering
 english
 enhanced
+enhancement
 enhancements
 enjoy
 enli
@@ -944,6 +949,7 @@ eureka
 euroges
 europe
 european
+evan
 ever
 everyone
 everything
@@ -996,14 +1002,17 @@ featherstone
 febb
 february
 federico
+fedidb
 fediverse
 fediverso
+fediview
 fedora
 feedtwitter
 feel
 feels
 feisty
 fel
+fep
 fermin
 ferminra
 fersinco
@@ -1042,6 +1051,7 @@ flathub
 flatpak
 flatseal
 flex
+flipboard
 flisol
 floppy
 flowchart
@@ -1057,6 +1067,7 @@ fonapo
 food
 for
 foreshadow
+forgejo
 forget
 forgot
 fork
@@ -1205,6 +1216,7 @@ gnuleo
 gnupg
 gnustep
 gnutls
+gobernanza
 gobject
 golang
 gold
@@ -1216,6 +1228,7 @@ gonzales
 gonzalez
 gonzález
 good
+goodreads
 google
 gooool
 gordoleon
@@ -1461,12 +1474,14 @@ installfest
 institute
 instruction
 integer
+integrations
 intel
 inter
 interface
 interfacing
 international
 interoperabilidad
+interoperables
 interpretation
 intimidante
 intimidation
@@ -1604,6 +1619,7 @@ karnalll
 kate
 katy
 kazaa
+kazemi
 kbytes
 kcoder
 kde
@@ -1677,6 +1693,7 @@ least
 ledger
 leftof
 legacy
+lemmy
 lemus
 lennart
 lenny
@@ -1869,6 +1886,7 @@ massachusetts
 master
 masterloki
 mastermind
+mastoanalytics
 mastodon
 matarile
 mathematical
@@ -1921,6 +1939,7 @@ mhz
 michael
 michoacán
 microarquitectónico
+microblogging
 microsoft
 microsoftianos
 midi
@@ -2109,6 +2128,7 @@ oath
 obfuscation
 object
 objects
+observer
 ocultable
 odbc
 odracirredwolf
@@ -2244,6 +2264,7 @@ pcmcia
 pctel
 pdf
 pearpc
+peertube
 peladito
 pelican
 penguin
@@ -2272,6 +2293,7 @@ picture
 pictures
 piece
 piedritas
+piefed
 pikoro
 ping
 pingus
@@ -2280,11 +2302,13 @@ pinvoke
 pipelight
 pixar
 pixeles
+pixelfed
 pixelview
 pixie
 pizarrones
 pizarrón
 place
+places
 planeación
 platform
 platforms
@@ -2302,6 +2326,7 @@ pluggableauthentication
 plugin
 plugins
 plugs
+plume
 png
 podcast
 podman
@@ -2379,6 +2404,7 @@ process
 processor
 prodigious
 prodigy
+prodromou
 product
 profesionistas
 professional
@@ -2398,9 +2424,11 @@ prompt
 promt
 proof
 properly
+proposals
 propositivo
 prosecutorial
 protection
+protocol
 prototipado
 proxima
 proxy
@@ -2484,6 +2512,7 @@ receiving
 recent
 recently
 reclutadores
+recommendation
 recompilarlo
 recordarles
 reddit
@@ -2688,6 +2717,7 @@ sgeadmin
 shadow
 shanley
 shapper
+share
 shared
 sharepoint
 sharp
@@ -2937,6 +2967,7 @@ tcpflags
 team
 tec
 tech
+techcrunch
 technologist
 technology
 tecno
@@ -2978,6 +3009,7 @@ thomas
 thompson
 thorough
 thought
+threads
 three
 thriller
 through
@@ -3044,6 +3076,7 @@ tsutomu
 tublog
 tulsi
 tulsipop
+tumblr
 tuner
 turing
 turning
@@ -3108,6 +3141,7 @@ urls
 urpme
 urpmi
 usabilidad
+usage
 usb
 used
 usenet
@@ -3261,6 +3295,7 @@ wireless
 wirth
 with
 without
+wmtips
 wolf
 wolid
 wolvic
@@ -3278,6 +3313,7 @@ wrapped
 wrapper
 wrappers
 write
+writefreely
 writer
 written
 wtf
