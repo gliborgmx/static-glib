@@ -74,12 +74,23 @@ El sitio generado se guarda en el directorio `public/`.
 
 - **Markdown:** `pymarkdown scan content/`
 - **Ortografía:** `python -m pyspelling -n ortografia`
-- **Pre‑commit hooks:** `pre-commit run --all-files`
+- **Pre-commit hooks:** `pre-commit run --all-files`
 
 Los hooks de pre‑commit ya están configurados para ejecutarse automáticamente en
 cada commit. Incluyen corrección de espacios finales, finales de línea,
 ortografía, validación de Markdown y validación/formateo de código Python (ruff
 y pylint).
+
+#### Ortografía
+
+Las palabras no encontradas en el diccionario se añaden al final del archivo
+`es-local.dic`, que es un listado personal de palabras. Una vez añadidas, el
+archivo se ordena y se actualiza automáticamente con el script
+`scripts/corregir_diccionario.py`:
+
+```bash
+uv run scripts/corregir_diccionario.py
+```
 
 ### Calidad de código Python
 
