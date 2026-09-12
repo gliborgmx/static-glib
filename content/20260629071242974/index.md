@@ -15,7 +15,7 @@ cambio fue [John Carmack](https://es.wikipedia.org/wiki/John_Carmack), el más
 joven del equipo, con apenas 21 años.
 
 <!-- pyml disable-next-line line-length-->
-{{ figure(src="JohnCarmack.jpg" alt="John Carmack" caption="John Carmack en el GDC del 2010 <https://commons.wikimedia.org/wiki/File:John_Carmack_GDC_2010.jpg>")}}
+{{ <figure page src="JohnCarmack.jpg" alt="John Carmack" caption="John Carmack en el GDC del 2010 <https://commons.wikimedia.org/wiki/File:John_Carmack_GDC_2010.jpg>" /> }}
 
 Carmack nació el 20 de agosto de 1970 en [Shawnee
 Mission](https://en.wikipedia.org/wiki/Shawnee_Mission,_Kansas),

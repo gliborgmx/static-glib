@@ -1,19 +1,18 @@
 {% extends "index.html" %}
-{% import "macros/post.html" as post_macros %}
 
 {% block title %}{{config.title}} - {{page.title}}{% endblock title %}
 
 {% block content %}
 
 <article>
-    {{ post_macros::title(page=page) }}
+    {{ <title page /> }}
     <section>
         {{ page.content | safe }}
     </section>
 
     {% block page_before_footer %}
     <script data-isso-lang="es" data-isso="https://glib.org.mx/comments" src="https://glib.org.mx/comments/js/embed.min.js"></script>
-    <section id="isso-thread" data-isso-id="{{ page.path | trim_end_matches(pat='/') | safe }}">
+    <section id="isso-thread" data-isso-id="{{ page.path | trim_end(pat='/') | safe }}">
         <noscript>Se require Javascript activado para desplegar los comentarios.</noscript>
     </section>
     {% endblock page_before_footer %}
@@ -34,7 +33,7 @@
                 </li>
                 {% endif %}
                 <li>
-                    {{ edit_macros::edit(page=page) }}
+                    {{ <edit page /> }}
                 </li>
                 {% if page.higher %}
                 <li>

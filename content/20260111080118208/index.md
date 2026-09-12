@@ -27,8 +27,8 @@ procesamiento: el tiempo que tarda una operación, el consumo de energía, el
 sonido del ventilador, o, como en los siguientes ejemplos, el estado de las
 cachés del CPU.
 
-{{ figure(src="meltdown_spectre.png" alt="Meltdown & Spectre" caption="Captura de
-pantalla de <https://spectreattack.com/>") }}
+<!-- pyml disable-next-line line-length, no-inline-html-->
+{{ <figure page src="meltdown_spectre.png" alt="Meltdown & Spectre" caption="Captura de pantalla de <https://spectreattack.com/>" /> }}
 
 ## Ejecución Especulativa
 

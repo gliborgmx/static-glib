@@ -17,7 +17,7 @@ intercambiar publicaciones como si pertenecieran al mismo sitio? La respuesta es
 *ActivityPub*.
 
 <!-- pyml disable-next-line line-length-->
-{{ figure(src="activitypub.png" alt="ActivityPub" caption="ActivityPub. Hecho con <https://chat.qwen.ai/>")}}
+{{ <figure page src="activitypub.png" alt="ActivityPub" caption="ActivityPub. Hecho con <https://chat.qwen.ai/>" /> }}
 
 ## ¿Qué es ActivityPub?
 

@@ -21,7 +21,7 @@ inputs:
   zola-version:
     description: 'Versión de Zola a usar'
     required: false
-    default: 'v0.22.1'
+    default: 'v0.23.5'
   install-system-packages:
     description: 'Paquetes adicionales del sistema a instalar (separados por espacios)'
     required: false

@@ -45,7 +45,7 @@ un juego de palabras llamado *Horsle*, una parodia de Wordle donde la palabra
 siempre es «horse».
 
 <!-- pyml disable-next-line line-length-->
-{{ figure(src="x86CSS.png" alt="Una hoja de estilo CSS transformándose en transistores de un chip x86" caption="CSS convertido en CPU") }}
+{{ <figure page src="x86CSS.png" alt="Una hoja de estilo CSS transformándose en transistores de un chip x86" caption="CSS convertido en CPU" /> }}
 
 ## ¿Cómo funciona sin JavaScript?
 

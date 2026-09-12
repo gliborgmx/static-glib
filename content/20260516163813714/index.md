@@ -25,7 +25,7 @@ influyentes en la seguridad informática moderna y un firme defensor del softwar
 de dominio público.
 
 <!-- pyml disable-next-line line-length-->
-{{ figure(src="djb.jpg" alt="Daniel J. Bernstein" caption="Daniel J. Bernstein ([origen](https://www.youtube.com/watch?v=1svxNxG6hHc))")}}
+{{ <figure page src="djb.jpg" alt="Daniel J. Bernstein" caption="Daniel J. Bernstein ([origen](https://www.youtube.com/watch?v=1svxNxG6hHc))" /> }}
 
 Bernstein mostró desde temprana edad un talento excepcional para las
 matemáticas. Se graduó de la preparatoria Bellport en Long Island a los 15 años,

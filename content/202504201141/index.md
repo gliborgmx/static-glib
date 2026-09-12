@@ -35,7 +35,7 @@ los más rezagados, con únicamente *planes* para integrar la educación en
 ciencias computacionales en la currícula obligatoria:
 
 <!-- pyml disable-next-line line-length, no-inline-html-->
-{{ figure(src="fig_9e.png" alt="Availability of CS education by country, 2024" caption="Availability of CS education by country, 2024 ([origen](https://hai.stanford.edu/ai-index/2025-ai-index-report))") }}
+{{ <figure page src="fig_9e.png" alt="Availability of CS education by country, 2024" caption="Availability of CS education by country, 2024 ([origen](https://hai.stanford.edu/ai-index/2025-ai-index-report))" /> }}
 
 El resto de reporte, que es enorme, con 450 páginas, es bastante aleccionador.
 Pero solamente hojeando el primer capítulo, sobre Investigación y Desarrollo, es

@@ -1,3 +1,4 @@
+{% component mermaid() %}
 {% if nth == 1 %}
 <script type="module">
  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
@@ -7,3 +8,4 @@
 <pre class="mermaid">
   {{ body }}
 </pre>
+{% endcomponent mermaid %}

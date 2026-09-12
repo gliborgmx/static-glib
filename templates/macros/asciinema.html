@@ -1,3 +1,4 @@
+{% component asciinema(file: string, id: string) %}
 {% if nth == 1 %}
 <script type="text/javascript" src="{{ get_url(path='asciinema-player.min.js') }}" data-speed="2" data-theme="solarized-dark"></script>
 {% endif %}
@@ -10,7 +11,7 @@
 
      document.head.appendChild(link);
 
-     AsciinemaPlayer.create('{{ "/" ~ page.colocated_path ~ file | safe }}',
+     AsciinemaPlayer.create('{{ get_url(path=file | safe) }}',
                             document.getElementById('{{ id }}'), {
                                 speed: 1.5,
                                 idleTimeLimit: 0.5,
@@ -20,3 +21,4 @@
      });
     </script>
 </div>
+{% endcomponent asciinema %}

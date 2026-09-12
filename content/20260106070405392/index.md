@@ -16,7 +16,8 @@ suficiente. Mi postura es la contraria, y en este texto intentaré explicarla.
 Aunque [ya se ha hablado de contenedores aquí](@/20211022210304340.md), creo que
 vale la pena reiterar y profundizar un poco.
 
-{{ figure(src="containers.jpg" alt="Contenedores" caption="Contenedores") }}
+<!-- pyml disable-next-line line-length-->
+{{ <figure page src="containers.jpg" alt="Contenedores" caption="Contenedores" /> }}
 
 Normalmente es suficiente saber instalar y configurar Apache, un servidor SMTP,
 una base de datos como PostgreSQL, etc. Se suele asumir que un servidor es una

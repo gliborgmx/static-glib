@@ -21,7 +21,7 @@
                 </a>
                 <br/>
                 <time datetime="{{ page.date }}" itemprop="datePublished">
-                    {{ page.date | date(format="%A, %d %B %Y @ %H:%M %z", locale="es_MX") }}
+                    {{ page.date | date(format="EEEE, d MMMM yyyy @ HH:mm ZZZZ", locale="es_MX") }}
                 </time>
                 <address itemscope itemtype="http://schema.org/Person">
                     <a href="{{ get_taxonomy_url(kind="autor", name=page.taxonomies.autor[0], trailing_slash=false) }}">

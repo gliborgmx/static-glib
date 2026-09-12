@@ -17,7 +17,7 @@ expresando que en dicha modificación intervino un agente de programación. Pero
 ## ¿Qué es un coding agent?
 
 <!-- pyml disable-next-line line-length-->
-{{ figure(src="coding-agents.png" alt="Coding Agents" caption="Agentes de programación. Hecho con <https://chat.qwen.ai/>")}}
+{{ <figure page src="coding-agents.png" alt="Coding Agents" caption="Agentes de programación. Hecho con <https://chat.qwen.ai/>" /> }}
 
 Un *coding agent* o agente de programación es un programa que utiliza un [modelo
 de lenguaje](https://es.wikipedia.org/wiki/Modelo_de_lenguaje_grande) (LLM) para
