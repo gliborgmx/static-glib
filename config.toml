@@ -20,8 +20,6 @@ build_search_index = true
 
 [markdown.highlighting]
 theme = "solarized-light"
-smart_punctuation = true
-render_emoji = true
 
 [slugify]
 paths = "safe"

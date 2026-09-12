@@ -68,7 +68,7 @@ publicados en el sitio web hasta que sean integrados en el sitio original. Es
 decir, puedes jugar con ella cuanto quieras.
 
 <!-- pyml disable-next-line line-length-->
-{{ figure(src="fork.png" alt="Captura de pantalla para copiar el repositorio original") }}
+{{ <figure page src="fork.png" alt="Captura de pantalla para copiar el repositorio original" /> }}
 
 Recuerda que tu copia personal tendrá la dirección tendrá esta forma (reemplaza
 `<usuario>` por tu nombre de usuario en GitHub):
@@ -92,11 +92,11 @@ hacer modificaciones localmente.
 Para conocer la dirección SSH de tu repositorio has *click* el botón de *code*.
 
 <!-- pyml disable-next-line line-length-->
-{{ figure(src="clone.png", alt="Captura de pantalla con el URL para usar Git con SSH") }}
+{{ <figure page src="clone.png" alt="Captura de pantalla con el URL para usar Git con SSH" /> }}
 
 A continuación una videografía sobre cómo clonar localmente tu repositorio:
 
-{{ asciinema(file="clone.cast", id="clone") }}
+{{ <asciinema file="clone.cast" id="clone" /> }}
 
 ## Activar pre-commit (opcional)
 
@@ -153,7 +153,7 @@ Zola](https://www.getzola.org/documentation/content/page/).
 
 La siguiente videografía muestra una forma de hacerlo con `vim`:
 
-{{ asciinema(file="edit.cast", id="edit") }}
+{{ <asciinema file="edit.cast" id="edit" /> }}
 
 ## Integrar y empujar tus cambios
 
@@ -161,7 +161,7 @@ Ya que tenemos el archivo con el texto a contribuir, es momento de añadir el
 archivo y registrar los cambios en el repositorio local. Finalmente empujamos el
 cambio a nuestro repositorio en GitHub.
 
-{{ asciinema(file="push.cast", id="push") }}
+{{ <asciinema file="push.cast" id="push" /> }}
 
 ## Abrir pull request
 
@@ -170,10 +170,10 @@ nuestros cambios en el sitio web a través de un *pull request*. Para esto vamos
 a la página de GitHub donde está nuestro *fork* del repositorio.
 
 <!-- pyml disable-next-line line-length-->
-{{ figure(src="pull.png", alt="Captura de pantalla para crear un pull request") }}
+{{ <figure page src="pull.png" alt="Captura de pantalla para crear un pull request" /> }}
 
 <!-- pyml disable-next-line line-length-->
-{{ figure(src="pull-2.png", alt="Captura de pantalla para confirmar el pull request") }}
+{{ <figure page src="pull-2.png" alt="Captura de pantalla para confirmar el pull request" /> }}
 
 Ahora se ejecutarán todas las validaciones, tanto automáticas, como la
 ortografía y el formato Markdown, como las manuales por parte de los

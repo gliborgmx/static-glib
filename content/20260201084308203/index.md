@@ -13,7 +13,7 @@ tocar el código fuente del sistema operativo. Pues esto es posible con **eBPF**
 (Extended Berkeley Packet Filter).
 
 <!-- pyml disable-next-line line-length -->
-{{ figure(src="EBPF_logo.png" alt="eBPF logo" caption="Logo del proyecto eBPF [*](https://commons.wikimedia.org/wiki/File:EBPF_logo.png)") }}
+{{ <figure page src="EBPF_logo.png" alt="eBPF logo" caption="Logo del proyecto eBPF [*](https://commons.wikimedia.org/wiki/File:EBPF_logo.png)" /> }}
 
 ### De filtrar paquetes de red a programar el kernel
 
@@ -108,7 +108,7 @@ histograma de todas las llamadas al sistema que tu máquina está realizando (co
 Este pequeño script es una potente herramienta de observabilidad, dándote
 visibilidad instantánea sobre la actividad del kernel.
 
-{{ asciinema(file="ebpf.cast", id="clone") }}
+{{ <asciinema file="ebpf.cast" id="clone" /> }}
 
 ### Usos comunes del eBPF
 

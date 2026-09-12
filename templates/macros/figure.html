@@ -1,0 +1,15 @@
+{% component figure(page, src, position = "center", alt = "", caption = null, caption_position = "center") %}
+{%- if src is starting_with(pat="http")        -%}
+{%-    set img_src = src                       -%}
+{%- else                                       -%}
+{%-    set img_src = get_url(path=page.colocated_path ~ src | safe, trailing_slash=false) -%}
+{%- endif                                      -%}
+<figure class="{{ position }}" >
+    <img src="{{ img_src }}" alt="{{ alt }}" />
+{%- if caption -%}
+    <figcaption class="{{ caption_position }}">
+        {{- caption | markdown() | safe -}}
+    </figcaption>
+{%- endif -%}
+</figure>
+{% endcomponent figure %}

@@ -26,7 +26,8 @@ chimenea, y cocinábamos la cena, una notificación de Facebook de
 usa Facebook?). Me había etiquetado en la triste noticia del fallecimiento de
 Luis Rey Lara.
 
-{{ figure(src="luis_rey_lara.jpg" alt="Luis Rey Lara." caption="Luis Rey Lara") }}
+<!-- pyml disable-next-line line-length-->
+{{ <figure page src="luis_rey_lara.jpg" alt="Luis Rey Lara." caption="Luis Rey Lara" /> }}
 
 De pronto todos esos recuerdos se me agolparon. Bebeboy, como se hacía llamar en
 aquellos días, ha muerto. Con la ayuda de este sitio me puse a revisar [sus
