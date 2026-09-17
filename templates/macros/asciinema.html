@@ -1,5 +1,5 @@
-{% component asciinema(file: string, id: string) %}
-{% if nth == 1 %}
+{% component asciinema(file: string, id: string, first: bool = true) %}
+{% if first %}
 <script type="text/javascript" src="{{ get_url(path='asciinema-player.min.js') }}" data-speed="2" data-theme="solarized-dark"></script>
 {% endif %}
 <div id="{{ id }}">
@@ -8,9 +8,7 @@
      link.type = 'text/css';
      link.rel = 'stylesheet';
      link.href = "{{ get_url(path='asciinema-player.css') | safe }}";
-
      document.head.appendChild(link);
-
      AsciinemaPlayer.create('{{ get_url(path=file | safe) }}',
                             document.getElementById('{{ id }}'), {
                                 speed: 1.5,
