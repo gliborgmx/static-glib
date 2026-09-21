@@ -96,7 +96,7 @@ Para conocer la dirección SSH de tu repositorio has *click* el botón de *code*
 
 A continuación una videografía sobre cómo clonar localmente tu repositorio:
 
-{{ <asciinema file="clone.cast" id="clone" /> }}
+{{ <asciinema page file="clone.cast" id="clone" /> }}
 
 ## Activar pre-commit (opcional)
 
@@ -153,7 +153,7 @@ Zola](https://www.getzola.org/documentation/content/page/).
 
 La siguiente videografía muestra una forma de hacerlo con `vim`:
 
-{{ <asciinema file="edit.cast" id="edit" first={false} /> }}
+{{ <asciinema page file="edit.cast" id="edit" first={false} /> }}
 
 ## Integrar y empujar tus cambios
 
@@ -161,7 +161,7 @@ Ya que tenemos el archivo con el texto a contribuir, es momento de añadir el
 archivo y registrar los cambios en el repositorio local. Finalmente empujamos el
 cambio a nuestro repositorio en GitHub.
 
-{{ <asciinema file="push.cast" id="push" first={false} /> }}
+{{ <asciinema page file="push.cast" id="push" first={false} /> }}
 
 ## Abrir pull request
 

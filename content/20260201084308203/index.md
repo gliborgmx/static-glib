@@ -108,7 +108,7 @@ histograma de todas las llamadas al sistema que tu máquina está realizando (co
 Este pequeño script es una potente herramienta de observabilidad, dándote
 visibilidad instantánea sobre la actividad del kernel.
 
-{{ <asciinema file="ebpf.cast" id="clone" /> }}
+{{ <asciinema page file="ebpf.cast" id="clone" /> }}
 
 ### Usos comunes del eBPF
 
