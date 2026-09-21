@@ -1,4 +1,4 @@
-{% component asciinema(file: string, id: string, first: bool = true) %}
+{% component asciinema(page, file: string, id: string, first: bool = true) %}
 {% if first %}
 <script type="text/javascript" src="{{ get_url(path='asciinema-player.min.js') }}" data-speed="2" data-theme="solarized-dark"></script>
 {% endif %}
@@ -9,7 +9,7 @@
      link.rel = 'stylesheet';
      link.href = "{{ get_url(path='asciinema-player.css') | safe }}";
      document.head.appendChild(link);
-     AsciinemaPlayer.create('{{ get_url(path=file | safe) }}',
+     AsciinemaPlayer.create('{{ get_url(path=page.colocated_path ~ file | safe) }}',
                             document.getElementById('{{ id }}'), {
                                 speed: 1.5,
                                 idleTimeLimit: 0.5,
