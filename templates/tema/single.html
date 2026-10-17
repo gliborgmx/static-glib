@@ -7,7 +7,9 @@
         <img  alt="{{ term.name }}" src="{{ get_url(path='/topics/' ~ name ~ '.png', trailing_slash=false) }}" />
         {{ term.name | capitalize }} ({{ term.page_count }})
     </h2>
-    {% for year, pages in term.pages | sort(attribute="year") | reverse | group_by(attribute="year") %}
+  {% set grupos = term.pages | group_by(attribute="year") %}
+  {% for year in grupos | keys | sort | reverse %}
+    {% set pages = grupos[year] %}
     <h3>
         {{ year }}
     </h3>
