@@ -15,7 +15,7 @@ tocar el código fuente del sistema operativo. Pues esto es posible con **eBPF**
 <!-- pyml disable-next-line line-length -->
 {{ <figure page src="EBPF_logo.png" alt="eBPF logo" caption="Logo del proyecto eBPF [*](https://commons.wikimedia.org/wiki/File:EBPF_logo.png)" /> }}
 
-### De filtrar paquetes de red a programar el kernel
+## De filtrar paquetes de red a programar el kernel
 
 Todo comenzó en 1992 con el BPF original (Berkeley Packet Filter), creado por
 Steven McCanne y Van Jacobson para filtrar eficientemente paquetes de red en
@@ -198,10 +198,10 @@ la mejor manera de experimentar su magia sin ahogarse en la complejidad.
     y profunda.
 * **Herramientas y Ejemplos:**
   * [BPF Compiler Collection (BCC)](https://github.com/iovisor/bcc) - Conjunto
-     de herramientas y ejemplos listos para usar.
+    de herramientas y ejemplos listos para usar.
   * [bpftrace (Repositorio)](https://github.com/iovisor/bpftrace) - Lenguaje de
     alto nivel para eBPF. Su [Guía de
-     referencia](https://github.com/iovisor/bpftrace/blob/master/docs/reference_guide.md)
+    referencia](https://github.com/iovisor/bpftrace/blob/master/docs/reference_guide.md)
     es oro molido.
 * **Aprendizaje Práctico:**
   * [Brendan Gregg's Blog](https://www.brendangregg.com/ebpf.html) - La fuente

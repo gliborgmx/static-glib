@@ -42,8 +42,8 @@ soportar ASP.NET 1.1 Y 2.0 en Apache2.
 
 ligas:
 
-#. <http://wiki.glib.org.mx/index.php/ASP.NET_y_Apache_2>
-#. <http://wiki.glib.org.mx/index.php/Conexi%C3%B3n_con_MySQL_Server>
-#. <http://wiki.glib.org.mx/index.php/Tutorial_de_Instalacion_de_Mono_en_Mac_OS_X>
+1. <http://wiki.glib.org.mx/index.php/ASP.NET_y_Apache_2>
+1. <http://wiki.glib.org.mx/index.php/Conexi%C3%B3n_con_MySQL_Server>
+1. <http://wiki.glib.org.mx/index.php/Tutorial_de_Instalacion_de_Mono_en_Mac_OS_X>
 
 Nos vemos en la próxima reunión ¿cuándo? cuando se proponga.
