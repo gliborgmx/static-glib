@@ -36,7 +36,14 @@
   {% endif %}
 
         <link rel="stylesheet" href="{{ get_url(path='glib.css', trailing_slash=false) }}" />
-        <link rel="shortcut icon" href="{{ get_url(path='favicon.ico', trailing_slash=false) }}" />
+        <link rel="icon" type="image/x-icon" href="{{ get_url(path='favicon.ico', trailing_slash=false) }}" sizes="any" />
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ get_url(path='favicon-16x16.png', trailing_slash=false) }}" />
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ get_url(path='favicon-32x32.png', trailing_slash=false) }}" />
+        <link rel="icon" type="image/png" sizes="48x48" href="{{ get_url(path='favicon-48x48.png', trailing_slash=false) }}" />
+        <link rel="icon" type="image/png" sizes="64x64" href="{{ get_url(path='favicon-64x64.png', trailing_slash=false) }}" />
+        <link rel="icon" type="image/png" sizes="128x128" href="{{ get_url(path='favicon-128x128.png', trailing_slash=false) }}" />
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ get_url(path='apple-touch-icon.png', trailing_slash=false) }}" />
+        <link rel="manifest" href="{{ get_url(path='site.webmanifest', trailing_slash=false) }}" />
         <link type="text/plain" rel="author"  href="{{ get_url(path='humans.txt', trailing_slash=false) }}">
 
         <script type="text/javascript">
