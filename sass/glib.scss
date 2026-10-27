@@ -45,11 +45,11 @@
     }
 
     h1::before {
-        content: url("/logo.png");
+        content: url("/logo.svg");
         display: inline-block;
         margin-right: .2em;
         width: 100px;
-        height: 99px;
+        height: auto;
         vertical-align: middle;
     }
 
