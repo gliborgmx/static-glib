@@ -157,11 +157,11 @@ Ninguna tecnología es una bala de plata, y eBPF tiene sus desafíos:
    puede ser difícil de satisfacer. Programas lógicamente válidos pueden ser
    rechazados si el verificador no puede probar matemáticamente que son seguros,
    lo que puede frustrar a los desarrolladores.
-3. **Fragmentación y Compatibilidad:** Los programas eBPF dependen de estructuras
-   de datos internas del kernel (`kernel headers`). Un cambio en una nueva
-   versión del kernel puede romperlos. La comunidad ha creado prácticas como el
-   **Compile Once - Run Everywhere (CO-RE)** para mitigar esto, pero sigue
-   siendo un punto de atención.
+3. **Fragmentación y Compatibilidad:** Los programas eBPF dependen de
+   estructuras de datos internas del kernel (`kernel headers`). Un cambio en una
+   nueva versión del kernel puede romperlos. La comunidad ha creado prácticas
+   como el **Compile Once - Run Everywhere (CO-RE)** para mitigar esto, pero
+   sigue siendo un punto de atención.
 4. **Seguridad y Mal Uso Potencial:** Aunque el verificador es excelente, no es
    perfecto. En el pasado, se han encontrado vulnerabilidades que permitían
    "escapar" del entorno seguro de eBPF y comprometer el kernel. Además, en
