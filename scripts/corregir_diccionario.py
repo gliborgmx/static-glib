@@ -3,8 +3,10 @@
 
 Realiza las siguientes operaciones:
 1. Conserva la primera línea (header)
-2. Ordena alfabéticamente case-insensitive
-3. Elimina duplicados case-insensitive
+2. Ordena alfabéticamente sin distinguir mayúsculas
+3. Elimina duplicados exactos, conservando la mayúsculas/minúsculas de cada
+   palabra (hunspell hace coincidencia exacta de casing en el diccionario
+   personal: 'GLiB', 'GLib' y 'glib' son palabras distintas)
 4. Busca cada palabra en content/**.md y elimina las no usadas
 5. Actualiza el header con el conteo final de palabras
 """
@@ -85,23 +87,22 @@ def leer_diccionario(ruta: Path) -> tuple[str, list[str]]:
     return header, palabras
 
 
-def deduplicar_case_insensitive(palabras: list[str]) -> list[str]:
-    """Elimina duplicados case-insensitive y convierte a minúsculas.
+def deduplicar_exacto(palabras: list[str]) -> list[str]:
+    """Elimina duplicados exactos, conservando la mayúsculas/minúsculas.
 
     Args:
         palabras: Lista de palabras del diccionario.
 
     Returns:
-        Lista sin duplicados case-insensitive, todas en minúsculas.
+        Lista sin duplicados exactos, con la casing original intacta.
     """
     vistos: set[str] = set()
     resultado: list[str] = []
 
     for palabra in palabras:
-        clave = palabra.lower()
-        if clave not in vistos:
-            vistos.add(clave)
-            resultado.append(clave)
+        if palabra not in vistos:
+            vistos.add(palabra)
+            resultado.append(palabra)
 
     return resultado
 
@@ -134,7 +135,10 @@ def filtrar_palabras_usadas(palabras: list[str], palabras_md: set[str]) -> list[
         if palabra.replace("-", "").isalnum():
             # Solo filtrar palabras de 3+ caracteres para evitar falsos
             # positivos con subcadenas muy cortas ('a', 'in', 'er', etc.)
-            if len(palabra) >= 3 and not any(palabra in token for token in palabras_md):
+            palabra_en_min = palabra.lower()
+            if len(palabra) >= 3 and not any(
+                palabra_en_min in token for token in palabras_md
+            ):
                 continue
             resultado.append(palabra)
             continue
@@ -176,9 +180,9 @@ def main() -> None:
     _, palabras = leer_diccionario(DICT_PATH)
     print(f"  Palabras leídas: {len(palabras)}")
 
-    # 2. Deduplicar case-insensitive (y convertir a minúsculas)
-    print("Deduplicando (y pasando a minúsculas)...")
-    palabras_sin_dupes = deduplicar_case_insensitive(palabras)
+    # 2. Deduplicar exactos (conservando mayúsculas/minúsculas)
+    print("Deduplicando...")
+    palabras_sin_dupes = deduplicar_exacto(palabras)
     duplicados = len(palabras) - len(palabras_sin_dupes)
     if duplicados:
         print(f"  Eliminados {duplicados} duplicados")
