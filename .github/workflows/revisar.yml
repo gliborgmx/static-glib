@@ -20,7 +20,7 @@ jobs:
           setup-python: true
           setup-zola: true
           setup-locale: true
-          install-system-packages: 'aspell aspell-es'
+          install-system-packages: 'hunspell hunspell-es hunspell-en-us'
 
       - name: Revisar calidad de código Python
         run: |
