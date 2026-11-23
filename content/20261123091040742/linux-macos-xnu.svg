@@ -1,0 +1,221 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Linux y macOS compartiendo una misma pantalla</title>
+  <desc id="desc">Pantalla dividida: a la izquierda, una terminal de Linux ejecuta insmod xnu.ko; a la derecha, el Finder y el Dock de macOS.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#172033"/>
+      <stop offset="1" stop-color="#080d17"/>
+    </linearGradient>
+    <linearGradient id="linuxWallpaper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#182440"/>
+      <stop offset="0.55" stop-color="#10566b"/>
+      <stop offset="1" stop-color="#19a292"/>
+    </linearGradient>
+    <linearGradient id="macWallpaper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4a32a5"/>
+      <stop offset="0.45" stop-color="#ba4caa"/>
+      <stop offset="1" stop-color="#ff9b67"/>
+    </linearGradient>
+    <linearGradient id="screenGlass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.11"/>
+      <stop offset="0.35" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8590a2"/>
+      <stop offset="0.5" stop-color="#d5dbe5"/>
+      <stop offset="1" stop-color="#7e899c"/>
+    </linearGradient>
+    <filter id="monitorShadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="20" stdDeviation="24" flood-color="#000000" flood-opacity="0.55"/>
+    </filter>
+    <filter id="windowShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+    <clipPath id="screenClip">
+      <rect x="66" y="58" width="1468" height="742" rx="8"/>
+    </clipPath>
+    <clipPath id="leftClip">
+      <path d="M66 58H800V800H66Z"/>
+    </clipPath>
+    <clipPath id="rightClip">
+      <path d="M800 58H1534V800H800Z"/>
+    </clipPath>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#background)"/>
+  <ellipse cx="800" cy="865" rx="420" ry="24" fill="#000000" opacity="0.35"/>
+
+  <g>
+    <rect x="40" y="32" width="1520" height="800" rx="30" fill="#10141d" stroke="#3f4859" stroke-width="3"/>
+    <g clip-path="url(#screenClip)">
+      <g clip-path="url(#leftClip)">
+        <rect x="66" y="58" width="734" height="742" fill="url(#linuxWallpaper)"/>
+        <circle cx="260" cy="710" r="310" fill="#0a273b" opacity="0.28"/>
+        <circle cx="680" cy="280" r="330" fill="#46d7bd" opacity="0.08"/>
+        <path d="M66 630L270 420L410 555L610 330L800 505V800H66Z" fill="#071c30" opacity="0.23"/>
+        <path d="M66 700L240 530L405 675L590 485L800 665V800H66Z" fill="#04111e" opacity="0.22"/>
+
+        <rect x="66" y="58" width="734" height="42" fill="#111820" opacity="0.94"/>
+        <text x="88" y="85" fill="#f2f5f8" font-family="sans-serif" font-size="19" font-weight="600">Actividades</text>
+        <text x="414" y="85" fill="#e8edf3" font-family="sans-serif" font-size="17" text-anchor="middle">23 nov  18:42</text>
+        <path d="M722 75h18m-14-7v14m7-14v14M749 70l8 8-8 8m14-16v16m10-16v16" fill="none" stroke="#e8edf3" stroke-width="2" stroke-linecap="round"/>
+
+        <g>
+          <rect x="118" y="164" width="630" height="420" rx="12" fill="#111720"/>
+          <rect x="118" y="164" width="630" height="45" rx="12" fill="#293342"/>
+          <path d="M118 197H748V209H118Z" fill="#293342"/>
+          <circle cx="142" cy="187" r="7" fill="#f46c62"/>
+          <circle cx="165" cy="187" r="7" fill="#eeb34c"/>
+          <circle cx="188" cy="187" r="7" fill="#5fc856"/>
+          <text x="433" y="193" fill="#dce4ee" font-family="sans-serif" font-size="18" text-anchor="middle">usuario@linux: ~ — Terminal</text>
+          <text x="146" y="249" fill="#76e2a6" font-family="monospace" font-size="22">usuario@linux</text>
+          <text x="318" y="249" fill="#e8edf3" font-family="monospace" font-size="22">:</text>
+          <text x="331" y="249" fill="#80bfff" font-family="monospace" font-size="22">~</text>
+          <text x="344" y="249" fill="#e8edf3" font-family="monospace" font-size="22">$</text>
+          <text x="368" y="249" fill="#f4f6fa" font-family="monospace" font-size="22">ls</text>
+          <text x="146" y="285" fill="#74b9ff" font-family="monospace" font-size="21">Documentos  Descargas  xnu.ko</text>
+          <text x="146" y="341" fill="#76e2a6" font-family="monospace" font-size="22">usuario@linux</text>
+          <text x="318" y="341" fill="#e8edf3" font-family="monospace" font-size="22">:</text>
+          <text x="331" y="341" fill="#80bfff" font-family="monospace" font-size="22">~</text>
+          <text x="344" y="341" fill="#e8edf3" font-family="monospace" font-size="22">$</text>
+          <text x="368" y="341" fill="#ffffff" font-family="monospace" font-size="22" font-weight="700">insmod xnu.ko</text>
+          <rect x="607" y="320" width="12" height="26" fill="#d7f9e7"/>
+          <text x="146" y="538" fill="#788798" font-family="monospace" font-size="17">Cargando el módulo del núcleo XNU…</text>
+        </g>
+
+        <g transform="translate(655 668)">
+          <ellipse cx="0" cy="55" rx="74" ry="18" fill="#00111c" opacity="0.25"/>
+          <ellipse cx="0" cy="0" rx="47" ry="63" fill="#121820"/>
+          <ellipse cx="0" cy="10" rx="32" ry="45" fill="#f4f2e9"/>
+          <circle cx="-17" cy="-30" r="15" fill="#ffffff"/>
+          <circle cx="17" cy="-30" r="15" fill="#ffffff"/>
+          <circle cx="-14" cy="-29" r="5" fill="#17202b"/>
+          <circle cx="14" cy="-29" r="5" fill="#17202b"/>
+          <path d="M-17-15L0-4L17-15L0-25Z" fill="#f3a933"/>
+          <path d="M-28 58L-58 72H-7ZM28 58L58 72H7Z" fill="#efa62e"/>
+        </g>
+
+        <g>
+          <rect x="84" y="644" width="58" height="58" rx="12" fill="#223142" stroke="#6ecabc" stroke-opacity="0.45"/>
+          <path d="M101 686v-25l12-9 12 9v25l-12 8Z" fill="none" stroke="#7ce3cd" stroke-width="3"/>
+          <rect x="84" y="718" width="58" height="58" rx="12" fill="#223142" stroke="#6ecabc" stroke-opacity="0.45"/>
+          <path d="M99 734h28v28H99Zm6-7v7m16-7v7m-22 6h28m-28 8h28" fill="none" stroke="#89bfff" stroke-width="3"/>
+        </g>
+      </g>
+
+      <g clip-path="url(#rightClip)">
+        <rect x="800" y="58" width="734" height="742" fill="url(#macWallpaper)"/>
+        <path d="M752 720C960 420 1090 758 1285 438C1390 272 1510 322 1580 160V850H760Z" fill="#ff7b89" opacity="0.43"/>
+        <path d="M748 790C990 532 1160 828 1344 540C1444 384 1538 454 1580 350V850H748Z" fill="#6b44cf" opacity="0.48"/>
+        <path d="M890 64C1045 242 1190 135 1320 260C1444 380 1510 255 1570 260V58H890Z" fill="#4ac3e8" opacity="0.22"/>
+
+        <rect x="800" y="58" width="734" height="38" fill="#f7f4fc" opacity="0.72"/>
+        <text x="824" y="83" fill="#1c1a22" font-family="sans-serif" font-size="20" font-weight="700">●</text>
+        <text x="852" y="83" fill="#1c1a22" font-family="sans-serif" font-size="17" font-weight="700">Finder</text>
+        <text x="921" y="83" fill="#1c1a22" font-family="sans-serif" font-size="16">Archivo</text>
+        <text x="985" y="83" fill="#1c1a22" font-family="sans-serif" font-size="16">Edición</text>
+        <text x="1053" y="83" fill="#1c1a22" font-family="sans-serif" font-size="16">Visualización</text>
+        <text x="1470" y="83" fill="#1c1a22" font-family="sans-serif" font-size="16" text-anchor="end">18:42</text>
+        <path d="M1485 73h20m-17 5h14m-10 5h6" stroke="#1c1a22" stroke-width="2" stroke-linecap="round"/>
+
+        <g>
+          <rect x="872" y="141" width="570" height="448" rx="13" fill="#f5f5f7"/>
+          <rect x="872" y="141" width="570" height="49" rx="13" fill="#e9e7ed"/>
+          <path d="M872 177H1442V190H872Z" fill="#e9e7ed"/>
+          <circle cx="898" cy="166" r="7" fill="#ff5f57"/>
+          <circle cx="920" cy="166" r="7" fill="#febc2e"/>
+          <circle cx="942" cy="166" r="7" fill="#28c840"/>
+          <path d="M999 158l8 8-8 8m28-16l-8 8 8 8" fill="none" stroke="#8b8992" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="1080" y="152" width="205" height="29" rx="7" fill="#d9d7df"/>
+          <text x="1182" y="172" fill="#55515f" font-family="sans-serif" font-size="16" text-anchor="middle">Documentos</text>
+          <circle cx="1407" cy="166" r="10" fill="none" stroke="#86818f" stroke-width="2"/>
+          <path d="M1415 174l7 7" stroke="#86818f" stroke-width="2" stroke-linecap="round"/>
+
+          <rect x="872" y="190" width="156" height="399" fill="#e7e5ec" opacity="0.94"/>
+          <text x="890" y="221" fill="#8b8792" font-family="sans-serif" font-size="13" font-weight="700">FAVORITOS</text>
+          <rect x="882" y="234" width="136" height="31" rx="6" fill="#cdcbda"/>
+          <circle cx="899" cy="249" r="8" fill="#6585db"/>
+          <text x="916" y="255" fill="#37333e" font-family="sans-serif" font-size="15">AirDrop</text>
+          <path d="M891 280h16v11h-16Zm3-6h10v6h-10Z" fill="#6585db"/>
+          <text x="916" y="288" fill="#37333e" font-family="sans-serif" font-size="15">Documentos</text>
+          <path d="M891 309h16v13h-16Zm0-6h9l3 4h4v4h-16Z" fill="#6585db"/>
+          <text x="916" y="320" fill="#37333e" font-family="sans-serif" font-size="15">Descargas</text>
+          <circle cx="899" cy="349" r="8" fill="#8e64c5"/>
+          <text x="916" y="355" fill="#37333e" font-family="sans-serif" font-size="15">Aplicaciones</text>
+          <text x="890" y="400" fill="#8b8792" font-family="sans-serif" font-size="13" font-weight="700">UBICACIONES</text>
+          <circle cx="899" cy="430" r="8" fill="#8b96a8"/>
+          <text x="916" y="436" fill="#55515f" font-family="sans-serif" font-size="15">iCloud Drive</text>
+
+          <g transform="translate(1070 220)">
+            <path d="M0 16Q0 8 8 8H30L40 0H82Q90 0 90 8V62Q90 70 82 70H8Q0 70 0 62Z" fill="#69b8f6"/>
+            <path d="M0 24H90V62Q90 70 82 70H8Q0 70 0 62Z" fill="#4aa4e6"/>
+            <text x="45" y="102" fill="#44404b" font-family="sans-serif" font-size="15" text-anchor="middle">Proyectos</text>
+          </g>
+          <g transform="translate(1240 220)">
+            <path d="M0 16Q0 8 8 8H30L40 0H82Q90 0 90 8V62Q90 70 82 70H8Q0 70 0 62Z" fill="#69b8f6"/>
+            <path d="M0 24H90V62Q90 70 82 70H8Q0 70 0 62Z" fill="#4aa4e6"/>
+            <text x="45" y="102" fill="#44404b" font-family="sans-serif" font-size="15" text-anchor="middle">Imágenes</text>
+          </g>
+          <g transform="translate(1070 375)">
+            <rect x="7" y="0" width="76" height="88" rx="5" fill="#ffffff" stroke="#d3d0d9"/>
+            <path d="M60 0v22h23" fill="#e1e5ec"/>
+            <path d="M22 36h45M22 49h45M22 62h30" stroke="#a9a5b2" stroke-width="4" stroke-linecap="round"/>
+            <text x="45" y="120" fill="#44404b" font-family="sans-serif" font-size="15" text-anchor="middle">notas.txt</text>
+          </g>
+          <rect x="1028" y="565" width="414" height="24" fill="#f5f5f7"/>
+          <text x="1235" y="582" fill="#908b96" font-family="sans-serif" font-size="12" text-anchor="middle">3 elementos, 128,4 GB disponibles</text>
+        </g>
+
+        <g>
+          <rect x="897" y="672" width="520" height="94" rx="25" fill="#f4eff8" opacity="0.72" stroke="#ffffff" stroke-opacity="0.55"/>
+          <g transform="translate(916 684)">
+            <rect width="68" height="68" rx="16" fill="#e8edf5"/>
+            <path d="M6 16Q6 7 15 7H53Q62 7 62 16V52Q62 61 53 61H15Q6 61 6 52Z" fill="#57a9ef"/>
+            <circle cx="23" cy="29" r="3" fill="#173053"/>
+            <circle cx="45" cy="29" r="3" fill="#173053"/>
+            <path d="M20 44Q34 56 48 44" fill="none" stroke="#173053" stroke-width="3" stroke-linecap="round"/>
+            <path d="M34 8V60" stroke="#ffffff" stroke-opacity="0.7"/>
+          </g>
+          <g transform="translate(1000 684)">
+            <rect width="68" height="68" rx="16" fill="#fafafa"/>
+            <path d="M12 16h44l-5 19H17Z" fill="#60c5f3"/>
+            <path d="M17 35h34v20H17Z" fill="#279ddd"/>
+            <path d="M31 23v23m-7-7l7 7 7-7" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+          <g transform="translate(1084 684)">
+            <rect width="68" height="68" rx="16" fill="#f5f5f7"/>
+            <rect x="10" y="10" width="48" height="48" rx="11" fill="#c5ccd9"/>
+            <circle cx="26" cy="28" r="8" fill="#ffca3a"/>
+            <path d="M10 51l15-15 10 9 9-12 14 18Z" fill="#59b96b"/>
+          </g>
+          <g transform="translate(1168 684)">
+            <rect width="68" height="68" rx="16" fill="#f5f5f7"/>
+            <path d="M34 10l6 17 18-6-9 15 13 12-18 1-2 18-11-14-16 9 5-18-17-7 17-7-5-18 16 9Z" fill="#eb5c8b"/>
+            <circle cx="34" cy="34" r="12" fill="#7959cf"/>
+          </g>
+          <g transform="translate(1252 684)">
+            <rect width="68" height="68" rx="16" fill="#ffffff"/>
+            <circle cx="34" cy="34" r="23" fill="#4fb6ec"/>
+            <path d="M48 20L28 37l-4 16 13-12Z" fill="#ffffff"/>
+            <path d="M48 20L24 53l4-16Z" fill="#ef5c68"/>
+          </g>
+          <g transform="translate(1336 684)">
+            <rect width="68" height="68" rx="16" fill="#333840"/>
+            <path d="M14 20l12 12-12 12m17 0h22" fill="none" stroke="#e7edf4" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+          <path d="M1090 758h12" stroke="#44404b" stroke-width="3" stroke-linecap="round"/>
+          <path d="M1342 758h12" stroke="#44404b" stroke-width="3" stroke-linecap="round"/>
+        </g>
+      </g>
+
+      <rect x="798" y="58" width="4" height="742" fill="#f5f7fa" opacity="0.66"/>
+      <path d="M66 58H1534V800H66Z" fill="url(#screenGlass)" pointer-events="none"/>
+    </g>
+    <circle cx="800" cy="815" r="4" fill="#788394"/>
+  </g>
+
+  <path d="M730 830H870L892 868H708Z" fill="url(#metal)"/>
+  <path d="M652 868H948Q964 868 970 882H630Q636 868 652 868Z" fill="url(#metal)"/>
+  <rect x="630" y="882" width="340" height="5" rx="2.5" fill="#596477"/>
+</svg>
